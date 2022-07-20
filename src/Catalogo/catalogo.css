@@ -1,0 +1,27 @@
+/*Tratamento para que as IMG aumente no máximo 100% ao container*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.flex_catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw; /*Limite para a quebra*/
+    margin: 0 auto;
+}
+.flex_catalogo > div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+body {
+    font-family: Kumbh Sans;
+    font-weight: bold;
+}
+
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
