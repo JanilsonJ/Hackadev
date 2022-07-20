@@ -16,7 +16,7 @@ img {
 }
 body {
     font-family: Kumbh Sans;
-    font-weight: bold;
+    
 }
 
 
@@ -24,4 +24,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+}
+p {
+    padding: 0.3rem;
+}
+.preco {
+    font-weight: bold;
 }
