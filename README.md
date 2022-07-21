@@ -28,14 +28,14 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
 
 <table>
   <tr>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/105944368?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/105228399?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/105940414?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/70150982?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/86575881?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/81278385?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/85742237?v=4"></th>
-    <th> <img width="75px" height="75px" src="https://avatars.githubusercontent.com/u/18075026?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105944368?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105228399?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105940414?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/70150982?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/86575881?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/81278385?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/85742237?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/18075026?v=4"></th>
   </tr>
   
   <tr>
