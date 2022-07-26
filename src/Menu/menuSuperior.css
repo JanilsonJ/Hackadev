@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'KumbhSans';
+    src: url('../../styles/fonts/KumbhSans/KumbhSans-Bold.ttf') format('truetype');
+    /* font-style: normal;
+    font-weight: bold;
+    font-display: swap; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'KumbhSans', Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.max-width {
+    max-width: 100%;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-bottom: solid #e8ebf0 1px;
+}
+
+.navbar .logo a {
+    color: #547ec7;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none;
+}
+
+.cart {
+    background-color: #d9d9d9;
+    height: 100vh;
+    width: 30vw;
+    float: right;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cart .cart-bar {
+    margin-top: 96.2px;
+    background-color: #ffffff;
+    height: 50px;
+    width: 100%;
+    float: right;
+
+    display: flex;
+    justify-content: center;
+}
+
+.cart .cart-bar img {
+    margin: 10px;
+}
+
+.cart .cart-bar p {
+    margin: auto;
+    font-size: 24px;
+}
+
+.cart .cart-product {
+    background-color: aqua;
+    width: 100%;
+    height: 150px;
+}
+
+.cart .confirm-button {
+    text-align: center;
+    background-color: #4b8346;
+    /* margin-top: 147.2px; */
+    margin-top: auto;
+    /* height: 10rem; */
+    width: 100%;
+}
+
+.cart .confirm-button p {
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+@media (max-width: 1150px) {
+    .cart {
+        background-color: #d9d9d9;
+        height: 100vh;
+        width: 100vw;
+        z-index: 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
