@@ -86,6 +86,7 @@ body {
   height: 50%;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 }
 
 .main-container .payment-options .payment-details-title p {
@@ -122,6 +123,10 @@ body {
   min-height: 40%;
   margin: 3% 0;
   padding: 0 1.5%;
+}
+
+.main-container .car-items .car-items-details input {
+  cursor: pointer;
 }
 
 .main-container .car-items .car-items-details .car-item {
@@ -250,6 +255,10 @@ body {
   font-weight: bold;
   margin-bottom: 8%;
   font-size: clamp(0.9rem, 0.1rem + 0.6vw, 1rem);
+}
+
+.payment-method input {
+  cursor: pointer;
 }
 
 .pix {
