@@ -32,3 +32,19 @@ p {
 .preco {
     font-weight: bold;
 }
+/*Troca de imagens ao passar o mouse*/
+.produto {
+    position: relative;
+}
+
+.produto .seg {
+    visibility: hidden;
+    opacity: 0;
+    position:absolute; /*Fazer ajuste para manter a proporção de img de fundo*/
+    top: 0px;
+    left:0px;
+}
+.produto:hover .seg {
+    visibility: visible;
+    opacity: 1;
+}
