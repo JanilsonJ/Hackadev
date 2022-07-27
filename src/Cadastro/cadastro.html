@@ -4,12 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Cadastro/cadastro.css">
+    <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css">
     <title>Cadastro</title>
 
-    <link rel="stylesheet" href="../../styles/css/reset.css">
+    <link rel="stylesheet" href="../Cadastro/cadastro.css">
     <link rel="stylesheet" href="./cadastro.css">
+    <link rel="stylesheet" href="../../styles/css/reset.css">
 </head>
+
+<!-- TITULO -->
+
 <body>
-    
+       <div class="container">
+            <div class="form">
+                <form action="#">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>cadastro</h1>
+                        </div>
+                    </div>
+
+<!-- INFORMAÇÕES PESSOAIS -->
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="firstname">Nome Completo</label>
+                            <input id="firstname "type="text" name="firstname" placeholder="Digite Seu Nome" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="email">E-mail</label>
+                            <input id="email"type="email" name="email" placeholder="Digite seu E-mail" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="number">Telefone</label>
+                            <input id="number"type="tel" name="number" placeholder="(XX) XXXXX-XXXX" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="Senha">Senha</label>
+                            <input id="Senha"type="password" name="Senha" placeholder="Digite sua Senha" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="confirmar-senha">Confirmar Senha</label>
+                            <input id="confirmar-senha"type="password" name="confirmar-senha" placeholder="Confirme sua Senha" required>
+                        </div>
+                    </div>
+                </form>
+
+<!-- BOTÃO DE REGISTRO -->
+
+                    <div class="login-button">
+                        <button><a href="#">Registrar</a></button>
+                    </div>
+            </div>
+       </div>
 </body>
+
 </html>
