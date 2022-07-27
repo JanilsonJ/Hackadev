@@ -4,17 +4,312 @@
   margin: 0;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  margin: 5%;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 .main-container {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  background-color: #124d66;
-  padding: 20px;
+  width: 80%;
+  font-family: Kumbh Sans;
+  background-color: white;
+
   height: 100vh;
 }
 
 .main-container .container {
-  width: 30%;
-  border-radius: 30px;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  padding: 1%;
+}
+
+.main-container .payment-options .payment-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  width: 100%;
+  min-height: 40%;
+  margin: 8% 0;
+  padding: 3% 1.5%;
+}
+
+.main-container .payment-options .payment-details-title {
+  display: flex;
+  padding: 1% 0;
+  border-bottom: 2px solid black;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.main-container .payment-options .payment-details .info-payment-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5% 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #939393;
+}
+
+.main-container .payment-options .payment-details .title-payment-details {
+  font-weight: bold;
+  color: black;
+}
+
+.main-container .payment-options .payment-details .info-payment-details-botton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.main-container
+  .payment-options
+  .payment-details
+  .info-payment-details-botton
+  .btn {
+  border: none;
+  background-color: #68a8cf;
+  width: 80%;
+  height: 50%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.main-container .payment-options .payment-details-title p {
+  font-size: 1rem;
+}
+
+.main-container .delivery-address {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.main-container .delivery-address div {
+  width: 100%;
+  height: 40%;
+  margin: 20px;
+
   background-color: #d9d9d9;
+}
+
+.main-container .car-items .title-car-items {
+  display: flex;
+  padding: 1% 0;
+  border-bottom: 2px solid black;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.main-container .car-items .car-items-details {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 40%;
+  margin: 3% 0;
+  padding: 0 1.5%;
+}
+
+.main-container .car-items .car-items-details .car-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5% 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: max-content;
+}
+
+.main-container
+  .car-items
+  .car-items-details
+  .car-item
+  .checkbox
+  .main-container
+  .car-items
+  .car-items-details
+  .car-item
+  .endereco-car-item
+  p {
+  font-size: 0.8rem;
+  padding: 0.5% 0;
+}
+
+.main-container
+  .car-items
+  .car-items-details
+  .car-item
+  .endereco-car-item
+  p:first-child {
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+
+.main-container
+  .car-items
+  .car-items-details
+  .car-item
+  .endereco-car-item
+  p:nth-child(2) {
+  font-weight: bold;
+  color: #68a8cf;
+  margin-bottom: 1.5%;
+}
+
+.main-container
+  .car-items
+  .car-items-details
+  .car-item
+  .endereco-car-item
+  p:nth-child(3) {
+  font-size: 0.6rem;
+}
+
+.main-container .car-items .car-items-details .car-item a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.main-container .car-items .car-items-details .car-item .endereco-car-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container .car-items-details .car-item .endereco-car-item input {
+  height: 50%;
+  width: 4%;
+  margin-right: 5%;
+}
+
+.car-item-product-info div:first-child {
+  display: flex;
+  width: 50%;
+}
+
+.main-container .car-items .car-items-details .car-item-img {
+  width: 25%;
+  min-width: 70px;
+  height: 7rem;
+  background-image: url(../../styles/img/Agasalho.jpg);
+  background-size: 100% 100%;
+}
+
+.main-container .car-items .car-items-details .car-item-description {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.5rem, 0.1rem + 0.6vw, 0.6rem);
+}
+
+.car-item-product-info .car-item-description {
+  align-self: center;
+  margin-left: 5%;
+}
+
+.car-item-product-info .car-item-description p {
+  padding-bottom: 2.5%;
+}
+
+.car-item-product-info .car-item-description p:nth-child(1) {
+  font-size: clamp(0.6rem, 0.1rem + 1vw, 1rem);
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+
+.car-item-product-info .car-item-subtotal {
+  align-self: flex-end;
+}
+
+.car-item-product-info .car-item-subtotal p {
+  font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
+  font-weight: bold;
+}
+
+.payment-method {
+  width: 100%;
+  margin: 10% 0;
+  padding: 3% 0;
+  font-size: clamp(0.6rem, 0.1rem + 0.6vw, 1rem);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+.payment-method p:first-child {
+  font-weight: bold;
+  margin-bottom: 8%;
+  font-size: clamp(0.9rem, 0.1rem + 0.6vw, 1rem);
+}
+
+.pix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.6rem, 0.1rem + 0.6vw, 1rem);
+  width: 25%;
+}
+.pix .iconify {
+  margin: 5%;
+}
+
+.cartao-debito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.6rem, 0.1rem + 0.6vw, 1rem);
+  width: 25%;
+}
+
+.cartao-credito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.6rem, 0.1rem + 0.6vw, 1rem);
+  width: 25%;
+}
+
+.boleto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.6rem, 0.1rem + 0.6vw, 1rem);
+  width: 25%;
+}
+
+.payment-method-options {
+  display: flex;
+  padding: 0 1%;
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Kumbh Sans;
+    background-color: white;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .container {
+    width: 100% !important;
+  }
+
+  .info-payment-details-botton {
+    height: 30vw !important;
+  }
 }

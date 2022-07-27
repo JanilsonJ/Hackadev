@@ -8,12 +8,157 @@
 
     <link rel="stylesheet" href="../../styles/css/reset.css" />
     <link rel="stylesheet" href="./checkout.css" />
+    <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
     <div class="main-container">
-      <div class="car-items container"></div>
-      <div class="delivery-address container"></div>
-      <div class="payment-options container"></div>
+      <div class="car-items container">
+        <div class="title-car-items">
+          <p>SELECIONE O TIPO DE ENTREGA</p>
+        </div>
+        <div class="car-items-details">
+          <div class="car-item">
+            <div class="endereco-car-item">
+              <input type="checkbox" />
+              <div id="endereco-description-car-item">
+                <p>Endereço:</p>
+                <p>RESIDENCIAL</p>
+                <p>
+                  Rua Qualquer, Quadra 18, Lote 26, Parque Oeste, Goiânia- GO -
+                  74000-000
+                </p>
+              </div>
+            </div>
+            <a href="">Editar</a>
+
+            <div></div>
+          </div>
+          <div class="car-item car-item-product-info">
+            <div>
+              <div class="car-item-img"></div>
+              <div class="car-item-description">
+                <p>Agasalho Masculino</p>
+                <p>SKU: 10048825955</p>
+                <p>COR: Azul Marinho</p>
+                <p>Tamnaho: G</p>
+                <p>Unitário: R$ 135,99</p>
+              </div>
+            </div>
+            <div class="car-item-subtotal">
+              <p>Subtotal: R$ 135,99</p>
+            </div>
+          </div>
+          <div class="car-item car-item-product-info">
+            <div>
+              <div
+                class="car-item-img"
+                style="
+                  background-image: url(../../styles/img/Camiseta-StayingAlive.jpg);
+                "
+              ></div>
+              <div class="car-item-description">
+                <p>Camiseta Staying Alive</p>
+                <p>SKU: 10048852531</p>
+                <p>COR: Preto</p>
+                <p>Tamnaho: M</p>
+                <p>Unitário: R$ 25,99</p>
+              </div>
+            </div>
+            <div class="car-item-subtotal">
+              <p>Subtotal: R$ 25,99</p>
+            </div>
+          </div>
+        </div>
+        <div class="payment-method">
+          <p>Formas de pagamento</p>
+          <div class="payment-method-options">
+            <div class="cartao-debito">
+              <input
+                type="radio"
+                id="cartao"
+                name="pymentMethod"
+                value="debit_card"
+              />
+              <span class="material-symbols-outlined"> credit_card </span>
+              <p for="cartao">Cartao de debito</p>
+            </div>
+            <div class="cartao-credito">
+              <input
+                type="radio"
+                id="cartao1"
+                name="pymentMethod"
+                value="credit_card"
+              />
+              <span class="material-symbols-outlined"> credit_card </span>
+              <p for="cartao1">Cartao de credito</p>
+            </div>
+            <div class="pix">
+              <input type="radio" id="pix" name="pymentMethod" value="pix" />
+              <span
+                class="iconify"
+                data-icon="fa6-brands:pix"
+                data-width="20"
+                data-height="20"
+              ></span>
+              <p for="pix">Pix</p>
+            </div>
+            <div class="boleto">
+              <input
+                type="radio"
+                id="boleto"
+                name="pymentMethod"
+                value="boleto"
+              />
+              <span class="material-symbols-outlined"> barcode </span>
+              <p for="boleto">Boleto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-options container">
+        <div class="payment-details-title">
+          <p>DETALHES DA SUA COMPRA</p>
+        </div>
+        <div class="payment-details">
+          <div class="title-payment-details info-payment-details">
+            <p>Resumo do Pedido:</p>
+          </div>
+          <div class="info-payment-details">
+            <p>Subtotal</p>
+            <p>R$ 161,98</p>
+          </div>
+          <div class="info-payment-details">
+            <p>Vale Troca</p>
+            <p>R$ 0,00</p>
+          </div>
+          <div class="info-payment-details">
+            <p>Desconto</p>
+            <p>R$ 0,00</p>
+          </div>
+          <div class="info-payment-details">
+            <p>Entrega</p>
+            <p>R$ 0,00</p>
+          </div>
+          <div class="info-payment-details">
+            <p class="title-payment-details"><strong>Total</strong></p>
+            <p>R$ 161,98</p>
+          </div>
+
+          <div class="info-payment-details-botton info-payment-details">
+            <button class="btn">FINALIZAR COMPRA</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </html>
