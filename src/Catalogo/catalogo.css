@@ -19,7 +19,6 @@ body {
     
 }
 
-
 .produto {
     display: flex;
     flex-direction: column;
@@ -38,13 +37,19 @@ p {
 }
 
 .produto .seg {
-    visibility: hidden;
-    opacity: 0;
-    position:absolute; /*Fazer ajuste para manter a proporção de img de fundo*/
-    top: 0px;
-    left:0px;
+    display: none;
 }
+
 .produto:hover .seg {
-    visibility: visible;
-    opacity: 1;
+    display: block;
 }
+.produto:hover .pri {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .flex_catalogo > div {
+        flex: 1 1 128px;
+        margin: 10px;
+    }
+  }
