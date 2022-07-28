@@ -24,10 +24,15 @@
         <div class="title-car-items">
           <p>SELECIONE O TIPO DE ENTREGA</p>
         </div>
-        <div class="car-items-details">
+        <div class="car-items-details address-delivery">
           <div class="car-item">
             <div class="endereco-car-item">
-              <input type="checkbox" />
+              <input
+                type="radio"
+                id="delivery-address"
+                name="delivery-address"
+                value="default"
+              />
               <div id="endereco-description-car-item">
                 <p>Endereço:</p>
                 <p>RESIDENCIAL</p>
@@ -38,9 +43,46 @@
               </div>
             </div>
             <a href="">Editar</a>
-
-            <div></div>
           </div>
+          <div class="car-item">
+            <div class="delivery-categories">
+              <div>
+                <input
+                  type="radio"
+                  id="standard"
+                  name="delivery-categories"
+                  value="standard"
+                />
+                <div>
+                  <p style="font-weight: bold">Entrega Standard</p>
+                  <p>Até 15 dias uteis após a confiração de pagamento.</p>
+                </div>
+              </div>
+            </div>
+            <p class="price-delivery-categorie">R$ 7,00</p>
+          </div>
+          <div class="car-item">
+            <div class="delivery-categories">
+              <div>
+                <input
+                  type="radio"
+                  id="express"
+                  name="delivery-categories"
+                  value="express"
+                />
+                <div>
+                  <p style="font-weight: bold">Entrega Standard</p>
+                  <p>Até 6 dias uteis após a confiração de pagamento.</p>
+                </div>
+              </div>
+            </div>
+            <p class="price-delivery-categorie">R$ 18,00</p>
+          </div>
+        </div>
+        <div class="title-car-items">
+          <p>LISTA DE PRODUTOS</p>
+        </div>
+        <div class="car-items-details">
           <div class="car-item car-item-product-info">
             <div>
               <div class="car-item-img"></div>

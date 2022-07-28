@@ -89,6 +89,14 @@ body {
   cursor: pointer;
 }
 
+.main-container
+  .payment-options
+  .payment-details
+  .info-payment-details-botton
+  .btn:hover {
+  background-color: #a0b3c2;
+}
+
 .main-container .payment-options .payment-details-title p {
   font-size: 1rem;
 }
@@ -120,9 +128,10 @@ body {
   flex-direction: column;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
   width: 100%;
-  min-height: 40%;
   margin: 3% 0;
   padding: 0 1.5%;
+
+  overflow: auto;
 }
 
 .main-container .car-items .car-items-details input {
@@ -198,6 +207,28 @@ body {
   height: 50%;
   width: 4%;
   margin-right: 5%;
+}
+
+.delivery-categories {
+  font-size: clamp(0.5rem, 0.1rem + 0.6vw, 0.6rem);
+}
+
+.price-delivery-categorie {
+  font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
+  font-weight: bold;
+}
+
+.delivery-categories div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.delivery-categories div div p {
+  margin-left: 5%;
+}
+
+.delivery-categories div div p:first-child {
+  font-size: clamp(0.5rem, 0.5rem + 0.9vw, 1rem);
 }
 
 .car-item-product-info div:first-child {
