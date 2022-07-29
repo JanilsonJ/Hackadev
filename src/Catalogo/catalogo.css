@@ -25,11 +25,14 @@ body {
     align-items: center;
     padding: 10px;
 }
-p {
+.produto p {
+    font-size: clamp(0.5em, 1em + 1vw, 1.0em);
     padding: 0.3rem;
 }
 .preco {
+    margin-top: auto;
     font-weight: bold;
+    
 }
 /*Troca de imagens ao passar o mouse*/
 .produto {
@@ -46,10 +49,30 @@ p {
 .produto:hover .pri {
     display: none;
 }
-
+.desconto {
+    position: absolute;
+    margin: 5px;
+    padding: 5px;
+    right:  10px;
+    background-color: rgb(198, 37, 37);
+}
+.desconto h1 {
+    font-size: 1.0rem;
+    color: aliceblue;
+    
+}
+.preco .precodesc {
+    color: #D0413B;
+}
 @media only screen and (max-width: 600px) {
     .flex_catalogo > div {
         flex: 1 1 128px;
         margin: 10px;
     }
   }
+  @media only screen and (max-width: 600px) {
+    .desconto h1 {
+       font-size: 0.6rem;
+       
+    }
+}
