@@ -1,186 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
 
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../../styles/css/reset.css" />
-        <link rel="stylesheet" href="./menuSuperior.css" />
-        <script src="https://kit.fontawesome.com/fd44f4d442.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css">
-        <link rel="stylesheet" href="../../styles/fonts/LakkiReddy/KumbhSans.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Menu</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
 
-    </head>
-    
-    <body>
-        <nav class="navbar">
-            <div class="max-width">
-                <div class="logo">
-                    <a href="#">NERDress</a>
-                </div>
-                <ul class="menu">
-                    <li><a href="#" class="menu-btn"><i class="fas fa-search fa-2x"></i></a></li>
-                    <li><a href="#" class="menu-btn"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
-                    <li><a href="#" class="menu-btn"><i class="fas fa-user-circle fa-2x"></i></i></a></li>
-                    <!-- <li><a href="#" class="menu-btn"><img src="../../styles/img/Lupa.svg"></a></li>
-                    <li><a href="#" class="menu-btn"><img src="../../styles/img/Carrinho.svg" alt=""></a></li> 
-                    <li><a href="#" class="menu-btn"><img src="../../styles/img/Person.svg" alt=""></a></li> -->
+    <link rel="stylesheet" href="../../styles/css/reset.css" />
+    <link rel="stylesheet" href="./menuSuperior.css" />
+    <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css">
+    <link rel="stylesheet" href="../../styles/fonts/LakkiReddy/KumbhSans.css">
 
-    
-                </ul>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"> <img src="../../styles/img/LogoTransparencia3.png" ></a>
+        </div>
+
+        <div class="menu">
+            <div class="search-bar">
+                <input class="quantity" type="text" placeholder="Vestido, Moletom, Calça...">
             </div>
-        </nav>
 
-        <div class="cart active">
-            <div class="cart-bar"><img src="../../styles/img/left-arrow.svg" alt=""> <p>Carrinho</p></div>
+            <span class="menu-btn search-icon" tabindex="0">search</span>
+            <span class="menu-btn cart-icon" tabindex="0">shopping_cart</span>
+            <span class="menu-btn account-icon" tabindex="0">manage_accounts</span>
 
-            <!-- INICIO PRODUTOS DO CARRINHO -->
-            <div class="cart__product">
-                <!-- INICIO IMAGEM DO PRODUTO -->
-                <div>
-                    <img 
-                    src="../../styles/img/Vestdo.jpg" 
-                    class="cart__product-image">
-                </div> 
-                <!-- FIM IMAGEM DO PRODUTO -->
-
-                <!-- INICIO DETALHES DO CARRINHO -->
-                <div class="cart__product-details">
-                    <div class="cart__product-title">
-                        Vestido regata com estampados florais
-                        <div class="cart_product-size">Tamanho:
-                        <div class="cart__product-sizes">(M)</div>
+            <div class="cart">
+                <div class="cart-bar">
+                    <p>Carrinho</p>
+                </div>
+                
+                <div class="cart__products">
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Vestdo.jpg" class="cart__product-image">
                         </div>
-                        <div class="cart_product-price">
-                        R$ 89,90
-                            <div class="cart__product-options">
-                            em até 3x R$ 29.96
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Vestido regata com estampados florais
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(M)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 89,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 29.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
                             </div>
+                            <span class="cart__product-line"></span>
                         </div>
-                        <div class="cart__product-selector">
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
 
-                            <span class="add-icon">add</span>
-                            <span class="quantity">1</span>
-                            <span class="remove-icon">remove</span>
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Bolso Carta ocasional Shorts Masculino.jpg"
+                                class="cart__product-image">
                         </div>
-                        
-                        <div class="cart__product-remove">
-                        Remover item
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Bolso Carta ocasional Shorts Masculino
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 38,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 12.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+                            
+                            <span class="cart__product-line"></span>
                         </div>
-                        <div class="cart__product-line">
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
+
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
                         </div>
-                <!-- FIM DETALHES DO CARRINHO -->
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- FIM PRODUTOS DO CARRINHO -->
+                <!-- INICIO PRODUTOS DO CARRINHO -->
 
-    <!-- INICIO PRODUTOS DO CARRINHO -->
-    <div class="cart__product">
-        <!-- INICIO IMAGEM DO PRODUTO -->
-        <div>
-            <img 
-            src="../../styles/img/Bolso Carta ocasional Shorts Masculino.jpg" 
-            class="cart__product-image">
-        </div> 
-        <!-- FIM IMAGEM DO PRODUTO -->
+                <!-- FIM PRODUTOS DO CARRINHO -->
 
-        <!-- INICIO DETALHES DO CARRINHO -->
-        <div class="cart__product-details">
-            <div class="cart__product-title">
-                Bolso Carta ocasional Shorts Masculino
-                <div class="cart_product-size">Tamanho:
-                <div class="cart__product-sizes">(G)</div>
+                <div class="confirm-button">
+                    <p>Total R$ 185,70</p>
+                    <p>Finalizar Compra</p>
                 </div>
-                <div class="cart_product-price">
-                    R$ 38,90
-                    <div class="cart__product-options">
-                    em até 3x R$ 12.96
-                    </div>
-                </div>
-                <div class="cart__product-selector">
-
-                    <span class="add-icon">
-                        add
-                    </span>
-
-                    <span class="quantity">
-                        1
-                    </span>
-
-                    <span class="remove-icon">
-                        remove
-                    </span>
-
-                </div>
-                <div class="cart__product-remove">
-                Remover item
-                </div>
-                <div class="cart__product-line">
-                </div>
-        <!-- FIM DETALHES DO CARRINHO -->
             </div>
         </div>
-    </div>
-    <!-- FIM PRODUTOS DO CARRINHO -->
+    </nav>
+</body>
 
-      <!-- INICIO PRODUTOS DO CARRINHO -->
-      <div class="cart__product">
-        <!-- INICIO IMAGEM DO PRODUTO -->
-        <div>
-            <img 
-            src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg" 
-            class="cart__product-image">
-        </div> 
-        <!-- FIM IMAGEM DO PRODUTO -->
-
-        <!-- INICIO DETALHES DO CARRINHO -->
-        <div class="cart__product-details">
-            <div class="cart__product-title">
-                Camiseta Refletivo Padrão de flores e letras
-                <div class="cart_product-size">Tamanho:
-                <div class="cart__product-sizes">(G)</div>
-                </div>
-                <div class="cart_product-price">
-                    R$ 56,90
-                    <div class="cart__product-options">
-                    em até 3x R$ 18.96
-                    </div>
-                </div>
-                <div class="cart__product-selector">
-
-                    <span class="add-icon">
-                        add
-                    </span>
-
-                    <span class="quantity">
-                        1
-                    </span>
-
-                    <span class="remove-icon">
-                        remove
-                    </span>
-
-                </div>
-                <div class="cart__product-remove">
-                Remover item
-                </div>
-                <div class="cart__product-line">
-                </div>
-        <!-- FIM DETALHES DO CARRINHO -->
-            </div>
-        </div>
-    </div>
-    <!-- FIM PRODUTOS DO CARRINHO -->
-
-            <div class="confirm-button">
-                <p>Total R$ 185,70</p>
-                <p>Finalizar Compra</p> 
-            </div>
-
-        </div>
-    </body>
 </html>
