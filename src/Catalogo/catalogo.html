@@ -5,16 +5,273 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo</title>
-
+    
     <link rel="stylesheet" href="../../styles/css/reset.css">
+    <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css">
     <link rel="stylesheet" href="./catalogo.css">
+
+    <link rel="stylesheet" href="../Menu/menuSuperior.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <header>
-    <iframe style="width: 100vw;" src="../Menu/menuSuperior.html" frameborder="0"></iframe>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"> <img src="../../styles/img/LogoTransparencia3.png" ></a>
+        </div>
+
+        <div class="menu">
+            <div class="search-bar">
+                <input class="quantity" type="text" placeholder="Vestido, Moletom, Calça...">
+            </div>
+
+            <span class="menu-btn search-icon" tabindex="0">search</span>
+            <span class="menu-btn cart-icon" tabindex="0">shopping_cart</span>
+            <a class="menu-btn" href="../Minha Conta/minha-conta.html"><span class="account-icon" tabindex="0">manage_accounts</span></a>
+
+            <div class="cart">
+                <div class="cart-bar">
+                    <p>Carrinho</p>
+                </div>
+                
+                <div class="cart__products">
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Vestdo.jpg" class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Vestido regata com estampados florais
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(M)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 89,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 29.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
+
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Bolso Carta ocasional Shorts Masculino.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Bolso Carta ocasional Shorts Masculino
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 38,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 12.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+                            
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
+
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+                                
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- INICIO PRODUTOS DO CARRINHO -->
+
+                <!-- FIM PRODUTOS DO CARRINHO -->
+
+                <div class="confirm-button">
+                    <p>Total R$ 185,70</p>
+                    <p>Finalizar Compra</p>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <body>
-    
+    <main>
+        <section class="flex_catalogo">
+            <div class="produto">
+                <a href="../produto/produto.html">
+                    <img class="pri" src="../../styles/img/01_Blusaverde_frente.webp">
+                    <img class="seg" src="../../styles/img/01_Blusaverde_costa.webp">
+                </a>
+                <p>Camiseta Verde Simples</p>
+                <p class="preco">R$ 59,00</p>
+            </div>
+            <div class="produto">
+                <a href="../produto/produto.html">
+                    <img class="pri" src="../../styles/img/02_Camiseta_GolaRedonda_frente.webp">
+                    <img class="seg" src="../../styles/img/02_Camiseta_GolaRedonda_verso.webp"> 
+                </a>
+                <p>Camiseta gola Coração</p>
+                <p class="preco"><span class="precodesc">R$ 38,90</span></p>
+                <div class="desconto"><h1>50% OFF</h1></div>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/03_Terno_e_blazer_frontal_aberto_com_gola_xale_frente.webp">
+                <img class="seg" src="../../styles/img/03_Terno_e_blazer_frontal_aberto_com_gola_xale_verso.webp">
+                <p>Terno e blazer Gola Xale</p>
+                <p class="preco">R$ 186,90</p>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/04_Camiseta_Ocasional_Plantas_frente.webp">
+                <img class="seg" src="../../styles/img/04_Camiseta_Ocasional_plantas_verso.webp">
+                <p>Camiseta Plantas ocasional</p>
+                <p class="preco">R$ 39,90</p>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/05_ Listrado_Formal_Camisa_Masculina.webp">
+                <img class="seg" src="../../styles/img/05_ Listrad_ Formal_Camisa_Masculina.Verso.webp">
+                <p>Camisa Listrado Formal</p>
+                <p class="preco"><span class="precodesc">R$ 69,99</span></p>
+                <div class="desconto"><h1>10% OFF</h1></div>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/06_Moletom_de bolso_com_cordão_frente.webp">
+                <img class="seg" src="../../styles/img/06_Moletom_de bolso_com_cordão_verso.webp">
+                <p>Moletom de bolso</p>
+                <p class="preco">R$ 77,90</p>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/07_Bolsa com alça superior Carta Gráfica_Frente.webp">
+                <img class="seg" src="../../styles/img/07_Bolsa com alça superior Carta Gráfica_verso.webp">
+                <p>Bolsa com alça superior</p>
+                <p class="preco">R$ 182,95</p>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/08_Óculos de sol com armação grande.frente.webp">
+                <img class="seg" src="../../styles/img/08_Óculos_de_sol_com_armação grande_verso.webp">
+                <p>Óculos de sol</p>
+                <p class="preco">R$ 32,90</p>
+            </div>
+            <div class="produto">
+                <img class="pri" src="../../styles/img/09_ Branco_Embrulhar_Geométrico_Casual_Blusas_frente.webp">
+                <img class="seg" src="../../styles/img/09_Branco_Embrulhar_Geométrico_Casual_Blusas_verso.webp">
+                <p>Blusa Branco Embrulhar </p>
+                <p class="preco">R$ 32,90</p>
+            </div>
+            <div class="produto">
+                <img src="../../styles/img/10_PRODUTO_OUT.png">
+                <p>Camiseta Feminina Rosa</p>
+                <p class="preco">R$ 59,00</p>
+            </div>         
+        </section>
+    </main>
 </body>
 </html>
