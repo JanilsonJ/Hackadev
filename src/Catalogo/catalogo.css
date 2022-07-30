@@ -1,42 +1,59 @@
+
+
 /*Tratamento para que as IMG aumente no máximo 100% ao container*/
 img {
     max-width: 100%;
     display: block;
 }
 
+body {
+    font-family: Kumbh Sans;
+    position: relative;
+    background-color: #FDF9E9;
+}
+
 .flex_catalogo{
     display: flex;
     flex-wrap: wrap;
-    max-width: 90vw; /*Limite para a quebra*/
+    padding: 10px;
     margin: 0 auto;
+    margin-top: 70px;
+
+    overflow-y: scroll;
+    height: calc(100vh - 70px);
+    width: 100vw;
 }
 .flex_catalogo > div {
     flex: 1 1 200px;
     margin: 10px;
 }
-body {
-    font-family: Kumbh Sans;
-    
-}
 
 .produto {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+
+    background-color: #F7F0DE ;
+
+    border-width: 2px;
+    border-style: outset;
+    border-color: #9e977b;
 }
+
+.produto img {
+    cursor: pointer;
+}
+
 .produto p {
     font-size: clamp(0.5em, 1em + 1vw, 1.0em);
-    padding: 0.3rem;
+    padding: 10px;
+    color: #181A17;
 }
 .preco {
     margin-top: auto;
     font-weight: bold;
     
-}
-/*Troca de imagens ao passar o mouse*/
-.produto {
-    position: relative;
 }
 
 .produto .seg {
@@ -46,15 +63,19 @@ body {
 .produto:hover .seg {
     display: block;
 }
+
 .produto:hover .pri {
     display: none;
 }
+
 .desconto {
     position: absolute;
     margin: 5px;
     padding: 5px;
-    right:  10px;
-    background-color: rgb(198, 37, 37);
+    box-sizing: border-box;
+    right:  0;
+    border-radius: 5px;
+    background-color: #807a64;
 }
 .desconto h1 {
     font-size: 1.0rem;
