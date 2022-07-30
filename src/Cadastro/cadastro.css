@@ -114,4 +114,18 @@ button:hover, button:focus {
   transform: translateY(-6px);
 }
     
+@media screen and (max-width: 440px) {
+  .navbar {
+    justify-content: center !important;
+  }
+
+  .nome_e-commerce {
+    display: none;
+  }
+}
     
+@media screen and (max-width: 400px) {
+  .navbar .logo {
+    display: block;
+  }
+}
