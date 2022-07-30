@@ -8,13 +8,328 @@
 
     <link rel="stylesheet" href="../../styles/css/reset.css">
     <link rel="stylesheet" href="./minha-conta.css">
+    <link rel="stylesheet" href="../../styles/fonts/KumbhSans/KumbhSans.css">
+    <link rel="stylesheet" href="../Menu/menuSuperior.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <header>
-    <iframe style="width: 100vw;" src="../Menu/menuSuperior.html" frameborder="0"></iframe>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../Catalogo/catalogo.html"> <img src="../../styles/img/LogoTransparencia3.png"></a>
+        </div>
+
+        <div class="menu">
+            <div class="search-bar">
+                <input class="quantity" type="text" placeholder="Vestido, Moletom, Calça...">
+            </div>
+
+            <span class="menu-btn search-icon" tabindex="0">search</span>
+            <span class="menu-btn cart-icon" tabindex="0">shopping_cart</span>
+            <span class="menu-btn account-icon" tabindex="0">manage_accounts</span>
+
+            <div class="cart">
+                <div class="cart-bar">
+                    <p>Carrinho</p>
+                </div>
+
+                <div class="cart__products">
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Vestdo.jpg" class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Vestido regata com estampados florais
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(M)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 89,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 29.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
+
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Bolso Carta ocasional Shorts Masculino.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Bolso Carta ocasional Shorts Masculino
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 38,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 12.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- FIM PRODUTOS DO CARRINHO -->
+
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                    <!-- INICIO PRODUTOS DO CARRINHO -->
+                    <div class="cart__product">
+                        <!-- INICIO IMAGEM DO PRODUTO -->
+                        <div>
+                            <img src="../../styles/img/Camiseta Refletivo Padrão de flores e letras.jpg"
+                                class="cart__product-image">
+                        </div>
+                        <!-- FIM IMAGEM DO PRODUTO -->
+
+                        <!-- INICIO DETALHES DO CARRINHO -->
+                        <div class="cart__product-details">
+                            <div class="cart__product-description">
+                                Camiseta Refletivo Padrão de flores e letras
+                                <div class="cart_product-size">Tamanho:
+                                    <div class="cart__product-sizes">(G)</div>
+                                </div>
+                                <div class="cart_product-price">
+                                    R$ 56,90
+                                    <div class="cart__product-options">
+                                        em até 3x R$ 18.96
+                                    </div>
+                                </div>
+
+                                <div class="cart__product-selector">
+                                    <span class="add-icon">add</span>
+                                    <input class="quantity" type="text" maxlength="2" value="1">
+                                    <span class="remove-icon">remove</span>
+                                </div>
+
+                                <div class="cart__product-remove">
+                                    <span class="trash-icon">delete_forever</span> Remover
+                                </div>
+                                <!-- FIM DETALHES DO CARRINHO -->
+                            </div>
+
+                            <span class="cart__product-line"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- INICIO PRODUTOS DO CARRINHO -->
+
+                <!-- FIM PRODUTOS DO CARRINHO -->
+
+                <a href="../Checkout/checkout.html" target="_blank" class="confirm-button">
+                    <p>Total R$ 185,70</p>
+                    <p>Finalizar Compra</p>
+                </a>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <body>
-    
+
+    <div class="main-container">
+
+        <div class="container_menu">
+            <button class="botao_menu btn_conta" type="button"><strong>CONTA</strong></button>
+            <button class="botao_menu btn_endereco" type="button"><strong>ENDEREÇOS</strong></button>
+            <button class="botao_menu btn_cartao" type="button"><strong>CARTÕES</strong></button>
+
+
+            <div class="container_cadastro">
+                <form id="formulario_cadastro">
+                    <div class="Campo">
+                        <label for="nome"><strong>Nome Completo</strong></label>
+                        <input type="text" name="nome" id="nome" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="email"><strong>Email</strong></label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="telefone"><strong>Telefone</strong></label>
+                        <input type="tel" name="telefone" id="telefone" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="senha"><strong>Senha</strong></label>
+                        <input type="password" name="senha" id="senha">
+                    </div>
+
+                    <div class="Campo">
+                        <label for="confirmasenha"><strong>Confirmar Senha</strong></label>
+                        <input type="password" name="confirma senha" id="confirmasenha">
+                    </div>
+
+                    <div id="botaodiv">
+                        <button class="botao" type="submit"><strong>ALTERAR DADOS</strong></button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="container_endereco">
+
+                <form id="formulario_endereco">
+
+                    <div class="Campo">
+                        <label for="cep">
+                            <strong>CEP</strong>
+                            <a target="_blank" href="http://buscacepinter.correios.com.br/app/endereco/index.php?" class="icone">not_listed_location</a>
+                        </label>
+
+                        <input type="text" name="cep" id="cep" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="numero"><strong>Numero</strong></label>
+                        <input type="text" name="numero" id="numero" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="endereco"><strong>Endereco</strong></label>
+                        <input type="text" name="endereco" id="endereco" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="bairro"><strong>Bairro</strong></label>
+                        <input type="text" name="bairro" id="bairro" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="cidade"><strong>Cidade</strong></label>
+                        <input type="text" name="cidade" id="cidade" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="estado"><strong>Estado</strong></label>
+                        <input type="text" name="estado" id="estado" required>
+                    </div>
+                    <div class="Campo">
+                        <label for="complemento"><strong>Complemento</strong></label>
+                        <input type="text" name="complemento" id="complemento" required>
+                    </div>
+                    <div class="Campo">
+                        <label for="referencia"><strong>Referencia</strong></label>
+                        <input type="text" name="refencia" id="referencia" required>
+                    </div>
+
+                    <div id="botaodiv">
+                        <button class="botao" type="submit"><strong>ALTERAR DADOS</strong></button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="container_cartao">
+                <form id="formulario_cartao">
+                    <div class="Campo">
+                        <label for="numerocartao"><strong>Numero do Cartão</strong></label>
+                        <input type="text" name="numerocartao" id="numerocartao" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="nomecartao"><strong>Nome Cartão</strong></label>
+                        <input type="text" name="nomecartao" id="nomecartao" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="dataexp"><strong>Data de expiração</strong></label>
+                        <input type="text" name="dataexp" id="dataexp" required>
+                    </div>
+
+                    <div class="Campo">
+                        <label for="cvv"><strong>Código de segurança (CVV)</strong></label>
+                        <input type="text" name="cvv" id="cvv">
+                    </div>
+
+                    <div id="botaodiv">
+                        <button class="botao" type="submit"><strong>ALTERAR DADOS</strong></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

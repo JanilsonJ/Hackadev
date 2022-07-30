@@ -1,27 +1,99 @@
+
+
 /*Tratamento para que as IMG aumente no máximo 100% ao container*/
 img {
     max-width: 100%;
     display: block;
 }
 
+body {
+    font-family: Kumbh Sans;
+    position: relative;
+    background-color: #FDF9E9;
+}
+
 .flex_catalogo{
     display: flex;
     flex-wrap: wrap;
-    max-width: 90vw; /*Limite para a quebra*/
+    padding: 10px;
     margin: 0 auto;
+    margin-top: 70px;
+
+    overflow-y: scroll;
+    height: calc(100vh - 70px);
+    width: 100vw;
 }
 .flex_catalogo > div {
     flex: 1 1 200px;
     margin: 10px;
 }
-body {
-    font-family: Kumbh Sans;
-    font-weight: bold;
-}
-
 
 .produto {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background-color: #F7F0DE ;
+
+    border-width: 2px;
+    border-style: outset;
+    border-color: #9e977b;
+}
+
+.produto img {
+    cursor: pointer;
+}
+
+.produto p {
+    font-size: clamp(0.5em, 1em + 1vw, 1.0em);
+    padding: 10px;
+    color: #181A17;
+}
+.preco {
+    margin-top: auto;
+    font-weight: bold;
+    
+}
+
+.produto .seg {
+    display: none;
+}
+
+.produto:hover .seg {
+    display: block;
+}
+
+.produto:hover .pri {
+    display: none;
+}
+
+.desconto {
+    position: absolute;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    right:  0;
+    border-radius: 5px;
+    background-color: #807a64;
+}
+.desconto h1 {
+    font-size: 1.0rem;
+    color: aliceblue;
+    
+}
+.preco .precodesc {
+    color: #D0413B;
+}
+@media only screen and (max-width: 600px) {
+    .flex_catalogo > div {
+        flex: 1 1 128px;
+        margin: 10px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .desconto h1 {
+       font-size: 0.6rem;
+       
+    }
 }
