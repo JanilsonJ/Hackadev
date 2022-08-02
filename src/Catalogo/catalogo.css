@@ -12,7 +12,7 @@ body {
     background-color: #FDF9E9;
 }
 
-.flex_catalogo{
+.catalogo{
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -23,12 +23,13 @@ body {
     height: calc(100vh - 70px);
     width: 100vw;
 }
-.flex_catalogo > div {
+/*> Elementos filho de Catalago*/
+.catalogo > div {
     flex: 1 1 200px;
     margin: 10px;
 }
 
-.produto {
+.catalago__produto {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -41,34 +42,38 @@ body {
     border-color: #9e977b;
 }
 
-.produto img {
+.catalago__produto img {
     cursor: pointer;
 }
 
-.produto p {
+.catalago__text {
     font-size: clamp(0.5em, 1em + 1vw, 1.0em);
     padding: 10px;
     color: #181A17;
 }
-.preco {
+.catalago__text--preco {
     margin-top: auto;
     font-weight: bold;
     
 }
-
-.produto .seg {
+.catalago__text--riscado {
+    text-decoration: line-through;
+    font-size: 12px;
+}
+/*Pri= Primeira Imagem e Seg=Segunda*/
+.catalago__produto .seg {
     display: none;
 }
 
-.produto:hover .seg {
+.catalago__produto:hover .seg {
     display: block;
 }
 
-.produto:hover .pri {
+.catalago__produto:hover .pri {
     display: none;
 }
 
-.desconto {
+.catalago__desconto {
     position: absolute;
     margin: 5px;
     padding: 5px;
@@ -77,22 +82,29 @@ body {
     border-radius: 5px;
     background-color: #807a64;
 }
-.desconto h1 {
+.catalago__desconto .titulo_desconto {
     font-size: 1.0rem;
     color: aliceblue;
     
 }
-.preco .precodesc {
+.catalago__text--desconto {
+    margin-top: auto;
+    font-weight: bold;
     color: #D0413B;
 }
+.catalago__out {
+    position: absolute;
+    background-color: transparent;
+}
+/*Ajustes de Telas*/
 @media only screen and (max-width: 600px) {
-    .flex_catalogo > div {
+    .catalogo > div {
         flex: 1 1 128px;
         margin: 10px;
     }
   }
   @media only screen and (max-width: 600px) {
-    .desconto h1 {
+    .catalago__desconto .titulo_desconto {
        font-size: 0.6rem;
        
     }
