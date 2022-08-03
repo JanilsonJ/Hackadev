@@ -1,5 +1,3 @@
-
-
 /*Tratamento para que as IMG aumente no máximo 100% ao container*/
 img {
     max-width: 100%;
@@ -10,18 +8,31 @@ body {
     font-family: Kumbh Sans;
     position: relative;
     background-color: #FDF9E9;
+    margin-top: 70px;
+    overflow-y: scroll;
 }
+/*Banner*/
+.banner {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   background-color: #181A17;
+    
+}
+.banner .banner__imagem {
+    display: block;
+    width: 50%;
+    text-align: center;
 
+}
+/*FlexBOX*/
 .catalogo{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
     margin: 0 auto;
-    margin-top: 70px;
-
-    overflow-y: scroll;
     height: calc(100vh - 70px);
-    width: 100vw;
+    
+    
 }
 /*> Elementos filho de Catalago*/
 .catalogo > div {
@@ -60,16 +71,16 @@ body {
     text-decoration: line-through;
     font-size: 12px;
 }
-/*Pri= Primeira Imagem e Seg=Segunda*/
-.catalago__produto .seg {
+/*Efeito Hover transição de imagens*/
+.catalago__produto .segunda_imagem {
     display: none;
 }
 
-.catalago__produto:hover .seg {
+.catalago__produto:hover .segunda_imagem {
     display: block;
 }
 
-.catalago__produto:hover .pri {
+.catalago__produto:hover .primeira_imagem {
     display: none;
 }
 
