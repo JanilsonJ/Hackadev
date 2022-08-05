@@ -24,18 +24,21 @@ O segmento “Moda e Acessórios” representa 5,6% do faturamento no varejo onl
 
 Oferecer a melhor experiência aos usuários que interagem com os produtos no desktop, e principalmente em dispositivos móveis, é fundamental para se manter vivo e competitivo nesse segmento. 
 
+## Deploy
+<stroke>Link:</stroke> https://ima-ecommerce.netlify.app/
+
 ## Equipe
 
 <table>
   <tr>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105944368?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105228399?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/105940414?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/70150982?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/86575881?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/81278385?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/85742237?v=4"></th>
-    <th> <img width="50px" height="50px" src="https://avatars.githubusercontent.com/u/18075026?v=4"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/allagyn.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/ArturDiego.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/ezcmacedo.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/estevaosampaio.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/Fabioazevedojr.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/JanilsonJ.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/mateus-asouza.png"></th>
+    <th> <img width="50px" height="50px" src="https://github.com/PauloHenryck.png"></th>
   </tr>
   
   <tr>
