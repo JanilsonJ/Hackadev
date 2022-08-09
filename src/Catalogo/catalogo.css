@@ -15,17 +15,15 @@ body {
 .banner {
    width: 100%;
    display: flex;
-   justify-content: center;
-   background-color: #181A17;
+    background-color: #181A17;
     
 }
 .banner .banner__imagem {
     display: block;
-    width: 50%;
-    text-align: center;
-
+    width: 100%;
 }
-/*FlexBOX*/
+
+/*Sessão Catalago de Produtos*/
 .catalogo{
     display: flex;
     flex-wrap: wrap;
