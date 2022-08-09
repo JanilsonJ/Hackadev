@@ -15,15 +15,15 @@ body {
 .banner {
    width: 100%;
    display: flex;
-   justify-content: center;
+    background-color: #181A17;
+    
 }
 .banner .banner__imagem {
     display: block;
     width: 100%;
-    text-align: center;
 }
 
-/*Sessão Catalago*/
+/*Sessão Catalago de Produtos*/
 .catalogo{
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +43,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     background-color: #F7F0DE ;
+
     border-width: 2px;
     border-style: outset;
     border-color: #9e977b;
