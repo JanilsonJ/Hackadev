@@ -7,7 +7,7 @@ img {
 body {
     font-family: Kumbh Sans;
     position: relative;
-    background-color: #FDF9E9;
+    background-color: #FEFDFD;
     margin-top: 70px;
     overflow-y: scroll;
 }
@@ -15,7 +15,7 @@ body {
 .banner {
    width: 100%;
    display: flex;
-    background-color: #181A17;
+   padding: 15px;
     
 }
 .banner .banner__imagem {
@@ -27,9 +27,7 @@ body {
 .catalogo{
     display: flex;
     flex-wrap: wrap;
-    margin: 5px;
-    height: calc(100vh - 70px);
-    margin-bottom: 25%;
+    margin: 10px 5px;
     }
 /*> Elementos filho de Catalago*/
 .catalogo > div {
@@ -42,9 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background-color: #F7F0DE ;
-
+    background-color: white;
     border-width: 2px;
     border-style: outset;
     border-color: #9e977b;
@@ -58,10 +54,13 @@ body {
     font-size: clamp(0.5em, 1em + 1vw, 1.0em);
     padding: 10px;
     color: #181A17;
+    text-align: left;
 }
 .catalago__text--preco {
     margin-top: auto;
     font-weight: bold;
+    text-align: left;
+    
     
 }
 .catalago__text--riscado {
