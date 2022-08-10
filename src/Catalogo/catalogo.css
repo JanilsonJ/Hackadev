@@ -27,11 +27,10 @@ body {
 .catalogo{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 5px;
     height: calc(100vh - 70px);
-    
-    
-}
+    margin-bottom: 25%;
+    }
 /*> Elementos filho de Catalago*/
 .catalogo > div {
     flex: 1 1 200px;
