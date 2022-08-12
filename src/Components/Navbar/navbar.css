@@ -54,6 +54,9 @@
     font-size: 18px;
 }
 
+.navbar .navbar__search__icon:hover {
+    animation:zigzag 3s linear infinite;
+}
 /* NAVBAR MENU */
 
 .navbar .navbar__menu {
@@ -174,6 +177,15 @@
   100% { 
     transform:rotate(360deg); 
   } 
+}
+
+@keyframes zigzag { 
+  50% { 
+    transform:rotate(45deg); 
+  }
+  50% {
+    transform:rotate(-45deg); 
+  }
 }
 
 @media all and (max-width: 768px) {
