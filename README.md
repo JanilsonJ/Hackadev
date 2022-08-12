@@ -48,7 +48,7 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
     <th><a href="https://github.com/estevaosampaio">Estevão Sampaio</a></th>
     <th><a href="https://github.com/Fabioazevedojr">Fábio Marques</a></th>
     <th><a href="https://github.com/JanilsonJ">Janilson Júnior</a></th>
-    <th><a href="https://github.com/mateus-asouza">Mateus Alvez</a></th>
+    <th><a href="https://github.com/mateus-asouza">Mateus Alves</a></th>
     <th><a href="https://github.com/PauloHenryck">Paulo Henryck</a></th>
   </tr>
 </table>
