@@ -6,7 +6,7 @@
 
     font-family: Kumbh Sans;
 
-    padding: 5px 30px;
+    padding: 0px 30px;
     box-shadow: 0px 0 6px #000;
     box-sizing: border-box;
     
@@ -21,8 +21,42 @@
     cursor: pointer;
 }
 
+/* NAVBAR SEARCH */
+
+.navbar .navbar__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar__search input {
+    width: 40vw;
+
+    font-family: Kumbh Sans;
+    font-weight: 700;
+    color: #00000096;
+
+    padding: 8px 30px 8px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+
+    background-color: #00000017;
+    box-shadow: 2px 2px 6px #00000048;
+}
+
+.navbar .navbar__search__icon {
+    position: absolute;
+    padding: 5px 10px;
+    right: 0px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* NAVBAR MENU */
+
 .navbar .navbar__menu {
-    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -30,28 +64,53 @@
 .navbar .navbar__icon {
     color: var(--HeavyMetal);
     font-size: 35px;
-    margin: 0 5px;
-    padding: 5px 6px 5px 6px;
-    border-bottom: 3px solid var(--AntiFlash);
+    padding: 5px 6px;
+    margin-right: 5px;
+}
 
-    text-align: center;
+.navbar .navbar__menu__button{
+    border: 3px solid var(--AntiFlash);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
     transition: .5s ease-in-out;
 }
 
-.navbar .navbar__icon:hover{
-    border-color: #000;
+.navbar .navbar__menu__button:hover{
+    border-bottom-color: #000;
 }
 
-.navbar .navbar__menu__button{
-    background-color: transparent;
-    border: none;
+.navbar .navbar__menu__button p{
+    text-align: start;
+    color: #000;
+    padding: 2px 3px 2px 0px;
+    font-size: 12px;
+
+}
+
+.navbar .navbar__menu__button span{
+    background-color: var(--MetallicRed);
+    color: var(--AntiFlash);
+    border-radius: 50%;
+    padding: 2px 6px;
+
+    position: absolute;
+    top: 50%;
+    left: 18%;
+
+}
+
+.navbar .navbar__menu__icon {
+    display: none;
 }
 
 /* CART */
 
-.cart_visibility {
+.cart__box {
     position: fixed;
     top: 0;
 
@@ -76,7 +135,7 @@
     text-align: center;
 }
 
-.cart__button {
+.cart__button, .menu__button {
     font-size: 35px;
 
     background-color: transparent;
@@ -88,13 +147,77 @@
     align-items: center;
 }
     
-.cart__button:hover {
+.close__icon:hover {
     color: var(--MetallicRed);
     animation:spin 6s linear infinite;
+}
+
+/* MENU BOX */
+.menu__box {
+    background-color: var(--AntiFlash);
+    position: fixed;
+    top: 0;
+
+    width: 200px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 1s ease-in;
+
+    box-shadow: 0px 2px 6px #000;
 }
 
 @keyframes spin { 
   100% { 
     transform:rotate(360deg); 
   } 
+}
+
+@media all and (max-width: 768px) {
+    .navbar {
+        padding: 0px 10px;
+    }
+    
+    .navbar .navbar__menu__button p {
+        display: none;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .navbar .navbar__search input {
+        width: 50vw;
+    }
+    
+    .navbar .navbar__menu {
+        display: none;
+    }
+
+    .navbar .navbar__menu__icon {
+        display: block;
+    }
+
+    .navbar .navbar__icon {
+        padding: 5px 0;
+        margin-right: 0;
+    }
+
+    .navbar .navbar__search {
+        margin-right: 15px;
+    }
+    
+    .navbar .navbar__menu__button p {
+        display: block;
+        margin-left: 20px;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 400px){
+    .cart__box {
+        width: auto;
+        min-width: 100%;
+    }
 }
