@@ -1,0 +1,156 @@
+.footer {
+    width: 100%;
+
+    background-color: var(--HeavyMetal);
+    color: var(--AntiFlash);
+
+    font-family: Kumbh Sans;
+    font-size: clamp(9px, 2vw, 18px);
+
+    box-shadow: 0 0 6px #000;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .footer_social-links {
+    width: 25%;
+    height: 100%;
+
+    padding: 1em;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    justify-content: space-evenly;
+}
+
+
+.footer .footer_social-links .footer_social-links__title{
+    font-weight: bold;
+    width: 100%;
+    margin: 0 0 10px 5px;
+}
+
+.social__icons {
+    font-size: 20px;
+    color: var(--AntiFlash);
+    
+    border-radius: 5px;
+    padding: 5px;
+
+    
+    transition: 1s;
+
+    cursor: pointer;
+}
+
+.instagram_icon:hover {
+    background-image: var(--Instagram);
+}
+
+.facebook_icon:hover {
+    background-color: var(--Facebook);
+}
+
+.youtube_icon:hover {
+    background-color: var(--Youtube);
+}
+
+.linkedin_icon:hover {
+    background-color: var(--Linkedin);
+}
+
+.footer .footer_about {
+    width: 75%;
+    height: 100%;
+
+    padding: 1em;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-self: flex-start;
+}
+
+.footer .footer_about .footer_about__title{
+    width: 100%;
+
+    font-weight: bold;
+    margin: 0 0 10px 5px;
+}
+
+.footer .footer_about__description {
+    margin: 0 0 10px 5px;
+    text-align: justify;
+}
+
+.footer .footer_about__description a {
+    color: var(--AntiFlash);
+}
+
+.footer .footer__team {
+    width: 100%;
+    height: 100%;
+
+    padding: 1em;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-self: flex-start;
+}
+
+.footer .footer__team .footer__team__title{
+    width: 100%;
+
+    font-weight: bold;
+    margin: 0 0 10px 5px;
+}
+
+.footer .footer__team .footer__team__links{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.footer .footer__team .footer__team__links .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem;
+}
+
+.footer .footer__team .footer__team__links .card img{
+    border-radius: 50%;
+    width: 50px;
+}
+
+.footer .footer__team .footer__team__links .card a{
+    margin-top: 4px;
+    color: var(--AntiFlash);
+}
+
+.footer__copyright {
+    background-color: var(--AntiFlash);
+    color: var(--HeavyMetal);
+    font-size: clamp(9px, 2vw, 12px);
+    width: 100%;
+    flex-grow: 1;
+}
+
+.footer__copyright p{
+    padding: 1rem ;
+    text-align: center;
+}
+
+
+.footer__copyright p span{
+    font-weight: 600;
+}

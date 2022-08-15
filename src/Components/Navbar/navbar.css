@@ -47,7 +47,12 @@
     outline: none;
     box-sizing: border-box;
 
-    background-color: #00000017;
+    background-color: var(--AntiFlash);
+    border: 1px solid rgb(194, 194, 194);
+}
+
+
+.navbar .navbar__search input:focus {
     box-shadow: 2px 2px 6px #00000048;
 }
 
