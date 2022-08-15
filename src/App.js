@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
@@ -6,11 +6,13 @@ import Account from "./Pages/Account";
 import Checkout from "./Pages/Checkout";
 
 import Navbar from './Components/Navbar';
+import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
+
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -20,7 +22,9 @@ function App() {
 
         <Route path="*" element={<Home />} /> {/*Redireciona para Home se a página não existir*/}
       </Routes>
-    </BrowserRouter>
+
+      <Footer />
+    </Router>
   );
 }
 

@@ -68,7 +68,7 @@ const Navbar = () => {
                         <CloseIcon className='close__icon'/>
                     </button>
                         
-                    <Link to="/account" style={{ textDecoration: 'none' }}>
+                    <Link to="/account" style={{textDecoration:'none'}}>
                         <button className='navbar__menu__button' onClick={displayMenu}>
                             <PersonIcon className='navbar__icon'/>
                             <p>Entrar / Cadastrar</p>
