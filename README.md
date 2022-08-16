@@ -25,7 +25,8 @@ O segmento “Moda e Acessórios” representa 5,6% do faturamento no varejo onl
 Oferecer a melhor experiência aos usuários que interagem com os produtos no desktop, e principalmente em dispositivos móveis, é fundamental para se manter vivo e competitivo nesse segmento. 
 
 ## Deploy
-<stroke>Link:</stroke> https://ima-ecommerce.netlify.app/
+<p><stroke>Projeto atual:</stroke> https://ima-ecommerce.netlify.app/</p>
+<p><stroke>Versão 1.0:</stroke> https://ima-ecommerce-v1.netlify.app/</p>
 
 ## Equipe
 
