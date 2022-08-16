@@ -1,5 +1,12 @@
 .home {
-    font-family: Kumbh Sans;
-    font-weight: bold;
-    padding: 35px;
+    padding: 60px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.home img {
+    width: 300px;
 }
