@@ -1,5 +1,5 @@
 .navbar {
-    width: 100vw;
+    width: 100%;
 
     background-color: var(--AntiFlash);
     color: var(--HeavyMetal);
