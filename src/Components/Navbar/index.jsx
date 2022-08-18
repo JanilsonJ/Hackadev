@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { NavLink, useLocation, Link  } from 'react-router-dom'
 
 import { 
-    MdSearch as SearchIcon, 
     MdClose as CloseIcon
 } from "react-icons/md";
 
@@ -12,6 +11,7 @@ import {
 } from "react-icons/ai";
 
 import Cart from './Cart'
+import SearchItems from './SearchItems'
 import './navbar.css'
 
 const Navbar = (props) => {
@@ -27,13 +27,6 @@ const Navbar = (props) => {
             setBackgroundDisplay({opacity: 1, zIndex: 998})
         }    
     }
-
-    const disabledButton = () => {
-        const button = document.getElementById('search__button');
-        const input = document.getElementById('search__input');
-
-        input.value === '' ? button.disabled = true : button.disabled = false
-    }
     
     /* Não apresentar a navbar na tela de checkou e login */
     const { pathname } = useLocation();
@@ -47,15 +40,7 @@ const Navbar = (props) => {
                     <img src="/assets/Logos/Logo_Black_Transparencia.png" alt="IMA logo" />
                 </NavLink >
 
-                <section className="navbar_search">
-                    <form className="search_form">
-                        <input type="text" id='search__input' onKeyUp={disabledButton} placeholder='Camisa, Vestido, Calça...' required/>
-                        <label htmlFor="search__input">O que você procura?</label>
-                        <button disabled id='search__button'>
-                            <SearchIcon className='search__button__icon'/>
-                        </button>
-                    </form>
-                </section>
+                <SearchItems />
 
                 <div className='navbar__menu'>
                     <button className='navbar__menu__button' onClick={displayCart}>

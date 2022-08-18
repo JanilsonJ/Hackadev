@@ -8,6 +8,7 @@ const products = [
             imgPath + "01_Blusaverde_frente.webp",
             imgPath + "01_Blusaverde_costa.webp"
         ],
+        type: 'Blusa',
         value: 59.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -18,6 +19,7 @@ const products = [
             imgPath + "02_Camiseta_GolaRedonda_frente.webp",
             imgPath + "02_Camiseta_GolaRedonda_verso.webp"
         ],
+        type: 'Camiseta',
         value: 77.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -28,6 +30,7 @@ const products = [
             imgPath + "03_Terno_e_blazer_frontal_aberto_com_gola_xale_frente.webp",
             imgPath + "03_Terno_e_blazer_frontal_aberto_com_gola_xale_verso.webp"
         ],
+        type: 'Terno e blazer',
         value: 186.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -38,6 +41,7 @@ const products = [
             imgPath + "04_Camiseta_Ocasional_Plantas_frente.webp",
             imgPath + "04_Camiseta_Ocasional_Plantas_verso.webp"
         ],
+        type: 'Camiseta',
         value: 39.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -48,6 +52,7 @@ const products = [
             imgPath + "05_ Listrado_Formal_Camisa_Masculina.webp",
             imgPath + "05_ Listrad_ Formal_Camisa_Masculina.Verso.webp"
         ],
+        type: 'Camiseta',
         value: 76.89,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -58,6 +63,7 @@ const products = [
             imgPath + "06_Moletom_de bolso_com_cordão_frente.webp",
             imgPath + "06_Moletom_de bolso_com_cordão_verso.webp"
         ],
+        type: 'Moletom',
         value: 77.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -68,6 +74,7 @@ const products = [
             imgPath + "07_Bolsa com alça superior Carta Gráfica_Frente.webp",
             imgPath + "07_Bolsa com alça superior Carta Gráfica_verso.webp"
         ],
+        type: 'Bolsa',
         value: 182.95,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -78,6 +85,7 @@ const products = [
             imgPath + "08_Óculos de sol com armação grande.frente.webp",
             imgPath + "08_Óculos de sol com armação grande.verso.webp"
         ],
+        type: 'Óculos',
         value: 32.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -88,6 +96,7 @@ const products = [
             imgPath + "09_ Branco_Embrulhar_Geométrico_Casual_Blusas_frente.webp",
             imgPath + "09_Branco_Embrulhar_Geométrico_Casual_Blusas_verso.webp"
         ],
+        type: 'Blusa',
         value: 49.90,
         sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     },
@@ -98,7 +107,9 @@ const products = [
             imgPath + "10_Vestido regata com estampados florais_frente.webp",
             imgPath + "10_Vestido regata com estampados florais_verso.webp"
         ],
-        value: 75.90
+        type: 'Vestido',
+        value: 75.90,
+        sizes: [{ PP: true, P: true, M: true, G: true, GG: true }]
     }
 ]
 
