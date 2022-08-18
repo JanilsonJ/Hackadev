@@ -14,10 +14,9 @@ import {
 import Cart from './Cart'
 import './navbar.css'
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [cartDisplay, setCartDisplay] = useState('-400px');
     const [backgroundDisplay, setBackgroundDisplay] = useState({opacity: 0, zIndex: -1});
-    const [bagQuantity, setBagQuantity] = useState(0);
     
     const displayCart = () => {
         if (cartDisplay === '15px') {
@@ -27,8 +26,6 @@ const Navbar = () => {
             setCartDisplay('15px');
             setBackgroundDisplay({opacity: 1, zIndex: 998})
         }    
-
-        setBagQuantity(bagQuantity + 1)
     }
 
     const disabledButton = () => {
@@ -63,7 +60,7 @@ const Navbar = () => {
                 <div className='navbar__menu'>
                     <button className='navbar__menu__button' onClick={displayCart}>
                         <BagIcon className='navbar__button__icon'/>
-                        <span className='bag__items-count'>{bagQuantity}</span>
+                        <span className='bag__items-count'>{props.bagItems.length}</span>
                     </button>
 
                     <Link to="/account" style={{textDecoration: 'none'}}>
@@ -85,10 +82,10 @@ const Navbar = () => {
                             <CloseIcon className='close__icon'/>
                         </button>
 
-                        <p>SACOLA ({bagQuantity})</p>
+                        <p>SACOLA ({props.bagItems.length})</p>
                     </div>
                     
-                    <Cart/>  
+                    <Cart  bagItems={props.bagItems} setBagItems={props.setBagItems}/>  
                 </div>
             </header>
         </>
