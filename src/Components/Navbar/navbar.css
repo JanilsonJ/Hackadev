@@ -98,7 +98,9 @@
     top: 15px;
     background-color: #fff;
 
-    width: 400px;
+    width: calc(100% - 30px);
+    max-width: 400px;
+
     height: calc(100vh - 30px);
 
     border-radius: 10px;
@@ -169,12 +171,5 @@
     
         font-size: 14px;
         font-weight: 600;
-    }
-}
-
-@media all and (max-width: 450) {
-    .cart__box {
-        width: calc(100% - 30px);
-        min-width: calc(100% - 30px);
     }
 }
