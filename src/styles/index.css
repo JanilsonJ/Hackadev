@@ -26,34 +26,82 @@
 
 @font-face {
   font-family: Kumbh Sans;
-  src: url("./fonts/KumbhSans/KumbhSans-Bold.ttf");
-  font-weight: bold;
+  src: url("./fonts/KumbhSans/KumbhSans-Thin.ttf");
+  font-weight: 100;
 }
 
 @font-face {
   font-family: Kumbh Sans;
-  src: url("./fonts/KumbhSans/KumbhSans-Medium.ttf");
-  font-weight: medium;
+  src: url("./fonts/KumbhSans/KumbhSans-ExtraLight.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-Light.ttf");
+  font-weight: 300;
 }
 
 @font-face {
   font-family: Kumbh Sans;
   src: url("./fonts/KumbhSans/KumbhSans-Regular.ttf");
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-ExtraBold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: Kumbh Sans;
+  src: url("./fonts/KumbhSans/KumbhSans-Black.ttf");
+  font-weight: 900;
 }
 
 /* SCROLL BAR */
-body::-webkit-scrollbar {
-  width: 1em;
+body {
+  overflow: overlay;
 }
- 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #0000004d;
+
+::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
 }
- 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
 }
 
 /* RESET CSS */

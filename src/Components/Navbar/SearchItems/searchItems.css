@@ -1,0 +1,139 @@
+/* SEARCH */
+
+.navbar .navbar_search {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+
+.navbar_search .search_form{
+    width: 100%;
+    position: relative;
+    display: flex;
+
+    font-size: 12px;
+}
+
+.navbar_search .search_form input {
+    width: 100%;
+    height: 32px;
+    
+    padding: 10px 40px 10px 20px;
+
+    border-radius: 10px ;
+    border: .5px none var(--HeavyMetal);
+    outline: none;
+
+    box-sizing: border-box;
+
+    box-shadow: 2px 4px 5px var(--DustyGray);
+}
+
+.search_form input::placeholder {
+    color: #FFF;
+}
+
+.navbar_search .search_form label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-weight: 700;
+    color: var(--DustyGray);
+
+    padding: 0 6px;
+
+    transform: translate(10px, 10px);
+    transform-origin: left;
+    transition: transform .25s;
+}
+
+.search_form input:focus+label,
+.search_form input:valid+label  {
+    background-color: #FFF;
+    transform: translate(15px, -5px) scale(.7);
+    color: var(--DustyGray);
+}
+
+.search_form input:focus::placeholder  {
+    color: var(--DustyGray);
+}
+
+.search_form .search__icon {
+    
+    
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+
+    right: 8px;
+    top: 6px;
+}
+
+/* SEARCH RESULT */
+
+.search_result {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    max-height: 50vh;
+
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    background-image: linear-gradient(#fff 60%, #ffffff80);
+    border-radius: 0 0 10px 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 4px 5px var(--DustyGray);
+
+    overflow-y: auto;
+
+    opacity: 0;
+    z-index: -1;
+}
+
+.search_form input:focus ~ .search_result,
+.search_result:hover {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* SEARCH CARD */
+
+.search_form .search-item__card {
+    display: flex;
+
+    color: var(--HeavyMetal);
+    text-decoration: none;
+}
+
+.search_form .search-item__card img {
+    width: 75px;
+    transition: 1s;
+}
+
+.search_form .search-item__card:hover img {
+    width: 90px
+}
+
+.search_form .search-item__card .search-item__description {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.search-item__card .search-item__description h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.search_form .search-item__description p {
+    font-size: 14px;
+    font-weight: 600;
+}

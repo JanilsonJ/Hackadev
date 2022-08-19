@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
+import { Link  } from 'react-router-dom'
 
 import './home.css';
+import ProductsList from '../../data/products';
 
 const Home = () => {
     useEffect(() => {
@@ -10,10 +12,13 @@ const Home = () => {
     return (
         <>
             <section className='home'>
-                <img src="/assets/img/Products/10_Vestido regata com estampados florais_frente.webp" alt="" />
-                <img src="/assets/img/Products/10_Vestido regata com estampados florais_frente.webp" alt="" />
-                <img src="/assets/img/Products/10_Vestido regata com estampados florais_frente.webp" alt="" />
-                <img src="/assets/img/Products/10_Vestido regata com estampados florais_frente.webp" alt="" />
+                {ProductsList.map(p => {
+                    return (
+                        <Link key={p.id} to={`/product/${p.id}`} >    
+                            <img src= {p.img[0]} alt={p.name}/>
+                        </Link> 
+                    )
+                })}    
             </section>
         </>
     )
