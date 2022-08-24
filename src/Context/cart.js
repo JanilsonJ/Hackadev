@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
     const [bagItems, setBagItems] = useState([]);
-    const [bagItemsCount, updateItemsCount] = useState(0);
+    const [bagItemsCount, updateItemsCount] = useState(null);
 
     const addBagItem = (product) => {
         if ( bagItems.includes(product) ){
@@ -23,7 +23,11 @@ export const CartProvider = ({children}) => {
     }
 
     const deleteBagItem = (product) => {
-        updateItemsCount(bagItemsCount - product.bagQuantity);
+        bagItemsCount - product.bagQuantity === 0 ? 
+            updateItemsCount(null)
+            :
+            updateItemsCount(bagItemsCount - product.bagQuantity);
+
         setBagItems(bagItems.filter((p) => p !== product))
     }
 
