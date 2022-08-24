@@ -15,7 +15,7 @@ const Home = () => {
                 {ProductsList.map(p => {
                     return (
                         <Link key={p.id} to={`/product/${p.id}`} >    
-                            <img src= {p.img[0]} alt={p.name}/>
+                            <img src= {p.img.front} alt={p.name}/>
                         </Link> 
                     )
                 })}    

@@ -1,11 +1,23 @@
+import { useContext } from 'react';
+
+import { CartContext } from '../../../Context/cart';
+
 import './cart.css';
 
-const Cart = (props) => {
+const Cart = () => {
+    const {bagItems, deleteBagItem, removeBagItem, addBagItem} = useContext(CartContext);
+
     return (
         <section className='cart'>
-            {props.bagItems.map( (items) => { 
+            {bagItems.map( (items) => { 
                 return(
-                    <img key={items.id} src={items.img[0]} alt={items.name} style={{width: '100px'}} />
+                    <div key={items.id}  style={{display: 'flex', alignItems: 'center', justifyContent: 'space-around'}}>
+                        <img src={items.img.front} alt={items.name} style={{width: '100px'}} />
+                        <button onClick={() => deleteBagItem(items)}> delete </button>
+                        <button onClick={() => removeBagItem(items)}> - </button>
+                        <p> {items.bagQuantity} </p>
+                        <button onClick={() => addBagItem(items)}> + </button>
+                    </div>
                 )
             })}
         </section>
