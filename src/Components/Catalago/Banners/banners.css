@@ -21,7 +21,6 @@
     
     top: 45%;
     
-
     font-size: 2rem;
     color: white;
     cursor: pointer;
@@ -36,10 +35,24 @@
 }
 
 .left-arrow {
-       left: 5%;
+    left: 5%;
 }
 
 .arrow:hover {
     background-color: rgba(226, 207, 207, 0.4);
     opacity: 1;
+}
+/*Ajuste de Tela*/
+@media only screen and (max-width: 500px) {
+    .arrow {
+        top: 35%;
+        font-size: 1rem;
+    }
+    .right-arrow {
+        right: 2%;
+     }
+     
+     .left-arrow {
+         left: 2%;
+     }
 }

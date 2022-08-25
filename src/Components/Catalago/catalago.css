@@ -11,15 +11,15 @@
 }
 /*Card Catalago de Produtos*/
 .catalago__produto {
-    flex: 1 1 210px; /*flex-grow, flex-shrink, flex-basis*/
+    flex: 1 1 250px; /*flex-grow, flex-shrink, flex-basis*/
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: space-around; /* spaço igual em toda a linha;*/
     
     
-    margin: 0 5px 16px;
+    margin: 2px 5px 16px;
     padding: 5px;
     box-sizing: border-box;   /*Controle de Padding*/
     
@@ -48,39 +48,43 @@
    
      
 }
-.img_gray {
-    -webkit-filter: grayscale(1);
-}
+
 /*Estilização de Textos*/
-.catalago__text {
-    font-size: clamp(9px, 4vw, 16px); /*mínimo, valor preferencial e valor máximo*/
-    padding: 10px;
+.description__product h3 {
+    margin: 8px 0px 4px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    font-size: clamp(9px, 4vw, 14px); /*mínimo, valor preferencial e valor máximo*/
+    padding: 3px;
     color: #555050;
-    text-align: left;
     
 }
-.catalago__text--preco {
+
+
+.catalago__text--regular_price {
     
+    padding-bottom: 2px;
     margin-top: auto;
     font-weight: bold;
     text-align: left;
     color: black;
-    font-size: clamp(10px, 4vw, 18px); /*mínimo, valor preferencial e valor máximo*/
+    font-size: clamp(10px, 4vw, 17px); /*mínimo, valor preferencial e valor máximo*/
     
 }
 .catalago__text--riscado {
-    padding-bottom: 3px;
+    padding-bottom: 2px;
     text-decoration: line-through;
-    
+    margin-top: auto;
     font-size: clamp(9px, 4vw, 12px);
     box-sizing: border-box;
 }
-.catalago__tex--preco--sale {
-    font-size: clamp(10px, 4vw, 14px); /*mínimo, valor preferencial e valor máximo*/
+/*Desconto em cima da IMG*/
+.catalago__tex--regular_price--sale {
+    font-size: clamp(10px, 3vw, 14px); /*mínimo, valor preferencial e valor máximo*/
     top: 5px;
     left: 0;
     color: rgba(0, 0, 0, 0.87);
-    padding: 3px 20px;
+    padding: 3px 10px;
     z-index: 1;
     
     position: absolute;
@@ -90,14 +94,12 @@
 .cor_desconto {
     color: rgb(197, 85, 70);
 }
-.produto_esgotado {
-    font-size: clamp(10px, 4vw, 20px); /*mínimo, valor preferencial e valor máximo*/
-    top: 25px;
-    left: 0;
-    color: rgba(209, 14, 14, 0.87);
-    padding: 13px 70px;
-    z-index: 1;
-    position: absolute;
-    font-weight: 700;
-    background-color: #FFF;
+/*Ajustes de Telas*/
+@media only screen and (max-width: 500px) {
+    .catalago__produto {
+        flex: 1 1 128px; /*flex-grow, flex-shrink, flex-basis*/
+    }
+    .catalago__tex--regular_price--sale {
+        padding: 3px 7px;
+    }
 }
