@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/checkout" element={<Checkout />} />
 
           {/*Redireciona para Home se a página não existir*/}
-          <Route exact path="*" element={<Home />} />{" "}
+          <Route exact path="*" element={<Home />} />
         </Routes>
 
         <Footer />

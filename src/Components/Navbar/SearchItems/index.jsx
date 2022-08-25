@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
 import { 
-    // MdClose as CloseIcon, 
     MdSearch as SearchIcon
 } from "react-icons/md";
 
@@ -20,17 +19,53 @@ const SearchItems = () => {
         return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
 
-    const exists = (name, type) => {
+    const exists = (name, type, keyword) => {
         name = strNormalize(name);
         type = strNormalize(type);
-        
-        return name.includes(input) || type.includes(input)
+        keyword = keyword.find(k => strNormalize(k).includes(input))
+
+        return (keyword || type.includes(input) || name.includes(input))
     }
 
     const clearInput = () => {
         document.getElementById('search__input').value = null;
         setInput(null);
     }
+
+    const searchResult = (p) => {
+        if (p.porcent_descount > 0){
+            return (
+                <>
+                  <div className="card__image">
+                    <img src={p.img.front} alt={p.name} />
+                    <p> -{p.porcent_descount}% </p>
+                  </div>
+                  <div className="search-item__description">
+                    <h3>{p.name}</h3>
+                    <div className="prices">
+                        <p className='old__price'>&nbsp;R$ {p.regular_price.toFixed(2)}&nbsp; </p>
+                        <p className='actual__price'>R$ {p.actual_price.toFixed(2)}</p>
+                    </div>
+                  </div>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <div className="card__image">
+                      <img src={p.img.front} alt={p.name} />
+                    </div>
+                    <div className="search-item__description">
+                      <h3>{p.name}</h3>
+                      <div className="prices">
+                        <p className='actual__price'>R$ {p.actual_price.toFixed(2)}</p>
+                      </div>
+                    </div>
+                </>
+              );
+        }
+    }
+
 
     return (
         <section className="navbar_search">
@@ -41,17 +76,13 @@ const SearchItems = () => {
                 
                 <section className="search_result">
                     {ProductsList.map(p => {
-                        if (exists(p.name, p.type) && input !== '' && input !== ' '){
+                        if (exists(p.name, p.type, p.keywords) && input !== '' && input !== ' '){
                             return (
                                 <section key={p.id}>
                                     <hr />
-                                    <Link to={`/product/${p.id}`} className='search-item__card' onClick={clearInput}>    
-                                        <img src= {p.img[0]} alt={p.name}/>
-                                        <div className='search-item__description' >
-                                            <h3>{p.name}</h3>
-                                            <p>R$ {p.value}</p>
-                                        </div>
-                                    </Link> 
+                                    <Link to={`/product/${p.id}`} className="search-item__card" onClick={clearInput} >
+                                        {searchResult(p)}
+                                    </Link>
                                 </section>
                             )
                         } else

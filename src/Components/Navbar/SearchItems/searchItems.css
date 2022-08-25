@@ -53,7 +53,7 @@
 .search_form input:focus+label,
 .search_form input:valid+label  {
     background-color: #FFF;
-    transform: translate(15px, -5px) scale(.7);
+    transform: translate(15px, -8px) scale(.7);
     color: var(--DustyGray);
 }
 
@@ -62,8 +62,6 @@
 }
 
 .search_form .search__icon {
-    
-    
     position: absolute;
 
     width: 20px;
@@ -112,7 +110,7 @@
 }
 
 .search_form .search-item__card img {
-    width: 75px;
+    width: 60px;
     transition: 1s;
 }
 
@@ -120,20 +118,48 @@
     width: 90px
 }
 
+.search_form .search-item__card .card__image{
+    position: relative;
+}
+
+.search_form .search-item__card .card__image p{
+    position: absolute;
+    
+    top: 3px;
+    right: 3px;
+    
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    background-color: var(--MetallicRed);
+    color: #FFF;
+    font-size: 10px;
+}
+
 .search_form .search-item__card .search-item__description {
     display: flex;
     flex-direction: column;
 
     padding: 0 10px;
-    box-sizing: border-box;
-}
 
-.search-item__card .search-item__description h3 {
     font-size: 16px;
-    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.search_form .search-item__description p {
-    font-size: 14px;
+.search_form .search-item__description .prices {
+    margin-top: 15px;   
+}
+
+.search_form .search-item__description .old__price {
+    font-weight: 900;
+    color: #c0313171;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.search_form .search-item__description .actual__price {
+    font-size: 16px;
     font-weight: 600;
 }

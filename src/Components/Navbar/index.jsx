@@ -14,7 +14,6 @@ import Cart from './Cart'
 import SearchItems from './SearchItems'
 import './navbar.css'
 
-
 import { CartContext } from '../../Context/cart';
 
 const Navbar = () => {
@@ -48,13 +47,13 @@ const Navbar = () => {
                 <SearchItems />
 
                 <div className='navbar__menu'>
-                    <button className='navbar__menu__button' onClick={displayCart}>
+                    <button className='navbar__menu__button menu__button__bag' onClick={displayCart}>
                         <BagIcon className='navbar__button__icon'/>
                         <span className='bag__items-count'>{bagItemsCount}</span>
                     </button>
 
                     <Link to="/account" style={{textDecoration: 'none'}}>
-                        <button className='navbar__menu__button'>
+                        <button className='navbar__menu__button menu__button__account'>
                             <UserIcon className='navbar__button__icon'/>
                         </button>
                     </Link>
@@ -72,7 +71,7 @@ const Navbar = () => {
                             <CloseIcon className='close__icon'/>
                         </button>
 
-                        <p>SACOLA ({bagItemsCount})</p>
+                        <p>SACOLA {bagItemsCount ? `( ${bagItemsCount} )`: ''}</p>
                     </div>
                     
                     <Cart />  
