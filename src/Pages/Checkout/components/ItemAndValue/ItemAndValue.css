@@ -1,0 +1,9 @@
+.container-itemAndValue {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px;
+  align-items: center;
+  padding: 1.5% 0;
+  width: 100%;
+  height: 100%;
+}
