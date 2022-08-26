@@ -1,33 +1,48 @@
+.login {
+  height: calc(100vh - 72px);
+
+}
 
 .container {
   width: 100%;
-  height: calc(100vh - 142px);
+  height: calc(100vh - 170px);
   font-family: Kumbh Sans;
-  letter-spacing: 2.5px;
-  background: #ffffff ; 
+  letter-spacing: 2.5px; 
   color: #000000;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
-
-
 
 .footer__cadastro {
   min-height: 70px;
   background-color: var(--HeavyMetal);
   width: 100%;
   color: white;
-  padding: 15px 0;
   font-family: Kumbh Sans;
   font-weight: bold;
   letter-spacing: 1.3px;
   font-size: 18px;
+  padding: 15px 0;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+
+/* link fazer login */
+
+.already__registered{
+  letter-spacing: 0.3px;
+  margin-bottom: 15px;
+  text-decoration: none;
+
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 
@@ -42,14 +57,8 @@
   margin-top: 10px;
 }
 
-
 .partners_color {
   height: 2em;
-  margin: 0 10px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
-
-
-@media (max-width: 940px) {
-  
-  
-  }
