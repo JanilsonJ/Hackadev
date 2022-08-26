@@ -1,0 +1,63 @@
+div.input-block {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  div.input-block input {
+    font-size: 1.2rem;
+    color: #495055;
+    width: 350px;
+    padding: 7px 10px;
+    border-radius: 1rem;
+    border: 2px solid  #D9D9D9;
+    outline:none;
+  }
+  div.input-block span.placeholder {
+    position: absolute;
+    margin: 10px 0;
+    padding: 0 4px;
+    font-family: Roboto, sans-serif;
+    color:  #6c757d;
+    display: flex;
+    align-items:center;
+    font-size: 1.2rem;
+    top: 0;
+    left: 17px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+  }
+  div.input-block input:valid + span.placeholder,
+  div.input-block input:focus + span.placeholder {
+    transform: scale(0.8) translateY(-22px);
+    background: #fff;
+    border-radius: 10px;
+  }
+  div.input-block input:focus{
+    color:black;
+    border-color: dimgray;
+  }
+  div.input-block input:focus + span.placeholder {
+    color: rgb(32, 32, 32);
+  }
+  
+  
+  /* TRATAMENTO INPUT DATA NASC */
+  
+  #data__nasc:invalid { 
+    color: transparent;
+  }
+  
+  #data__nasc:focus { 
+    color: black !important;
+  }
+  
+  /* #data__nasc:valid { 
+    color: black;
+  } */
+
+  @media screen and (max-width: 380px) {
+    div.input-block input{
+      width: 300px;
+    }
+  } 
