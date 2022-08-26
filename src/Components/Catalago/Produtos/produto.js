@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 
 const Produto = ({product}) => {
     //Função para desconto de Produtos
@@ -24,10 +24,11 @@ const Produto = ({product}) => {
     return (
         
         
-        <div className="catalago__produto">
+        <Link to={`/product/${product.id}`} className="catalago__produto">
             
             <img className="item_img" src={product.img.front} alt={product.name}/>
             <img className="item_img--a" src={product.img.back} alt={product.name}/>
+
             <div className="description__product"> 
             <h3>{product.name}</h3>
             </div>           
@@ -35,7 +36,7 @@ const Produto = ({product}) => {
             
             {price()}
             
-        </div>
+        </Link>
        
         
     );

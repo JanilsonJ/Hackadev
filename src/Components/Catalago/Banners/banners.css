@@ -5,7 +5,7 @@
    box-sizing: border-box; 
    align-items: center;
   /* margin: 10px;*/
-  
+   
 
 }
 .banner .banner__img {
@@ -32,6 +32,7 @@
 }
 .right-arrow {
    right: 5%;
+   
 }
 
 .left-arrow {
