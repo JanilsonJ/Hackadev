@@ -6,7 +6,7 @@ const Produto = ({product}) => {
         
         if (product.porcent_descount > 0) {
            
-            product.actual_price = (product.regular_price - (product.regular_price*50/100)).toFixed(2);
+            product.actual_price = (product.regular_price - (product.regular_price*product.porcent_descount/100)).toFixed(2);
             return (
                 <>
                     <p className = "catalago__text--riscado">R$ {product.regular_price.toString().replace('.', ',')}</p>
