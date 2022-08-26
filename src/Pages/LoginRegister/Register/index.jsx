@@ -1,9 +1,15 @@
+import { useContext } from "react";
+import { UserContext } from "../../../Context/user";
+
 import "./register.css"
 
 const Register = (props) => {
+    const { updateUserData } = useContext(UserContext);
     
     const cadastro = (e) => {
         e.preventDefault();
+
+        updateUserData(Array.from(e.target));
 
         props.setloginComponent(true);
     }

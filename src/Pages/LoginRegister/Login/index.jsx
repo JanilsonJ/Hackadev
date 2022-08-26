@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import {useNavigate} from "react-router-dom"
+import { UserContext } from "../../../Context/user";
 import "./login.css"
 
 const Login = () => {
     const navigate = useNavigate();
     
-    const login = (e) => {
+    const { setLoggedIn } = useContext(UserContext);
 
+    const login = (e) => {
         e.preventDefault();
+
+        setLoggedIn(true)
 
         navigate("/home");
     }
