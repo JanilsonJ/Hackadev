@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import './account.css';
+import Formulario from './Components/Formulario';
+import { VscAccount } from "react-icons/vsc";
+
 
 const Account = () => {
     useEffect(() => {
@@ -7,7 +10,9 @@ const Account = () => {
     });
 
     return (
-        <>
+        <>    
+        <h1 className='Subtitulo'><VscAccount/>Sua Conta</h1>
+        <Formulario />
         </>
     )
 }
