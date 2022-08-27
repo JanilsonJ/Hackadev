@@ -30,7 +30,7 @@ import { Link  } from 'react-router-dom'
                     <div className="minus__plus">
                         <FaMinusSquare onClick={() => onRemove(item)} className="minus" size="1.6rem" color= "var(--DustyGray)" />
                           {' '}
-                        <FaPlusSquare onClick={() => addBagItem(item)} className="plus" size="1.6rem" color= "var(--DustyGray)" />
+                        <FaPlusSquare onClick={() => addBagItem(item, item.productSize)} className="plus" size="1.6rem" color= "var(--DustyGray)" />
                     </div>
                     <button onClick={() => {updateItemsCount(bagItemsCount - item.quantity)
                                             setBagItems(bagItems.filter(p => p !== item))
@@ -38,7 +38,7 @@ import { Link  } from 'react-router-dom'
                                               updateItemsCount(null)
                                         }
                                     } 
-                              className="cart__product-remove"> <FaTrashAlt/> Remover</button>
+                              className="cart__product-remove"> <FaTrashAlt/>&nbsp;Remover</button>
                   </div>
                   
                 </div>

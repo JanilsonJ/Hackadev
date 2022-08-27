@@ -34,9 +34,17 @@ const Navbar = () => {
     
     /* Não apresentar a navbar na tela de checkou e login */
     const { pathname } = useLocation();
-    if (pathname === "/register" || pathname === "/checkout") 
-        return null;
-
+    if (pathname === "/register" || pathname === "/checkout") {
+        return (
+            <header className='navbar' style={{justifyContent: 'center'}}>
+                <NavLink to="/home"  className='navbar__logo'>
+                    <img src="/assets/Logos/Logo_Black_Transparencia.png" alt="IMA logo" />
+                </NavLink >
+                <h2>IMPÉRIO DA MODA AMERICANA</h2>
+            </header>
+        )
+    }
+    
     return (
         <>
             <header className='navbar'>

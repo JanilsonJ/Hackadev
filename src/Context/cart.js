@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
         const Exist = bagItems.find((x) => x.sku === bagProduct.sku);
         if (Exist) {
             const newBagItems = bagItems.map((x) =>
-                x.sku === product.sku
+                x.sku === Exist.sku
                     ? { ...Exist, quantity: Exist.quantity + 1 }
                     : x
             );
@@ -28,12 +28,12 @@ export const CartProvider = ({ children }) => {
     };
 
     const onRemove = (product) => {
-        const Exist = bagItems.find((x) => x.id === product.id);
+        const Exist = bagItems.find((x) => x.sku === product.sku);
         if (Exist.quantity === 1) {
             setBagItems(bagItems.filter((p) => p !== product));
         } else {
             const newBagItems = bagItems.map((x) =>
-                x.id === product.id
+                x.sku === product.sku
                     ? { ...Exist, quantity: Exist.quantity - 1 }
                     : x
             );
@@ -57,4 +57,4 @@ export const CartProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     );
-};
+}
