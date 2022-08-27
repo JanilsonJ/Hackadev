@@ -32,6 +32,10 @@ const SearchItems = () => {
         setInput(null);
     }
 
+    const BRL = (price) => {
+        return new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(price)
+    }
+
     const searchResult = (p) => {
         if (p.porcent_descount > 0){
             return (
@@ -43,8 +47,8 @@ const SearchItems = () => {
                   <div className="search-item__description">
                     <h3>{p.name}</h3>
                     <div className="prices">
-                        <p className='old__price'>&nbsp;R$ {p.regular_price.toFixed(2)}&nbsp; </p>
-                        <p className='actual__price'>R$ {p.actual_price.toFixed(2)}</p>
+                        <p className='old__price'>&nbsp;{BRL(p.regular_price)}&nbsp; </p>
+                        <p className='actual__price'>{BRL(p.actual_price)}</p>
                     </div>
                   </div>
                 </>
@@ -58,7 +62,7 @@ const SearchItems = () => {
                     <div className="search-item__description">
                       <h3>{p.name}</h3>
                       <div className="prices">
-                        <p className='actual__price'>R$ {p.actual_price.toFixed(2)}</p>
+                        <p className='actual__price'>{BRL(p.actual_price)}</p>
                       </div>
                     </div>
                 </>

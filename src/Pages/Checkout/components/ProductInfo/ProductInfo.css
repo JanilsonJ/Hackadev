@@ -1,0 +1,70 @@
+.productinfo-main-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 25vh;
+  overflow: auto;
+}
+
+.productinfo-main-container p {
+  height: max-content;
+  font-size: clamp(0.6rem, 0.2rem + 0.4vw, 3rem);
+}
+
+.productinfo-main-container div:first-child {
+  height: 10vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.container_car-item-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.container_car-item-description_product-image p {
+  padding: 2% 0;
+}
+.container_car-item-description p:first-child {
+  font-weight: bold;
+  font-size: clamp(0.6rem, 0.4rem + 0.6vw, 3rem);
+}
+
+.container_car-item-description_product-image {
+  width: 5vw;
+  height: 100%;
+  margin-right: 5%;
+}
+.container_car-item-description_product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.car-item-subtotal {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.line-botton-container-product-info {
+  border-bottom: 1px solid rgba(7, 5, 5, 0.1) !important;
+}
+
+@media (max-width: 800px) {
+  .container_car-item-description_product-image {
+    width: 15vw;
+    height: 100%;
+    margin-right: 5%;
+  }
+
+  .productinfo-main-container {
+    max-height: 22vh;
+  }
+}
