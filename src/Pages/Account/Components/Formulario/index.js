@@ -1,19 +1,30 @@
 import CampoTexto from '../CampoTexto'
 import './Formulario.css'
 import Botao from '../Botao';
+import { UserContext } from '../../../../Context/user';
+import { useContext } from 'react';
 
 const Formulario = () => {
+
+    const {updateUserData, user} = useContext(UserContext);
+
+    const handleChange =  (e) => {
+        e.preventDefault();
+
+        updateUserData(Array.from(e.target));
+    }
+
     return (
         <div>
             <section className="formulario">
-                <form className="Form__DadosPessoais">
+                <form className="Form__DadosPessoais" onSubmit={handleChange}>
                     <h2>Dados pessoais</h2>
-                    <CampoTexto label="Nome Completo" placeholder="Digite seu nome completo" />
-                    <CampoTexto label="CPF" placeholder="000.000.000-00" />
-                    <CampoTexto id="data__nasc" label="Data de Nascimento" placeholder="DD/MM/AAAA" type="date" />
-                    <CampoTexto label="Email" placeholder="Digite seu Email" />
-                    <CampoTexto label="Senha" placeholder="Digite sua Senha" />
-                    <CampoTexto label="Celular" placeholder="Digite o numero do celular" />
+                    <CampoTexto label="Nome Completo" placeholder="Digite seu nome completo" defaultValue={user.nome}/>
+                    <CampoTexto label="CPF" placeholder="000.000.000-00" defaultValue={user.cpf}/>
+                    <CampoTexto id="data__nasc" label="Data de Nascimento" placeholder="DD/MM/AAAA" type="date" defaultValue={user.dataNascimento} />
+                    <CampoTexto label="Email" placeholder="Digite seu Email" defaultValue={user.email}/>
+                    <CampoTexto label="Senha" placeholder="Digite sua Senha" defaultValue={user.senha}/>
+                    <CampoTexto label="Celular" placeholder="Digite o numero do celular" defaultValue={user.tel}/>
                 </form>
 
                 <form className="Form__Endereco">

@@ -12,9 +12,9 @@ const CampoTexto = (props) => {
         //     <input type={props.type} className='placeholder' placeholder={placeholderModificada}/>
         // </div>
 
-        <div class="input-block">
-            <input type={props.type} name="input-text" id={props.id} required spellcheck="false"/>
-                <span class="placeholder"> {props.label} </span>
+        <div className="input-block">
+            <input type={props.type} name="input-text" id={props.id} required spellCheck="false" defaultValue={props.defaultValue}/>
+                <span className="placeholder"> {props.label} </span>
         </div>
     )
 }
