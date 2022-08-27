@@ -19,7 +19,7 @@ const products = [
         ],
         regular_price: 59.90,
         actual_price: 53.91,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ const products = [
         ],
         regular_price: 77.90,
         actual_price: 70.11,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ const products = [
             front: imgPath + "Produto03_frente.webp",
             back: imgPath + "Produto03_verso.webp"
         },
-        type: 'Terno e blazer',
+        type: 'Conjunto',
         keywords: ['Terno', 'Blazer', 'Azul Marinho', 'Conjunto'],
         sizes: [
             {available: true, size: 'PP'},
@@ -59,7 +59,7 @@ const products = [
         ],
         regular_price: 186.90,
         actual_price: 186.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 4,
@@ -79,7 +79,7 @@ const products = [
         ],
         regular_price: 39.90,
         actual_price: 39.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 5,
@@ -88,7 +88,7 @@ const products = [
             front: imgPath + "Produto05_frente.webp",
             back: imgPath + "Produto05_verso.webp"
         },
-        type: 'Camiseta',
+        type: 'camisa',
         keywords: ['Camisa', 'Listrada', 'Branca'],
         sizes: [
             {available: false, size: 'PP'},
@@ -99,7 +99,7 @@ const products = [
         ],
         regular_price: 76.90,
         actual_price: 76.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 6,
@@ -119,7 +119,7 @@ const products = [
         ],
         regular_price: 77.90,
         actual_price: 70.11,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 16,
@@ -139,7 +139,7 @@ const products = [
         ],
         regular_price: 77.90,
         actual_price: 70.11,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 7,
@@ -159,7 +159,7 @@ const products = [
         ],
         regular_price: 119.90,
         actual_price: 83.93,
-        porcent_descount: 30
+        porcent_discount: 30
     },
     {
         id: 8,
@@ -179,7 +179,7 @@ const products = [
         ],
         regular_price: 74.90,
         actual_price: 63.67,
-        porcent_descount: 15
+        porcent_discount: 15
     },
     {
         id: 9,
@@ -199,7 +199,7 @@ const products = [
         ],
         regular_price: 49.90,
         actual_price: 49.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 10,
@@ -219,7 +219,7 @@ const products = [
         ],
         regular_price: 75.90,
         actual_price: 68.31,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 11,
@@ -239,7 +239,7 @@ const products = [
         ],
         regular_price: 85.90,
         actual_price: 85.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 12,
@@ -259,7 +259,7 @@ const products = [
         ],
         regular_price: 56.95,
         actual_price: 56.95,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 13,
@@ -279,7 +279,7 @@ const products = [
         ],
         regular_price: 89.90,
         actual_price: 58.44,
-        porcent_descount: 35
+        porcent_discount: 35
     },
     {
         id: 14,
@@ -299,7 +299,7 @@ const products = [
         ],
         regular_price: 63.99,
         actual_price: 63.99,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 15,
@@ -319,7 +319,7 @@ const products = [
         ],
         regular_price: 105.99,
         actual_price: 105.99,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 17,
@@ -339,7 +339,7 @@ const products = [
         ],
         regular_price: 109.95,
         actual_price: 98.96,
-        porcent_descount: 10
+        porcent_discount: 10
     },
     {
         id: 18,
@@ -348,7 +348,7 @@ const products = [
             front: imgPath + "Produto18_frente.webp",
             back: imgPath + "Produto18_verso.webp"
         },
-        type: 'Moletom',
+        type: 'Short',
         keywords: ['Short Jeans', 'Jens', 'Azul', 'Short Jeans', 'Bolso', 'Short'],
         sizes: [
             {available: false, size: 'PP'},
@@ -359,7 +359,7 @@ const products = [
         ],
         regular_price: 100.90,
         actual_price: 100.90,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 19,
@@ -379,7 +379,7 @@ const products = [
         ],
         regular_price: 72.90,
         actual_price: 69.26,
-        porcent_descount: 5
+        porcent_discount: 5
     },
     {
         id: 20,
@@ -399,7 +399,7 @@ const products = [
         ],
         regular_price: 128.95,
         actual_price: 128.95,
-        porcent_descount: 0
+        porcent_discount: 0
     },
     {
         id: 21,
@@ -408,7 +408,7 @@ const products = [
             front: imgPath + "Produto21_frente.webp",
             back: imgPath + "Produto21_verso.webp"
         },
-        type: 'Moletom',
+        type: 'Short',
         keywords: ['Short', 'Branco', 'Botão', 'Simples'],
         sizes: [
             {available: true, size: 'PP'},
@@ -419,7 +419,7 @@ const products = [
         ],
         regular_price: 87.99,
         actual_price: 87.99,
-        porcent_descount: 0
+        porcent_discount: 0
     }
 ]
 

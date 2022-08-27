@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 const Produto = ({ product }) => {
   //Função para desconto de Produtos
   const price = () => {
-    if (product.porcent_descount > 0) {
+    if (product.porcent_discount > 0) {
       product.actual_price =
         product.regular_price -
-        (product.regular_price * product.porcent_descount) / 100
+        (product.regular_price * product.porcent_discount) / 100
       return (
         <>
           <p className="catalago__text--riscado">
@@ -16,7 +16,7 @@ const Produto = ({ product }) => {
             {BRL(product.actual_price)}
           </p>
           <p className="catalago__tex--regular_price--sale">
-            {product.porcent_descount}%
+            {product.porcent_discount}%
           </p>
         </>
       )

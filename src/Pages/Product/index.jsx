@@ -92,7 +92,7 @@ const Product = () => {
           <span
             className="regular--price"
             style={
-              product.porcent_descount !== 0
+              product.porcent_discount !== 0
                 ? { display: 'unset' }
                 : { display: 'none' }
             }
@@ -102,7 +102,7 @@ const Product = () => {
           <span
             className="product--price"
             style={
-              product.porcent_descount !== 0
+              product.porcent_discount !== 0
                 ? { margin: '10px 0 0 0' }
                 : { margin: '30px 0 0 0' }
             }

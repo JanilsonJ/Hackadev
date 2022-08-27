@@ -37,12 +37,12 @@ const SearchItems = () => {
     }
 
     const productCard = (p) => {
-        if (p.porcent_descount > 0){
+        if (p.porcent_discount > 0){
             return (
                 <>
                   <div className="card__image">
                     <img src={p.img.front} alt={p.name} />
-                    <p> -{p.porcent_descount}% </p>
+                    <p> -{p.porcent_discount}% </p>
                   </div>
                   <div className="search-item__description">
                     <h3>{p.name}</h3>
