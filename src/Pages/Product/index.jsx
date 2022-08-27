@@ -54,13 +54,21 @@ const Product = () => {
     })
   }
 
+  const BRL = price => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price)
+  }
+
   return (
     <>
-      <div className="container">
+      <div className="container--product">
         <div className="products--images">
           <div className="main--product--image">
-            <img id="image_test" src={mainImage} alt={product.name} />
-            {/* </div> */}
+            <div className="product--image--zoom">
+              <img id="main--image" src={mainImage} alt={product.name} />
+            </div>
             <div className="image--product--preview">
               <img
                 onClick={() => {
@@ -89,8 +97,7 @@ const Product = () => {
                 : { display: 'none' }
             }
           >
-            De: R$
-            {product.regular_price.toFixed(2).toString().replace('.', ',')}
+            De: {BRL(product.regular_price)}
           </span>
           <span
             className="product--price"
@@ -100,11 +107,9 @@ const Product = () => {
                 : { margin: '30px 0 0 0' }
             }
           >
-            R$ {product.actual_price.toFixed(2).toString().replace('.', ',')}
+            {BRL(product.actual_price)}
           </span>
-          <p className="payment--info">
-            em até 3x {payment().toFixed(2).toString().replace('.', ',')}
-          </p>
+          <p className="payment--info">em até 3x {BRL(payment())}</p>
 
           <div className="product--size">
             <p>Escolha o tamanho:</p>
