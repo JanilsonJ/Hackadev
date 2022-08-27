@@ -1,0 +1,10 @@
+.radio-option {
+  display: flex;
+}
+.radio-option input {
+  cursor: pointer;
+}
+.radio-option div {
+  display: flex;
+  flex-direction: column;
+}

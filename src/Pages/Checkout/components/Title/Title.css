@@ -1,0 +1,14 @@
+.container-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  width: 70%;
+  height: 4%;
+  font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
+}
+
+.container-title p {
+  font-family: Kumbh Sans;
+  font-weight: 500;
+}
