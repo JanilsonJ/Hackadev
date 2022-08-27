@@ -12,13 +12,47 @@ const Product = () => {
 
   const { addBagItem } = useContext(CartContext)
 
+  const [size, setSize] = useState(null)
+
   function payment() {
     return product.actual_price / 3
   }
 
   useEffect(() => {
     document.title = `IMA - ${product.name}`
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   })
+
+  const buttonSelected = (e, size) => {
+    setSize(size)
+
+    let btns = document.getElementsByClassName('button__product-size')
+
+    Array.from(btns).map(
+      btn => (btn.className = btn.className.replace(' buttonActive', ''))
+    )
+
+    e.target.className += ' buttonActive'
+  }
+
+  const sizeButtons = () => {
+    return product.sizes.map(s => {
+      return s.available ? (
+        <button
+          className="button__product-size"
+          onClick={e => buttonSelected(e, s.size)}
+          key={s.size}
+        >
+          {s.size}
+        </button>
+      ) : (
+        <button className="button__product-size-disabled" disabled key={s.size}>
+          {s.size}
+        </button>
+      )
+    })
+  }
 
   return (
     <>
@@ -26,22 +60,23 @@ const Product = () => {
         <div className="products--images">
           <div className="main--product--image">
             <img id="image_test" src={mainImage} alt={product.name} />
-          </div>
-          <div className="image--product--preview">
-            <img
-              onClick={() => {
-                setMainImage(product.img.front)
-              }}
-              src={product.img.front}
-              alt={product.name}
-            />
-            <img
-              onClick={() => {
-                setMainImage(product.img.back)
-              }}
-              src={product.img.back}
-              alt={product.name}
-            />
+            {/* </div> */}
+            <div className="image--product--preview">
+              <img
+                onClick={() => {
+                  setMainImage(product.img.front)
+                }}
+                src={product.img.front}
+                alt={product.name}
+              />
+              <img
+                onClick={() => {
+                  setMainImage(product.img.back)
+                }}
+                src={product.img.back}
+                alt={product.name}
+              />
+            </div>
           </div>
         </div>
         <div className="info--product--container">
@@ -54,8 +89,7 @@ const Product = () => {
                 : { display: 'none' }
             }
           >
-            {' '}
-            De: R${' '}
+            De: R$
             {product.regular_price.toFixed(2).toString().replace('.', ',')}
           </span>
           <span
@@ -63,7 +97,7 @@ const Product = () => {
             style={
               product.porcent_descount !== 0
                 ? { margin: '10px 0 0 0' }
-                : { margin: '120px 0 0 0' }
+                : { margin: '30px 0 0 0' }
             }
           >
             R$ {product.actual_price.toFixed(2).toString().replace('.', ',')}
@@ -74,58 +108,17 @@ const Product = () => {
 
           <div className="product--size">
             <p>Escolha o tamanho:</p>
-            <button
-              style={
-                !product.sizes.PP
-                  ? { cursor: 'default', color: 'grey' }
-                  : { cursor: 'pointer' }
-              }
-            >
-              PP
-            </button>
-            <button
-              style={
-                !product.sizes.P
-                  ? { cursor: 'default', color: 'grey' }
-                  : { cursor: 'pointer' }
-              }
-            >
-              P
-            </button>
-            <button
-              style={
-                !product.sizes.M
-                  ? { cursor: 'default', color: 'grey' }
-                  : { cursor: 'pointer' }
-              }
-            >
-              M
-            </button>
-            <button
-              style={
-                !product.sizes.G
-                  ? { cursor: 'default', color: 'grey' }
-                  : { cursor: 'pointer' }
-              }
-            >
-              G
-            </button>
-            <button
-              style={
-                !product.sizes.GG
-                  ? { cursor: 'default' }
-                  : { cursor: 'pointer' }
-              }
-            >
-              GG
-            </button>
+
+            {sizeButtons()}
           </div>
+
           <button
+            className="teste"
             onClick={() => {
-              addBagItem(product)
+              size ? addBagItem(product, size) : alert('Selecione um tamanho')
             }}
           >
-            Adicionar ao Carrinho
+            Adicionar a sacola
           </button>
         </div>
       </div>
