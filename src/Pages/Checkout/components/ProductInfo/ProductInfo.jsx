@@ -14,7 +14,7 @@ const ProductInfo = (props) => {
         return (
           <ItemAndValue key={i} class="line-botton-container-product-info">
             <div className="container">
-              <div class="container_car-item-description">
+              <div className="container_car-item-description">
                 <div className="container_car-item-description_product-image">
                   <img src={product.img.front} alt="" />
                 </div>
@@ -25,7 +25,7 @@ const ProductInfo = (props) => {
                 </div>
               </div>
             </div>
-            <div class="car-item-subtotal">
+            <div className="car-item-subtotal">
               <p>Subtotal: R$ {product.actual_price}</p>
             </div>
           </ItemAndValue>

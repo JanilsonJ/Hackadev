@@ -14,7 +14,7 @@ const AddreessInfo = (props) => {
         </div>
 
         <div className="address-options-container">
-          <div class="address-options-container_mobile">
+          <div className="address-options-container_mobile">
             <div>
               <FiEdit />
               <a href="">editar</a>

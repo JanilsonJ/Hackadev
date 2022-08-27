@@ -1,7 +1,8 @@
 body {
   font-family: Kumbh Sans;
 }
-svg {
+
+.main-container svg {
   color: var(--blueCheckout);
 }
 
