@@ -36,7 +36,7 @@ const SearchItems = () => {
         return new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(price)
     }
 
-    const searchResult = (p) => {
+    const productCard = (p) => {
         if (p.porcent_descount > 0){
             return (
                 <>
@@ -85,7 +85,7 @@ const SearchItems = () => {
                                 <section key={p.id}>
                                     <hr />
                                     <Link to={`/product/${p.id}`} className="search-item__card" onClick={clearInput} >
-                                        {searchResult(p)}
+                                        {productCard(p)}
                                     </Link>
                                 </section>
                             )
