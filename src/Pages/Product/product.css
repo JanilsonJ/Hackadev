@@ -1,4 +1,4 @@
-.container {
+.container--product {
   font-family: Kumbh Sans;
   margin: 3% 0;
   display: flex;
@@ -13,12 +13,12 @@
   width: 25%;
 }
 
-.main--product--image {
+.product--image--zoom {
   overflow: hidden;
   border-radius: 2%;
 }
 
-.main--product--image img {
+.main--product--image #main--image {
   width: 100%;
   max-width: 100%;
   border-radius: 2%;
@@ -27,7 +27,7 @@
   transition: all 0.5s;
 }
 
-.main--product--image :hover {
+.main--product--image #main--image:hover {
   -moz-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
@@ -43,6 +43,16 @@
   margin-right: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.image--product--preview:hover {
+  -moz-transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .info--product--container {
@@ -149,7 +159,7 @@
 }
 
 @media all and (max-width: 850px) {
-  .container {
+  .container--product {
     flex-direction: column;
     justify-content: center;
     align-items: center;

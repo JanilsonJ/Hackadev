@@ -2,13 +2,13 @@ body {
   font-family: Kumbh Sans;
 }
 
-.main-container svg {
+.checkout-container svg {
   color: var(--blueCheckout);
 }
 
-p,
-label,
-button {
+.checkout-container p,
+.checkout-container label,
+.checkout-container button {
   font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
 }
 
@@ -16,7 +16,7 @@ button {
   font-weight: bold;
 }
 
-.main-container {
+.checkout-container {
   display: flex;
   width: 99.8%;
   height: 99.4vh;
@@ -115,7 +115,7 @@ button {
   margin-bottom: 5%;
 }
 @media (max-width: 800px) {
-  .main-container {
+  .checkout-container {
     display: flex;
     flex-direction: column;
     width: 99%;

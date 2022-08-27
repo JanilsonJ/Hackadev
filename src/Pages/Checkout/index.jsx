@@ -1,28 +1,28 @@
-import React from "react";
-import { useEffect } from "react";
-import ItemAndValue from "./components/ItemAndValue/ItemAndValue";
-import Title from "./components/Title/Title";
-import "./checkout.css";
-import Button from "./components/Button";
-import RadioOption from "./components/RadioOption/RadioOption";
-import Label from "./components/Label/Label";
-import AddreessInfo from "./components/AddreessInfo/AddreessInfo";
-import ProductInfo from "./components/ProductInfo/ProductInfo";
-import { MdLocationPin } from "react-icons/md";
-import PaymentsMethod from "./components/PaymentsMethod/PaymentsMethod";
+import React from 'react'
+import { useEffect } from 'react'
+import ItemAndValue from './components/ItemAndValue/ItemAndValue'
+import Title from './components/Title/Title'
+import './checkout.css'
+import Button from './components/Button'
+import RadioOption from './components/RadioOption/RadioOption'
+import Label from './components/Label/Label'
+import AddreessInfo from './components/AddreessInfo/AddreessInfo'
+import ProductInfo from './components/ProductInfo/ProductInfo'
+import { MdLocationPin } from 'react-icons/md'
+import PaymentsMethod from './components/PaymentsMethod/PaymentsMethod'
 
 const Checkout = () => {
   useEffect(() => {
-    document.title = "IMA - Checkout";
-  });
+    document.title = 'IMA - Checkout'
+  })
 
   return (
-    <div className="main-container">
+    <div className="checkout-container">
       <div className="main-container_session-container">
         <Title>DETALHES DA ENTREGA</Title>
         <div className="main-container_session-container_order-description">
           <div className="line-botton-container">
-            <div style={{ display: "flex" }}>
+            <div style={{ display: 'flex' }}>
               <MdLocationPin />
               <div>
                 <p className="bold">
@@ -93,7 +93,7 @@ const Checkout = () => {
             <p>R$ 0,00</p>
           </ItemAndValue>
           <ItemAndValue class="main-container_session-container_item">
-            <p style={{ color: "var(--HeavyMetal)", fontWeight: "bold" }}>
+            <p style={{ color: 'var(--HeavyMetal)', fontWeight: 'bold' }}>
               Total
             </p>
             <p>R$ 135,99</p>
@@ -104,7 +104,7 @@ const Checkout = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Checkout;
+export default Checkout
