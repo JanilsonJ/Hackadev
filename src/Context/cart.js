@@ -1,24 +1,27 @@
-import { useEffect } from 'react';
 import { createContext, useState } from 'react';
-
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [bagItems, setBagItems] = useState([]);
     const [bagItemsCount, updateItemsCount] = useState(null);
 
-    
-    const addBagItem = (product) => {
-        const Exist = bagItems.find((x) => x.id === product.id);
+
+    const addBagItem = (product, size) => {
+        const sku = `${product.id}${size}`
+        const bagProduct = Object.assign({}, product);
+        bagProduct.sku = sku;
+        
+        const Exist = bagItems.find((x) => x.sku === bagProduct.sku);
         if (Exist) {
             const newBagItems = bagItems.map((x) =>
-                x.id === product.id
+                x.sku === product.sku
                     ? { ...Exist, quantity: Exist.quantity + 1 }
                     : x
             );
             setBagItems(newBagItems);
         } else {
-            const newBagItems = [...bagItems, { ...product, quantity: +1 }];
+            bagProduct.productSize = size
+            const newBagItems = [...bagItems, { ...bagProduct, quantity: +1 }];
             setBagItems(newBagItems);
         }
         updateItemsCount(bagItemsCount + 1);

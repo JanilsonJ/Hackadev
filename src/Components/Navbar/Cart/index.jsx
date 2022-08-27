@@ -17,9 +17,9 @@ import { Link  } from 'react-router-dom'
                 <p className='cart__text'>Seu carrinho está vazio!</p></div>}
               
               {bagItems.map((item) => (
-                <div key={item.id} className="cart__product-description">
-                  <img className='cart__product-image' key={item.id} src={item.img.front} alt={item.name} style={{width: '130px'}} />
-                  <div className="cart__product-name">{item.name}
+                <div key={item.sku} className="cart__product-description">
+                  <img className='cart__product-image' key={item.sku} src={item.img.front} alt={item.name} style={{width: '130px'}} />
+                  <div className="cart__product-name">{item.name} <span className='product_size' >({item.productSize})</span>
                   <div className='regular_price' style={item.porcent_descount !== 0
                                                         ? {display: 'unset'}
                                                         : {display: 'none'}}
@@ -47,11 +47,6 @@ import { Link  } from 'react-router-dom'
                   {bagItems.length !== 0 && (
                 
                 <section className="resume">
-                  {/* <div className="item__price">
-                    <div className="item__price-fix">Preço dos Items</div>
-                    <div className="titem__price-total">R$ {itemsValue.toFixed(2).toString().replace('.', ',')}</div>
-                  </div>
-                  <span className='cart__product-line'></span> */}
                   <div className="total__value">
                     <div className="total__value-fix">
                       <strong>Preço total</strong>
