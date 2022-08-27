@@ -1,0 +1,68 @@
+.payment-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.payment-items__payment-item {
+  display: flex;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 2% 5%;
+}
+
+.payment-items__payment-item:hover {
+  transform: scale(1.1);
+}
+
+.payment-items__payment-item p {
+  margin-left: 5%;
+}
+
+.payment-items__svg {
+  width: 16px;
+  height: 16px;
+}
+
+.payments-description {
+  border-top: 1px solid black;
+  margin-top: 1%;
+}
+
+.payments-description__cartao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payments-description__cartao div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.payments-description__cartao__img {
+  width: 30px;
+  height: 30px;
+  margin-right: 2%;
+}
+
+.payments-description__boleto {
+  display: none;
+}
+
+.payments-description__boleto img {
+  width: 100%;
+  height: 10vh;
+}
+
+.payments-description__pix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.payments-description__pix img {
+  width: 30%;
+  height: 30%;
+}

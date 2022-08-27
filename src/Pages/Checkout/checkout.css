@@ -1,0 +1,134 @@
+body {
+  font-family: Kumbh Sans;
+}
+
+.main-container svg {
+  color: var(--blueCheckout);
+}
+
+p,
+label,
+button {
+  font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  width: 99.8%;
+  height: 99.4vh;
+}
+
+.main-container_session-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.main-container_session-container div:first-child {
+}
+
+/* .main-container_session-container_title {
+  width: 70%;
+  height: 4%;
+  font-size: clamp(0.5rem, 0.1rem + 1vw, 1rem);
+} */
+
+.main-container_session-container_order-summary {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  justify-content: space-around;
+  width: 90%;
+  height: max-content;
+  margin: 8% 0;
+  padding: 3% 1.5%;
+}
+.main-container_session-container_order_subtitle {
+  color: var(--HeavyMetal);
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+.main-container_session-container_div-button {
+  align-self: center;
+  width: 60%;
+  height: 30%;
+}
+
+.main-container_session-container_div-button button {
+  margin-top: 5%;
+  height: 5vh;
+}
+
+.main-container_session-container_div-button button:hover {
+  background-color: var(--blueGray);
+}
+
+.main-container_session-container_order-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+
+  width: 90%;
+  margin: 8% 0;
+  padding: 3% 1.5%;
+}
+
+.main-container_session-container_label-subtitle {
+  font-size: clamp(0.5rem, 0.1rem + 0.6vw, 0.6rem);
+}
+
+.main-container_session-container_label-title {
+  color: var(--HeavyMetal);
+}
+
+.main-container_session-container_item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: var(--SilverChalice);
+}
+
+.main-container_session-container_price {
+  font-weight: bold;
+  color: var(--HeavyMetal);
+
+  font-size: clamp(0.5rem, 0.1rem + 0.6vw, 1rem);
+}
+
+.line-botton-container {
+  padding: 3% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.forma-de-pagamento {
+  margin-bottom: 5%;
+}
+@media (max-width: 800px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    height: 99vh;
+  }
+
+  .main-container_session-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5%;
+    width: 99%;
+    height: 100%;
+  }
+}
