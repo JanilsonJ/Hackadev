@@ -1,0 +1,20 @@
+.Container__Botao{
+    display: flex;
+    justify-content:center;
+}
+
+.botao {
+    background-color: #6278f7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 32px 10px 32px ;
+    border: none; 
+    cursor: pointer;
+    color: #FFF;
+    margin: 0px 0px 20px 0px;
+}
+
+.botao:hover {
+    color: rgb(226, 226, 226)
+}

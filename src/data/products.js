@@ -10,10 +10,16 @@ const products = [
         },
         type: 'Blusa',
         keywords: ['Blusa', 'Verde', 'Simples'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 59.90.toFixed(2),
-        actual_price: 59.90.toFixed(2),
-        porcent_descount: 50
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 59.90,
+        actual_price: 53.91,
+        porcent_descount: 10
     },
     {
         id: 2,
@@ -24,9 +30,15 @@ const products = [
         },
         type: 'Camiseta',
         keywords: ['Camiseta', 'Gola Redonda', 'Verde'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 77.90.toFixed(2),
-        actual_price: 77.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 77.90,
+        actual_price: 70.11,
         porcent_descount: 10
     },
     {
@@ -38,9 +50,15 @@ const products = [
         },
         type: 'Terno e blazer',
         keywords: ['Terno', 'Blazer', 'Azul Marinho', 'Conjunto'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 186.90.toFixed(2),
-        actual_price: 186.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 186.90,
+        actual_price: 186.90,
         porcent_descount: 0
     },
     {
@@ -52,9 +70,15 @@ const products = [
         },
         type: 'Camiseta',
         keywords: ['Camiseta', 'Plantas', 'Verde'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 39.90.toFixed(2),
-        actual_price: 39.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 39.90,
+        actual_price: 39.90,
         porcent_descount: 0
     },
     {
@@ -66,9 +90,15 @@ const products = [
         },
         type: 'Camiseta',
         keywords: ['Camisa', 'Listrada', 'Branca'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 76.90.toFixed(2),
-        actual_price: 76.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 76.90,
+        actual_price: 76.90,
         porcent_descount: 0
     },
     {
@@ -80,9 +110,15 @@ const products = [
         },
         type: 'Moletom',
         keywords: ['Moletom', 'Verde', 'Capuz', 'Bolso'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 105.90.toFixed(2),
-        actual_price: 105.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 105.90,
+        actual_price: 90.02,
         porcent_descount: 15
     },
     {
@@ -94,10 +130,16 @@ const products = [
         },
         type: 'Moletom',
         keywords: ['Moletom', 'Preta', 'Preto', 'Emoji', 'Capuz'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 106.90.toFixed(2),
-        actual_price: 106.90.toFixed(2),
-        porcent_descount: 25
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 106.90,
+        actual_price: 106.90,
+        porcent_descount: 0
     },
     {
         id: 8,
@@ -108,10 +150,16 @@ const products = [
         },
         type: 'Moletom',
         keywords: ['Moletom', 'Azul', 'Halloween'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 59.95.toFixed(2),
-        actual_price: 59.95.toFixed(2),
-        porcent_descount: 35
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 59.95,
+        actual_price: 59.95,
+        porcent_descount: 0
     },
     {
         id: 9,
@@ -122,9 +170,15 @@ const products = [
         },
         type: 'Blusa',
         keywords: ['Blusa', 'Branco', 'Branca'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 49.90.toFixed(2),
-        actual_price: 49.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 49.90,
+        actual_price: 49.90,
         porcent_descount: 0
     },
     {
@@ -136,9 +190,15 @@ const products = [
         },
         type: 'Vestido',
         keywords: ['Vestido', 'Branca', 'Branco', 'Florais', 'Regata'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 75.90.toFixed(2),
-        actual_price: 75.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 75.90,
+        actual_price: 68.31,
         porcent_descount: 10
     },
     {
@@ -150,9 +210,15 @@ const products = [
         },
         type: 'Camisa',
         keywords: ['Camisa', 'Botões', 'Espaço', 'Manga Curta'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 85.90.toFixed(2),
-        actual_price: 85.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 85.90,
+        actual_price: 85.90,
         porcent_descount: 0
     },
     {
@@ -164,9 +230,15 @@ const products = [
         },
         type: 'Blusa',
         keywords: ['Blusa', 'Preta', 'Preto', 'Escrita', 'Japão', 'Escritas Japonesas'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 85.90.toFixed(2),
-        actual_price: 85.90.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 85.90,
+        actual_price: 85.90,
         porcent_descount: 0
     },
     {
@@ -178,9 +250,15 @@ const products = [
         },
         type: 'Vestido',
         keywords: ['Vestido', 'Floral', 'Preta', 'Preto', 'Regata'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 63.99.toFixed(2),
-        actual_price: 63.99.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 63.99,
+        actual_price: 63.99,
         porcent_descount: 0
     },
     {
@@ -192,9 +270,15 @@ const products = [
         },
         type: 'Camisa',
         keywords: ['Camisa', 'Preta', 'Preto', 'Bolso', 'Manga Longa', 'Botão'],
-        sizes: { PP: true, P: true, M: true, G: true, GG: true },
-        regular_price: 105.99.toFixed(2),
-        actual_price: 105.99.toFixed(2),
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 105.99,
+        actual_price: 105.99,
         porcent_descount: 0
     }
 ]

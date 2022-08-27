@@ -1,0 +1,42 @@
+.address {
+  display: flex;
+  flex-direction: column;
+}
+.address-main-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+.address-container {
+  display: flex;
+}
+.address-options-container {
+  justify-content: flex-end;
+}
+
+.address-options-container div {
+  display: flex;
+  align-items: center;
+}
+
+.address-options-container svg {
+  width: 12px;
+  margin: 0 5%;
+}
+
+.address-options-container a {
+  font-size: clamp(0.4rem, 0.1rem + 0.6vw, 1rem);
+}
+
+.address-options-container:nth-child(2) {
+  width: 20%;
+}
+
+@media (max-width: 800px) {
+  .address-options-container_mobile {
+    display: flex;
+
+    width: 20vw;
+  }
+}
