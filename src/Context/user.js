@@ -11,6 +11,7 @@ export const UserProvider = ({children}) => {
         dataNascimento: '',
         email: '',
         senha: '',
+        tel: ''
     })
 
     const [address, setAddress] = useState({
