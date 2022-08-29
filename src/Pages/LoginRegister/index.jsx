@@ -14,7 +14,7 @@ const LoginRegister = () => {
 
     return (
         <div className='login'>
-            <div className="container">
+            <div className="container-login">
                 {loginComponent ? <Login /> : <Register setloginComponent={setloginComponent} /> }
 
                 <div className='already__registered'>

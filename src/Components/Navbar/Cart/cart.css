@@ -157,7 +157,7 @@
     justify-content: space-between;
 }
 
-::-webkit-scrollbar {
+.cart__products::-webkit-scrollbar {
     display: none;
 }
 

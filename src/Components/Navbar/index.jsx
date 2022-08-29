@@ -34,7 +34,7 @@ const Navbar = () => {
     
     /* Não apresentar a navbar na tela de checkou e login */
     const { pathname } = useLocation();
-    if (pathname === "/register" || pathname === "/checkout") {
+    if (pathname === "/login" || pathname === "/checkout") {
         return (
             <header className='navbar' style={{justifyContent: 'center'}}>
                 <NavLink to="/home"  className='navbar__logo'>

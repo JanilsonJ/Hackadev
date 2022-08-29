@@ -36,13 +36,13 @@ const SearchItems = () => {
         return new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(price)
     }
 
-    const searchResult = (p) => {
-        if (p.porcent_descount > 0){
+    const productCard = (p) => {
+        if (p.porcent_discount > 0){
             return (
                 <>
                   <div className="card__image">
                     <img src={p.img.front} alt={p.name} />
-                    <p> -{p.porcent_descount}% </p>
+                    <p> -{p.porcent_discount}% </p>
                   </div>
                   <div className="search-item__description">
                     <h3>{p.name}</h3>
@@ -85,7 +85,7 @@ const SearchItems = () => {
                                 <section key={p.id}>
                                     <hr />
                                     <Link to={`/product/${p.id}`} className="search-item__card" onClick={clearInput} >
-                                        {searchResult(p)}
+                                        {productCard(p)}
                                     </Link>
                                 </section>
                             )

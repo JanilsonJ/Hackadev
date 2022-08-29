@@ -20,7 +20,7 @@ import { Link  } from 'react-router-dom'
                 <div key={item.sku} className="cart__product-description">
                   <img className='cart__product-image' key={item.sku} src={item.img.front} alt={item.name} style={{width: '130px'}} />
                   <div className="cart__product-name">{item.name} <span className='product_size' >({item.productSize})</span>
-                  <div className='regular_price' style={item.porcent_descount !== 0
+                  <div className='regular_price' style={item.porcent_discount !== 0
                                                         ? {display: 'unset'}
                                                         : {display: 'none'}}
                   >R$ {item.regular_price.toFixed(2).toString().replace('.', ',')}</div>
