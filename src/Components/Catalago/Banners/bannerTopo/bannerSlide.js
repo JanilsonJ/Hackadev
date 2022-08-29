@@ -32,7 +32,7 @@ const prevSlide = () => {
               key={index}
             >
               {index === valor_atual && (
-                <img src={slide.image} alt='' className='banner__img' />
+                <img src={slide.image} alt='Banner' className='banner__img' />
               )}
             </div>
           );
