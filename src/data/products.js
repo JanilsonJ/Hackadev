@@ -19,7 +19,7 @@ const products = [
         ],
         regular_price: 59.90,
         actual_price: 53.90,
-        porcent_descount: 10
+        porcent_discount: 10
 
     },
     {
@@ -40,7 +40,7 @@ const products = [
         ],
         regular_price: 77.90,
         actual_price: 77.90,
-        porcent_descount: 50
+        porcent_discount: 50
 
     },
     {
@@ -122,7 +122,7 @@ const products = [
 
         regular_price: 105.90,
         actual_price: 105.90,
-        porcent_descount: 15
+        porcent_discount: 15
     },
     {
         id: 16,
@@ -186,7 +186,7 @@ const products = [
 
         regular_price: 59.95,
         actual_price: 59.95,
-        porcent_descount: 35
+        porcent_discount: 35
 
     },
     {
@@ -217,7 +217,7 @@ const products = [
             back: imgPath + "Produto10_verso.webp"
         },
         type: 'Vestido',
-        keywords: ['Vestido', 'Branca', 'Branco', 'Florais', 'Regata', 'Desconto', 'Promoção'],
+        keywords: ['Vestido', 'Branca', 'Branco', 'Florais', 'Regata'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -227,7 +227,7 @@ const products = [
         ],
         regular_price: 75.90,
         actual_price: 75.90,
-        porcent_descount: 0
+        porcent_discount: 0
 
     },
     {
@@ -360,7 +360,7 @@ const products = [
         type: 'Short',
         keywords: ['Short Jeans', 'Jens', 'Azul', 'Short Jeans', 'Bolso', 'Short'],
         sizes: [
-            {available: false, size: 'PP'},
+            {available: true, size: 'PP'},
             {available: false, size: 'P'},
             {available: true, size: 'M'},
             {available: true, size: 'G'},
@@ -410,6 +410,26 @@ const products = [
         actual_price: 128.95,
         porcent_discount: 0
     },
+    {
+        id: 21,
+        name: "Short - Paper Bag Pants Simples",
+        img: {
+            front: imgPath + "Produto21_frente.webp",
+            back: imgPath + "Produto21_verso.webp"
+        },
+        type: 'Short',
+        keywords: ['Short', 'Branco', 'Bolso', 'Botão'],
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: true, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 87.99,
+        actual_price: 87.99,
+        porcent_discount: 0
+    }
    
 ]
 
