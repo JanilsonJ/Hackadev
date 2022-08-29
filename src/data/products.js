@@ -18,8 +18,9 @@ const products = [
             {available: true, size: 'GG'}
         ],
         regular_price: 59.90,
-        actual_price: 53.91,
-        porcent_discount: 10
+        actual_price: 53.90,
+        porcent_descount: 10
+
     },
     {
         id: 2,
@@ -38,8 +39,9 @@ const products = [
             {available: true, size: 'GG'}
         ],
         regular_price: 77.90,
-        actual_price: 70.11,
-        porcent_discount: 10
+        actual_price: 77.90,
+        porcent_descount: 50
+
     },
     {
         id: 3,
@@ -117,9 +119,10 @@ const products = [
             {available: true, size: 'G'},
             {available: true, size: 'GG'}
         ],
-        regular_price: 77.90,
-        actual_price: 70.11,
-        porcent_discount: 10
+
+        regular_price: 105.90,
+        actual_price: 105.90,
+        porcent_descount: 15
     },
     {
         id: 16,
@@ -140,6 +143,7 @@ const products = [
         regular_price: 77.90,
         actual_price: 70.11,
         porcent_discount: 10
+
     },
     {
         id: 7,
@@ -157,9 +161,11 @@ const products = [
             {available: true, size: 'G'},
             {available: true, size: 'GG'}
         ],
+
         regular_price: 119.90,
         actual_price: 83.93,
         porcent_discount: 30
+
     },
     {
         id: 8,
@@ -177,9 +183,11 @@ const products = [
             {available: false, size: 'G'},
             {available: false, size: 'GG'}
         ],
-        regular_price: 74.90,
-        actual_price: 63.67,
-        porcent_discount: 15
+
+        regular_price: 59.95,
+        actual_price: 59.95,
+        porcent_descount: 35
+
     },
     {
         id: 9,
@@ -218,8 +226,9 @@ const products = [
             {available: false, size: 'GG'}
         ],
         regular_price: 75.90,
-        actual_price: 68.31,
-        porcent_discount: 10
+        actual_price: 75.90,
+        porcent_descount: 0
+
     },
     {
         id: 11,
@@ -401,26 +410,7 @@ const products = [
         actual_price: 128.95,
         porcent_discount: 0
     },
-    {
-        id: 21,
-        name: "Short - Botão Simples ocasional",
-        img: {
-            front: imgPath + "Produto21_frente.webp",
-            back: imgPath + "Produto21_verso.webp"
-        },
-        type: 'Short',
-        keywords: ['Short', 'Branco', 'Botão', 'Simples'],
-        sizes: [
-            {available: true, size: 'PP'},
-            {available: true, size: 'P'},
-            {available: true, size: 'M'},
-            {available: true, size: 'G'},
-            {available: false, size: 'GG'}
-        ],
-        regular_price: 87.99,
-        actual_price: 87.99,
-        porcent_discount: 0
-    }
+   
 ]
 
 export default products

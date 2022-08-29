@@ -35,16 +35,20 @@ const Produto = ({ product }) => {
       currency: 'BRL'
     }).format(price)
   }
+
   return (
     <Link to={`/product/${product.id}`} className="catalago__produto">
-      <img className="item_img" src={product.img.front} alt={product.name} />
-      <img className="item_img--a" src={product.img.back} alt={product.name} />
+      <div className="catalago__produto--image">
+        <img className="item_img" src={product.img.front} alt={product.name} />
+        <img className="item_img--a" src={product.img.back} alt={product.name} />
+      </div>
 
       <div className="description__product">
         <h3>{product.name}</h3>
+
+        {price()}
       </div>
 
-      {price()}
     </Link>
   )
 }
