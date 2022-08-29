@@ -72,6 +72,7 @@ const PaymentsMethod = (props) => {
             <img
               src="/assets/Icons/visa.png"
               className="payments-description__cartao__img"
+              alt="Cartão"
             />
             <p>Número: **** **** **** 4370</p>
           </div>
@@ -81,12 +82,14 @@ const PaymentsMethod = (props) => {
           <img
             src="assets/Barcode/barcode.webp"
             className="payments-description__cartao__img"
+            alt="Boleto"
           />
         </div>
         <div className="payments-description__pix " id="pix-block">
           <img
             src="assets/Barcode/frame.png"
             className="payments-description__cartao__img"
+            alt="Pix"
           />
           <p>Chave: YcluGth^6t54%UZOf5Ru4FArbYka!1*h</p>
         </div>

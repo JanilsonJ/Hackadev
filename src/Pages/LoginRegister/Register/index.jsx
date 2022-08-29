@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Button from "../../../Components/Button";
 import { UserContext } from "../../../Context/user";
 
 import "./register.css"
@@ -58,7 +59,7 @@ const Register = (props) => {
             </div>
 
             <div className="login-button">
-                <button type='submit'>Cadastre-se</button>
+                <Button type="submit">Cadastre-se</Button>
             </div>
 
         </form>      

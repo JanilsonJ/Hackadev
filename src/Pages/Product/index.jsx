@@ -3,6 +3,7 @@ import { CartContext } from '../../Context/cart'
 import './product.css'
 import ProductList from '../../data/products'
 import { useParams } from 'react-router-dom'
+import Button from '../../Components/Button'
 
 const Product = () => {
   const { id } = useParams()
@@ -92,7 +93,7 @@ const Product = () => {
           <span
             className="regular--price"
             style={
-              product.porcent_descount !== 0
+              product.porcent_discount !== 0
                 ? { display: 'unset' }
                 : { display: 'none' }
             }
@@ -102,7 +103,7 @@ const Product = () => {
           <span
             className="product--price"
             style={
-              product.porcent_descount !== 0
+              product.porcent_discount !== 0
                 ? { margin: '10px 0 0 0' }
                 : { margin: '30px 0 0 0' }
             }
@@ -117,14 +118,15 @@ const Product = () => {
             {sizeButtons()}
           </div>
 
-          <button
-            className="teste"
-            onClick={() => {
-              size ? addBagItem(product, size) : alert('Selecione um tamanho')
-            }}
-          >
-            Adicionar a sacola
-          </button>
+
+
+          <div 
+            className='addBag__button' 
+            onClick={() => {size ? addBagItem(product, size) : alert('Selecione um tamanho')}}
+          >  
+            <Button >Adicionar a sacola</Button>
+          </div>
+          
         </div>
       </div>
     </>
