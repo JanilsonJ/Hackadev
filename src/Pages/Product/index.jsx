@@ -3,6 +3,7 @@ import { CartContext } from '../../Context/cart'
 import './product.css'
 import ProductList from '../../data/products'
 import { useParams } from 'react-router-dom'
+import Button from '../../Components/Button'
 
 const Product = () => {
   const { id } = useParams()
@@ -117,14 +118,15 @@ const Product = () => {
             {sizeButtons()}
           </div>
 
-          <button
-            className="teste"
-            onClick={() => {
-              size ? addBagItem(product, size) : alert('Selecione um tamanho')
-            }}
-          >
-            Adicionar a sacola
-          </button>
+
+
+          <div 
+            className='addBag__button' 
+            onClick={() => {size ? addBagItem(product, size) : alert('Selecione um tamanho')}}
+          >  
+            <Button >Adicionar a sacola</Button>
+          </div>
+          
         </div>
       </div>
     </>
