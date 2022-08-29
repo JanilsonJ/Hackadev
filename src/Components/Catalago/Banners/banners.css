@@ -1,66 +1,66 @@
 .banner {
-   position: relative;
-   margin-top: 0;
-   box-sizing: border-box; 
-   align-items: center;
-  /* margin: 10px;*/
-   width: 100%;
-   display: flex;
-}
-
-.banner .slides {
-    display: flex;
+    position: relative;
+    margin-top: 0;
+    box-sizing: border-box; 
+    align-items: center;
+   /* margin: 10px;*/
     width: 100%;
-    overflow: hidden;
-}
-
-.banner .banner__img {
-    display: block;
-    width: 100vw;
-    transition: 2s;
-   /* border-radius: 10px;*/
-    
-}
-/* Poscionamntos da Setinhas*/
-.arrow {
-    position: absolute;
-    
-    top: 45%;
-    
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-
-    padding: 5px;
-    border-radius: 400px;
-    
-    z-index: 1;
-}
-.right-arrow {
-   right: 5%;
-   
-}
-
-.left-arrow {
-    left: 5%;
-}
-
-.arrow:hover {
-    background-color: rgba(226, 207, 207, 0.4);
-    opacity: 1;
-}
-/*Ajuste de Tela*/
-@media only screen and (max-width: 500px) {
-    .arrow {
-        top: 35%;
-        font-size: 1rem;
-    }
-    .right-arrow {
-        right: 2%;
-     }
+    display: flex;
+ }
+ 
+ .banner .slides {
+     display: flex;
+     width: 100%;
+     overflow: hidden;
+ }
+ 
+ .banner .banner__img {
+     display: block;
+     min-width: 100vw;
+     transition: 2s;
+    /* border-radius: 10px;*/
      
-     .left-arrow {
-         left: 2%;
+ }
+ /* Poscionamntos da Setinhas*/
+ .arrow {
+     position: absolute;
+     
+     top: 45%;
+     
+     font-size: 2rem;
+     color: white;
+     cursor: pointer;
+     user-select: none;
+ 
+     padding: 5px;
+     border-radius: 400px;
+     
+     z-index: 1;
+ }
+ .right-arrow {
+    right: 5%;
+    
+ }
+ 
+ .left-arrow {
+     left: 5%;
+ }
+ 
+ .arrow:hover {
+     background-color: rgba(226, 207, 207, 0.4);
+     opacity: 1;
+ }
+ /*Ajuste de Tela*/
+ @media only screen and (max-width: 500px) {
+     .arrow {
+         top: 35%;
+         font-size: 1rem;
      }
-}
+     .right-arrow {
+         right: 2%;
+      }
+      
+      .left-arrow {
+          left: 2%;
+      }
+ }
