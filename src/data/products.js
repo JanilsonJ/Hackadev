@@ -18,7 +18,7 @@ const products = [
             {available: false, size: 'GG'}
         ],
         regular_price: 59.90,
-        actual_price: 53.91,
+        actual_price: 53.90,
         porcent_descount: 10
     },
     {
@@ -38,8 +38,8 @@ const products = [
             {available: false, size: 'GG'}
         ],
         regular_price: 77.90,
-        actual_price: 70.11,
-        porcent_descount: 10
+        actual_price: 77.90,
+        porcent_descount: 50
     },
     {
         id: 3,
@@ -118,7 +118,7 @@ const products = [
             {available: false, size: 'GG'}
         ],
         regular_price: 105.90,
-        actual_price: 90.02,
+        actual_price: 105.90,
         porcent_descount: 15
     },
     {
@@ -139,7 +139,7 @@ const products = [
         ],
         regular_price: 106.90,
         actual_price: 106.90,
-        porcent_descount: 0
+        porcent_descount: 20
     },
     {
         id: 8,
@@ -159,7 +159,7 @@ const products = [
         ],
         regular_price: 59.95,
         actual_price: 59.95,
-        porcent_descount: 0
+        porcent_descount: 35
     },
     {
         id: 9,
@@ -198,8 +198,8 @@ const products = [
             {available: false, size: 'GG'}
         ],
         regular_price: 75.90,
-        actual_price: 68.31,
-        porcent_descount: 10
+        actual_price: 75.90,
+        porcent_descount: 0
     },
     {
         id: 11,
