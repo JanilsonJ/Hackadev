@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import {useNavigate} from "react-router-dom"
+
+import Button from "../../../Components/Button";
+
 import { UserContext } from "../../../Context/user";
+
 import "./login.css"
 
 const Login = () => {
@@ -35,7 +39,7 @@ const Login = () => {
             </div>    
 
             <div className="login-button">
-                <button type='submit'>Logar</button>
+                <Button type="submit">Logar</Button>
             </div>
 
         </form>      

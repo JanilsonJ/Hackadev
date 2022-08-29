@@ -1,8 +1,9 @@
 import CampoTexto from '../CampoTexto'
 import './Formulario.css'
-import Botao from '../Botao';
+
 import { UserContext } from '../../../../Context/user';
 import { useContext } from 'react';
+import Button from '../../../../Components/Button';
 
 const Formulario = () => {
 
@@ -45,9 +46,10 @@ const Formulario = () => {
                     <CampoTexto label="Código de segurança (CVV)" placeholder="000" />
                 </form>
             </section>
-
-            <Botao>Alterar dados</Botao>
-
+            
+            <div className='formulario__botao'>
+                <Button type="submit">Salvar Alterações</Button>
+            </div>
         </div>
     )
 }
