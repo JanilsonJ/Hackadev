@@ -15,6 +15,22 @@ const Product = () => {
 
   const [size, setSize] = useState(null)
 
+  const [sizeAlert, setSizeAlert] = useState(false)
+
+  const shakeButtonSizes = () => {
+    setSizeAlert(true)
+
+    let btns = document.getElementsByClassName('button__product-size')
+
+    Array.from(btns).map(btn => (btn.className += ' vai-tremer'))
+
+    setTimeout(() => {
+      Array.from(btns).map(
+        btn => (btn.className = btn.className.replace(' vai-tremer', ''))
+      )
+    }, 800)
+  }
+
   function payment() {
     return product.actual_price / 3
   }
@@ -23,9 +39,10 @@ const Product = () => {
     document.title = `IMA - ${product.name}`
 
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  })
+  }, [])
 
   const buttonSelected = (e, size) => {
+    setSizeAlert(false)
     setSize(size)
 
     let btns = document.getElementsByClassName('button__product-size')
@@ -117,16 +134,21 @@ const Product = () => {
 
             {sizeButtons()}
           </div>
+          <span
+            className="product--size--alert"
+            style={sizeAlert ? { display: 'unset' } : { display: 'none' }}
+          >
+            Selecione o tamanho desejado
+          </span>
 
-
-
-          <div 
-            className='addBag__button' 
-            onClick={() => {size ? addBagItem(product, size) : alert('Selecione um tamanho')}}
-          >  
-            <Button >Adicionar a sacola</Button>
+          <div
+            className="addBag__button"
+            onClick={() => {
+              size ? addBagItem(product, size) : shakeButtonSizes()
+            }}
+          >
+            <Button>Adicionar a sacola</Button>
           </div>
-          
         </div>
       </div>
     </>
