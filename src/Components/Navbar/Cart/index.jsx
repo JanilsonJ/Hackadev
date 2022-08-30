@@ -19,17 +19,17 @@ import { Link  } from 'react-router-dom'
               {bagItems.map((item) => (
                 <div key={item.sku} className="cart__product-description">
                   <img className='cart__product-image' key={item.sku} src={item.img.front} alt={item.name} style={{width: '130px'}} />
-                  <div className="cart__product-name">{item.name} <span className='product_size' >({item.productSize})</span>
+                  <div className="cart__product-name"> <span className='product__name' >{item.name}</span>  <span className='product_size' >({item.productSize})</span>
                   <div className='regular_price' style={item.porcent_discount !== 0
                                                         ? {display: 'unset'}
                                                         : {display: 'none'}}
                   >R$ {item.regular_price.toFixed(2).toString().replace('.', ',')}</div>
                   <div className="cart_product-price">
-                    {item.quantity} x R$ {item.actual_price.toFixed(2).toString().replace('.', ',')}
+                    R$ {item.actual_price.toFixed(2).toString().replace('.', ',')}
                   </div>
                     <div className="minus__plus">
                         <FaMinusSquare onClick={() => onRemove(item)} className="minus" size="1.6rem" color= "var(--DustyGray)" />
-                          {' '}
+                        &nbsp;<span className='item_quantity' >{item.quantity}</span>&nbsp;
                         <FaPlusSquare onClick={() => addBagItem(item, item.productSize)} className="plus" size="1.6rem" color= "var(--DustyGray)" />
                     </div>
                     <button onClick={() => {updateItemsCount(bagItemsCount - item.quantity)
@@ -38,7 +38,7 @@ import { Link  } from 'react-router-dom'
                                               updateItemsCount(null)
                                         }
                                     } 
-                              className="cart__product-remove"> <FaTrashAlt/>&nbsp;Remover</button>
+                              className="cart__product-remove"> <FaTrashAlt/>&nbsp; <span className='hide_remove'>Remover</span> </button>
                   </div>
                   
                 </div>
