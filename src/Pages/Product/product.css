@@ -146,8 +146,38 @@
 }
 
 .addBag__button {
-  margin-top: 30px;
-  width: 100%;
+  margin: 30px 0 20px 0;
+}
+
+.vai-tremer {
+  background-color: var(--MetallicRed);
+  /* animacao */
+  animation: tremer 0.2s;
+  animation-iteration-count: 4;
+}
+
+.product--size--alert {
+  color: red;
+  margin: 30px 0 0 0;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+@keyframes tremer {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media all and (max-width: 1100px) {
