@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, useLocation, Link  } from 'react-router-dom'
 
 import { 
@@ -14,10 +14,14 @@ import Cart from './Cart'
 import SearchItems from './SearchItems'
 import './navbar.css'
 
-const Navbar = (props) => {
+import { CartContext } from '../../Context/cart';
+
+const Navbar = () => {
     const [cartDisplay, setCartDisplay] = useState('-400px');
     const [backgroundDisplay, setBackgroundDisplay] = useState({opacity: 0, zIndex: -1});
     
+    const {bagItemsCount} = useContext(CartContext);
+
     const displayCart = () => {
         if (cartDisplay === '15px') {
             setCartDisplay('-400px')
@@ -30,9 +34,17 @@ const Navbar = (props) => {
     
     /* Não apresentar a navbar na tela de checkou e login */
     const { pathname } = useLocation();
-    if (pathname === "/register" || pathname === "/checkout") 
-        return null;
-
+    if (pathname === "/login" || pathname === "/checkout") {
+        return (
+            <header className='navbar' style={{justifyContent: 'center'}}>
+                <NavLink to="/home"  className='navbar__logo'>
+                    <img src="/assets/Logos/Logo_Black_Transparencia.png" alt="IMA logo" />
+                </NavLink >
+                <h2>IMPÉRIO DA MODA AMERICANA</h2>
+            </header>
+        )
+    }
+    
     return (
         <>
             <header className='navbar'>
@@ -43,13 +55,13 @@ const Navbar = (props) => {
                 <SearchItems />
 
                 <div className='navbar__menu'>
-                    <button className='navbar__menu__button' onClick={displayCart}>
+                    <button className='navbar__menu__button menu__button__bag' onClick={displayCart}>
                         <BagIcon className='navbar__button__icon'/>
-                        <span className='bag__items-count'>{props.bagItems.length}</span>
+                        <span className='bag__items-count'>{bagItemsCount}</span>
                     </button>
 
                     <Link to="/account" style={{textDecoration: 'none'}}>
-                        <button className='navbar__menu__button'>
+                        <button className='navbar__menu__button menu__button__account'>
                             <UserIcon className='navbar__button__icon'/>
                         </button>
                     </Link>
@@ -67,10 +79,10 @@ const Navbar = (props) => {
                             <CloseIcon className='close__icon'/>
                         </button>
 
-                        <p>SACOLA ({props.bagItems.length})</p>
+                        <p>SACOLA {bagItemsCount ? `( ${bagItemsCount} )`: ''}</p>
                     </div>
                     
-                    <Cart  bagItems={props.bagItems} setBagItems={props.setBagItems}/>  
+                    <Cart />  
                 </div>
             </header>
         </>

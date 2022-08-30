@@ -35,7 +35,7 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
     <th> <img width="50px" height="50px" src="https://github.com/allagyn.png"></th>
     <th> <img width="50px" height="50px" src="https://github.com/ArturDiego.png"></th>
     <th> <img width="50px" height="50px" src="https://github.com/ezcmacedo.png"></th>
-    <th> <img width="50px" height="50px" src="https://github.com/estevaosampaio.png"></th>
+    <!-- <th> <img width="50px" height="50px" src="https://github.com/estevaosampaio.png"></th> -->
     <th> <img width="50px" height="50px" src="https://github.com/Fabioazevedojr.png"></th>
     <th> <img width="50px" height="50px" src="https://github.com/JanilsonJ.png"></th>
     <th> <img width="50px" height="50px" src="https://github.com/mateus-asouza.png"></th>
@@ -46,7 +46,7 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
     <th><a href="https://github.com/allagyn">André Luiz</a></th>
     <th><a href="https://github.com/ArturDiego">Artur Diego</a></th>
     <th><a href="https://github.com/ezcmacedo">Enzo Carol</a></th>
-    <th><a href="https://github.com/estevaosampaio">Estevão Sampaio</a></th>
+     <!-- <th><a href="https://github.com/estevaosampaio">Estevão Sampaio</a></th> -->
     <th><a href="https://github.com/Fabioazevedojr">Fábio Marques</a></th>
     <th><a href="https://github.com/JanilsonJ">Janilson Júnior</a></th>
     <th><a href="https://github.com/mateus-asouza">Mateus Alves</a></th>

@@ -1,31 +1,158 @@
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react'
+import { CartContext } from '../../Context/cart'
+import './product.css'
+import ProductList from '../../data/products'
 import { useParams } from 'react-router-dom'
+import Button from '../../Components/Button'
 
-import './product.css';
+const Product = () => {
+  const { id } = useParams()
+  const product = ProductList.find(p => p.id === parseInt(id))
 
-import ProductsList from '../../data/products';
+  const [mainImage, setMainImage] = useState(product.img.front)
 
-const Product = (props) => {
+  const { addBagItem } = useContext(CartContext)
 
-    const { id } = useParams();
-    const product = ProductsList.find(p => p.id === parseInt(id));
+  const [size, setSize] = useState(null)
 
-    useEffect(() => {
-        document.title = 'IMA - ' + product.name;
-    });
+  const [sizeAlert, setSizeAlert] = useState(false)
 
-    const addtoCart = () => {
-        props.setBagItems([...props.bagItems, product])
-    }
+  const shakeButtonSizes = () => {
+    setSizeAlert(true)
 
-    return (
-        <>
-            <p>{product.name}</p>
-            <p>{JSON.stringify(product.sizes)}</p>
-            <img src={product.img[0]} alt={product.name} style={{width: '300px'}}/>
-            <button onClick={addtoCart}>Adicionar a sacola</button>
-        </>
+    let btns = document.getElementsByClassName('button__product-size')
+
+    Array.from(btns).map(btn => (btn.className += ' vai-tremer'))
+
+    setTimeout(() => {
+      Array.from(btns).map(
+        btn => (btn.className = btn.className.replace(' vai-tremer', ''))
+      )
+    }, 800)
+  }
+
+  function payment() {
+    return product.actual_price / 3
+  }
+
+  useEffect(() => {
+    document.title = `IMA - ${product.name}`
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
+  const buttonSelected = (e, size) => {
+    setSizeAlert(false)
+    setSize(size)
+
+    let btns = document.getElementsByClassName('button__product-size')
+
+    Array.from(btns).map(
+      btn => (btn.className = btn.className.replace(' buttonActive', ''))
     )
+
+    e.target.className += ' buttonActive'
+  }
+
+  const sizeButtons = () => {
+    return product.sizes.map(s => {
+      return s.available ? (
+        <button
+          className="button__product-size"
+          onClick={e => buttonSelected(e, s.size)}
+          key={s.size}
+        >
+          {s.size}
+        </button>
+      ) : (
+        <button className="button__product-size-disabled" disabled key={s.size}>
+          {s.size}
+        </button>
+      )
+    })
+  }
+
+  const BRL = price => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(price)
+  }
+
+  return (
+    <>
+      <div className="container--product">
+        <div className="products--images">
+          <div className="main--product--image">
+            <div className="product--image--zoom">
+              <img id="main--image" src={mainImage} alt={product.name} />
+            </div>
+            <div className="image--product--preview">
+              <img
+                onClick={() => {
+                  setMainImage(product.img.front)
+                }}
+                src={product.img.front}
+                alt={product.name}
+              />
+              <img
+                onClick={() => {
+                  setMainImage(product.img.back)
+                }}
+                src={product.img.back}
+                alt={product.name}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="info--product--container">
+          <p className="product--name">{product.name}</p>
+          <span
+            className="regular--price"
+            style={
+              product.porcent_discount !== 0
+                ? { display: 'unset' }
+                : { display: 'none' }
+            }
+          >
+            De: {BRL(product.regular_price)}
+          </span>
+          <span
+            className="product--price"
+            style={
+              product.porcent_discount !== 0
+                ? { margin: '10px 0 0 0' }
+                : { margin: '30px 0 0 0' }
+            }
+          >
+            {BRL(product.actual_price)}
+          </span>
+          <p className="payment--info">em até 3x {BRL(payment())}</p>
+
+          <div className="product--size">
+            <p>Escolha o tamanho:</p>
+
+            {sizeButtons()}
+          </div>
+          <span
+            className="product--size--alert"
+            style={sizeAlert ? { display: 'unset' } : { display: 'none' }}
+          >
+            Selecione o tamanho desejado
+          </span>
+
+          <div
+            className="addBag__button"
+            onClick={() => {
+              size ? addBagItem(product, size) : shakeButtonSizes()
+            }}
+          >
+            <Button>Adicionar a sacola</Button>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Product

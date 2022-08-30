@@ -1,35 +1,42 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 
-import Register from "./Pages/Register";
+import LoginRegister from "./Pages/LoginRegister";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Account from "./Pages/Account";
 import Checkout from "./Pages/Checkout";
 
-import Navbar from './Components/Navbar';
+import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
-function App() {
-  const [bagItems, setBagItems] = useState([]);
+import { CartProvider } from "./Context/cart";
+import { UserProvider } from "./Context/user";
 
+function App() {
   return (
     <Router>
-      <Navbar bagItems={bagItems} setBagItems={setBagItems}/>
 
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/product/:id" element={<Product bagItems={bagItems} setBagItems={setBagItems}/>} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/checkout" element={<Checkout />} />
+      <UserProvider>
+        <CartProvider>
+          <Navbar />
+          
+          <Routes>
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/login" element={<LoginRegister />} />
+            <Route exact path="/product/:id" element={<Product />} />
+            <Route exact path="/account" element={<Account />} />
+            <Route exact path="/checkout" element={<Checkout />} />
 
-        <Route path="*" element={<Home />} /> {/*Redireciona para Home se a página não existir*/}
-      </Routes>
+            {/*Redireciona para Home se a página não existir*/}
+            <Route exact path="*" element={<Home />} />
+          </Routes>
 
-      <Footer />
+          <Footer />
+        </CartProvider>
+      </UserProvider>
+
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

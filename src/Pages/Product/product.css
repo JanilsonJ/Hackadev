@@ -1,0 +1,231 @@
+.container--product {
+  font-family: Kumbh Sans;
+  margin: 3% 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.products--images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 25%;
+}
+
+.product--image--zoom {
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+.main--product--image #main--image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 2%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.5s;
+}
+
+.main--product--image #main--image:hover {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.image--product--preview {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image--product--preview img {
+  width: 25%;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.image--product--preview:hover {
+  -moz-transform: none;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.info--product--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 3%;
+  width: 25%;
+}
+
+.product--name {
+  font-weight: bold;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+}
+
+.regular--price {
+  text-decoration: line-through;
+  font-weight: normal;
+  font-size: clamp(0.5rem, 1vw, 1.5rem);
+  color: var(--FriarGray);
+  margin-top: 130px;
+}
+
+.product--price {
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.payment--info {
+  font-weight: normal;
+  font-size: clamp(0.5rem, 1vw, 1.5rem);
+}
+
+.product--size {
+  font-weight: normal;
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin-top: 45px;
+}
+
+.product--size p {
+  margin-bottom: 10px;
+}
+
+.button__product-size {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #9ca3af);
+  background-image: -moz-linear-gradient(top, #ffffff, #9ca3af);
+  background-image: -ms-linear-gradient(top, #ffffff, #9ca3af);
+  background-image: -o-linear-gradient(top, #ffffff, #9ca3af);
+  background-image: -webkit-gradient(to bottom, #ffffff, #9ca3af);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 18px;
+  padding: 6px;
+  -webkit-box-shadow: 1px 1px 4px 0 #000000;
+  -moz-box-shadow: 1px 1px 4px 0 #000000;
+  box-shadow: 1px 1px 4px 0 #000000;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  margin-right: 10px;
+}
+
+.button__product-size-disabled {
+  cursor: default;
+  margin-right: 10px;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 6px;
+  -webkit-box-shadow: 1px 1px 4px 0 #000000;
+  -moz-box-shadow: 1px 1px 4px 0 #000000;
+  box-shadow: 1px 1px 4px 0 #000000;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  margin-right: 10px;
+}
+
+.buttonActive {
+  color: #ffffff;
+  background-color: var(--FriarGray);
+  border: 1px solid var(--HeavyMetal);
+}
+
+.addBag__button {
+  margin: 30px 0 20px 0;
+}
+
+.vai-tremer {
+  background-color: var(--MetallicRed);
+  /* animacao */
+  animation: tremer 0.2s;
+  animation-iteration-count: 4;
+}
+
+.product--size--alert {
+  color: red;
+  margin: 30px 0 0 0;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+@keyframes tremer {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .products--images {
+    width: 25%;
+  }
+  .image--product--preview {
+    height: unset;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .container--product {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .products--images {
+    width: 70%;
+  }
+  .info--product--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 0 0;
+    width: auto;
+  }
+  .product--name {
+    text-align: center;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .regular--price {
+    font-size: clamp(18px, 18px + 1vw, 20px);
+    margin-top: 5px;
+  }
+
+  .product--price {
+    font-size: clamp(18px, 18px + 1vw, 20px);
+    font-weight: bold;
+  }
+
+  .payment--info {
+    font-size: clamp(12px, 12px + 1vw, 20px);
+  }
+  .product--size {
+    font-size: clamp(22px, 22px + 1vw, 22px);
+  }
+}
