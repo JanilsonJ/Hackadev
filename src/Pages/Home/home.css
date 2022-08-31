@@ -1,12 +1,7 @@
-.home {
-    padding: 1px 0px;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.home_container {
+    position: relative;
+    display: block;
 }
-
-.home img {
-    width: 300px;
+.home_container::after, ::before {
+    box-sizing: inherit;
 }
