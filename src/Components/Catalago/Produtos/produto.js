@@ -42,11 +42,9 @@ const Produto = ({ product }) => {
         <img className="item_img" src={product.img.front} alt={product.name} />
         <img className="item_img--a" src={product.img.back} alt={product.name} />
       </div>
-
+      <h3>{product.name}</h3> 
       <div className="description__product">
-        <h3>{product.name}</h3>
-
-        {price()}
+         {price()}
       </div>
 
     </Link>

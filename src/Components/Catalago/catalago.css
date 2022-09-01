@@ -15,6 +15,9 @@
 
 /*Card Catalago de Produtos*/
 .catalago__produto {
+    display: flex;
+    flex-direction: column;
+
     width: 18%;
     min-width: 175px;
     max-width: 250px;
@@ -68,7 +71,13 @@
 }
 
 /*Estilização de Textos*/
-.description__product h3 {
+.description__product {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    
+}
+.catalago__produto h3 {
     margin: 8px 0px 4px;
     line-height: 1.2;
     box-sizing: border-box;
@@ -77,6 +86,7 @@
     color: #555050;
     
 }
+
 
 
 .catalago__text--regular_price {
@@ -144,5 +154,14 @@
     .catalago__produto {
         min-width: 50%;
         margin: 0;
+    }
+}
+/*Ajuste para telas acima de 1700 de Largura*/
+@media only screen and (min-width: 1700px){
+    .catalago {
+        justify-content:flex-start;
+        
+        margin-right: 1em;
+        margin-left: 3em; 
     }
 }
