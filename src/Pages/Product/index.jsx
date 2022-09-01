@@ -39,7 +39,15 @@ const Product = () => {
     document.title = `IMA - ${product.name}`
 
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+    // Reiniciando o componente
+    setMainImage(product.img.front)
+    setSizeAlert(false)
+    setSize(null)
+
+    document
+      .getElementsByClassName('buttonActive')[0]
+      ?.classList.remove('buttonActive')
+  }, [product])
 
   const buttonSelected = (e, size) => {
     setSizeAlert(false)
@@ -122,7 +130,7 @@ const Product = () => {
             style={
               product.porcent_discount !== 0
                 ? { margin: '10px 0 0 0' }
-                : { margin: '30px 0 0 0' }
+                : { margin: '50px 0 0 0' }
             }
           >
             {BRL(product.actual_price)}
