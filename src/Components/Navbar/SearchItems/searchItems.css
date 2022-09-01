@@ -32,7 +32,7 @@
 }
 
 .search_form input::placeholder {
-  color: #fff;
+  color: transparent;
 }
 
 .navbar_search .search_form label {

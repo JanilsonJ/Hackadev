@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink, useLocation, Link  } from 'react-router-dom'
 
 import { 
@@ -17,21 +17,18 @@ import './navbar.css'
 import { CartContext } from '../../Context/cart';
 
 const Navbar = () => {
-    const [cartDisplay, setCartDisplay] = useState('-400px');
     const [backgroundDisplay, setBackgroundDisplay] = useState({opacity: 0, zIndex: -1});
     
-    const {bagItemsCount} = useContext(CartContext);
+    const {bagItemsCount, bagDisplay, setBagDisplay} = useContext(CartContext);
 
-    const displayCart = () => {
-        if (cartDisplay === '15px') {
-            setCartDisplay('-400px')
-            setBackgroundDisplay({opacity: 0, zIndex: -1})
-        } else {
-            setCartDisplay('15px');
-            setBackgroundDisplay({opacity: 1, zIndex: 998})
-        }    
+    const displayBag = () => {
+        setBagDisplay(!bagDisplay)
     }
     
+    useEffect(() => {
+        setBackgroundDisplay(!bagDisplay)
+    }, [bagDisplay]);
+
     /* Não apresentar a navbar na tela de checkou e login */
     const { pathname } = useLocation();
     if (pathname === "/login" || pathname === "/checkout") {
@@ -55,7 +52,7 @@ const Navbar = () => {
                 <SearchItems />
 
                 <div className='navbar__menu'>
-                    <button className='navbar__menu__button menu__button__bag' onClick={displayCart}>
+                    <button className='navbar__menu__button menu__button__bag' onClick={displayBag}>
                         <BagIcon className='navbar__button__icon'/>
                         <span className='bag__items-count'>{bagItemsCount}</span>
                     </button>
@@ -66,16 +63,16 @@ const Navbar = () => {
                         </button>
                     </Link>
                 </div>
-
+    
                 <section 
                     className='background_hover' 
-                    onClick={displayCart}
-                    style={backgroundDisplay}>
+                    onClick={displayBag}
+                    style={backgroundDisplay ? ({opacity: 0, zIndex: -1}) : ({opacity: 1, zIndex: 998})}>
                 </section>
 
-                <div className='cart__box' style={{right: cartDisplay}}>
+                <div className='cart__box' style={bagDisplay ? {right: '15px'} : {right: '-400px'}}>
                     <div className='cart_header'>
-                        <button onClick={displayCart}  className='cart__button'>
+                        <button onClick={displayBag}  className='cart__button'>
                             <CloseIcon className='close__icon'/>
                         </button>
 
