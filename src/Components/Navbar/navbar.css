@@ -47,9 +47,9 @@
 }
 .navbar .navbar__menu__button {
     background-color: transparent;
-
+    color: var(--HeavyMetal);
     height: 100%;
-    border: 3px solid #FFF;
+    border: 3px solid transparent;
     box-sizing: border-box;
     position: relative;
     

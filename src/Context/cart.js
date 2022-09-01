@@ -4,7 +4,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [bagItems, setBagItems] = useState([]);
     const [bagItemsCount, updateItemsCount] = useState(null);
-
+    const [bagDisplay, setBagDisplay] = useState(false);
 
     const addBagItem = (product, size) => {
         const sku = `${product.id}${size}`
@@ -52,6 +52,8 @@ export const CartProvider = ({ children }) => {
                 addBagItem,
                 bagItemsCount,
                 updateItemsCount,
+                bagDisplay, 
+                setBagDisplay
             }}
         >
             {children}
