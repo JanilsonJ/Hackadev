@@ -40,7 +40,7 @@ const products = [
         ],
         regular_price: 77.90,
         actual_price: 77.90,
-        porcent_discount: 50
+        porcent_discount: 0
 
     },
     {
