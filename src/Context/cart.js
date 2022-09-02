@@ -40,7 +40,10 @@ export const CartProvider = ({ children }) => {
     const onRemove = (product) => {
         const Exist = bagItems.find((x) => x.sku === product.sku);
         if (Exist.quantity === 1) {
-            setBagItems(bagItems.filter((p) => p !== product));
+            if(window.confirm("Deseja retirar o produto da sacola?"))
+                setBagItems(bagItems.filter((p) => p !== product))
+            else
+                return
         } else {
             const newBagItems = bagItems.map((x) =>
                 x.sku === product.sku
