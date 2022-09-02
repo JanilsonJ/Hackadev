@@ -35,8 +35,9 @@
 }
 
 .navbar h2 {
-    font-size: 20px;
-    margin-left: 50px;
+    font-size: clamp(16px, 1vw + 2px, 20px);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* BUTTONS */
