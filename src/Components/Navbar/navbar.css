@@ -7,13 +7,13 @@
     font-family: Kumbh Sans;
     font: 12px;
 
-    padding: 0px 1em;
     box-sizing: border-box;
     box-shadow: 0px 0 6px #000;
     
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /* LOGO */
@@ -146,6 +146,38 @@
     color: var(--MetallicRed);
 }
 
+/* PAGES NAVIGATION */
+
+.navbar .navbar__pages {
+    width: 100vw;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background-color: var(--HeavyMetal);
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.navbar .navbar__pages .navbar__pages__link{
+    font-size: clamp(10px, 1vw + 5px, 16px);
+    font-weight: 500;
+    color: #f7f7f7;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+.navbar .navbar__pages .navbar__pages__link:hover{
+    color: var(--MetallicRed);
+}
+
 /* RESPONSIVIDADE */
 
 @media all and (max-width: 500px){
@@ -164,6 +196,10 @@
         width: 100%;
         margin-bottom: 15px;
         box-sizing: border-box;
+    }
+
+    .navbar .navbar__pages {
+        order: 3;
     }
 
     .navbar .navbar__button__icon {
