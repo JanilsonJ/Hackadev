@@ -9,7 +9,7 @@ const products = [
             back: imgPath + "Produto01_verso.webp"
         },
         type: 'Blusa',
-        keywords: ['Blusa', 'Verde', 'Simples', 'Desconto', 'Promoção'],
+        keywords: ['Blusa', 'Verde', 'Simples', 'Desconto', 'Promoção', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -20,7 +20,6 @@ const products = [
         regular_price: 59.90,
         actual_price: 53.90,
         porcent_discount: 10
-
     },
     {
         id: 2,
@@ -30,7 +29,7 @@ const products = [
             back: imgPath + "Produto02_verso.webp"
         },
         type: 'Camiseta',
-        keywords: ['Camiseta', 'Gola Redonda', 'Verde', 'Desconto', 'Promoção'],
+        keywords: ['Camiseta', 'Gola Redonda', 'Verde', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -41,7 +40,6 @@ const products = [
         regular_price: 77.90,
         actual_price: 77.90,
         porcent_discount: 0
-
     },
     {
         id: 3,
@@ -51,7 +49,7 @@ const products = [
             back: imgPath + "Produto03_verso.webp"
         },
         type: 'Conjunto',
-        keywords: ['Terno', 'Blazer', 'Azul Marinho', 'Conjunto'],
+        keywords: ['Terno', 'Blazer', 'Azul Marinho', 'Conjunto', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -71,7 +69,7 @@ const products = [
             back: imgPath + "Produto04_verso.webp"
         },
         type: 'Camiseta',
-        keywords: ['Camiseta', 'Plantas', 'Verde'],
+        keywords: ['Camiseta', 'Plantas', 'Verde', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -85,13 +83,13 @@ const products = [
     },
     {
         id: 5,
-        name: "Camisa Listrada Formal - Masculina",
+        name: "Camisa Listrada Formal",
         img: {
             front: imgPath + "Produto05_frente.webp",
             back: imgPath + "Produto05_verso.webp"
         },
         type: 'camisa',
-        keywords: ['Camisa', 'Listrada', 'Branca'],
+        keywords: ['Camisa', 'Listrada', 'Branca', 'Masculino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: true, size: 'P'},
@@ -111,7 +109,7 @@ const products = [
             back: imgPath + "Produto06_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Verde', 'Capuz', 'Bolso', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Verde', 'Capuz', 'Bolso', 'Desconto', 'Promoção', 'Masculino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: false, size: 'P'},
@@ -132,7 +130,7 @@ const products = [
             back: imgPath + "Produto16_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Marrom', 'Capuz', 'Bolso', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Marrom', 'Capuz', 'Bolso', 'Desconto', 'Promoção', 'Masculino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: false, size: 'P'},
@@ -143,7 +141,6 @@ const products = [
         regular_price: 77.90,
         actual_price: 70.11,
         porcent_discount: 10
-
     },
     {
         id: 7,
@@ -153,7 +150,7 @@ const products = [
             back: imgPath + "Produto07_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Preta', 'Preto', 'Emoji', 'Capuz', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Preta', 'Preto', 'Emoji', 'Capuz', 'Desconto', 'Promoção', 'Masculino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: true, size: 'P'},
@@ -165,7 +162,6 @@ const products = [
         regular_price: 119.90,
         actual_price: 83.93,
         porcent_discount: 30
-
     },
     {
         id: 8,
@@ -175,7 +171,7 @@ const products = [
             back: imgPath + "Produto08_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Azul', 'Halloween', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Azul', 'Halloween', 'Desconto', 'Promoção', 'Feminino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: true, size: 'P'},
@@ -187,7 +183,6 @@ const products = [
         regular_price: 59.95,
         actual_price: 59.95,
         porcent_discount: 35
-
     },
     {
         id: 9,
@@ -197,7 +192,7 @@ const products = [
             back: imgPath + "Produto09_verso.webp"
         },
         type: 'Blusa',
-        keywords: ['Blusa', 'Branco', 'Branca'],
+        keywords: ['Blusa', 'Branco', 'Branca', 'Feminino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: true, size: 'P'},
@@ -217,7 +212,7 @@ const products = [
             back: imgPath + "Produto10_verso.webp"
         },
         type: 'Vestido',
-        keywords: ['Vestido', 'Branca', 'Branco', 'Florais', 'Regata'],
+        keywords: ['Vestido', 'Branca', 'Branco', 'Florais', 'Regata', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -228,7 +223,6 @@ const products = [
         regular_price: 75.90,
         actual_price: 75.90,
         porcent_discount: 0
-
     },
     {
         id: 11,
@@ -238,7 +232,7 @@ const products = [
             back: imgPath + "Produto11_verso.webp"
         },
         type: 'Camisa',
-        keywords: ['Camisa', 'Botões', 'Espaço', 'Manga Curta'],
+        keywords: ['Camisa', 'Botões', 'Espaço', 'Manga Curta', 'Masculino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -258,7 +252,7 @@ const products = [
             back: imgPath + "Produto12_verso.webp"
         },
         type: 'Blusa',
-        keywords: ['Blusa', 'Preta', 'Preto', 'Escrita', 'Japão', 'Escritas Japonesas'],
+        keywords: ['Blusa', 'Preta', 'Preto', 'Escrita', 'Japão', 'Escritas Japonesas', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -278,7 +272,7 @@ const products = [
             back: imgPath + "Produto15_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Preta', 'Preto', 'Escrita', 'Japão', 'Escritas Japonesas', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Preta', 'Preto', 'Escrita', 'Japão', 'Escritas Japonesas', 'Desconto', 'Promoção', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -298,7 +292,7 @@ const products = [
             back: imgPath + "Produto13_verso.webp"
         },
         type: 'Vestido',
-        keywords: ['Vestido', 'Floral', 'Preta', 'Preto', 'Regata'],
+        keywords: ['Vestido', 'Floral', 'Preta', 'Preto', 'Regata', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: false, size: 'P'},
@@ -312,13 +306,13 @@ const products = [
     },
     {
         id: 15,
-        name: "Camisa com bolso ",
+        name: "Camisa com bolso",
         img: {
             front: imgPath + "Produto14_frente.webp",
             back: imgPath + "Produto14_verso.webp"
         },
         type: 'Camisa',
-        keywords: ['Camisa', 'Preta', 'Preto', 'Bolso', 'Manga Longa', 'Botão'],
+        keywords: ['Camisa', 'Preta', 'Preto', 'Bolso', 'Manga Longa', 'Botão', 'Masculino', 'Desconto', 'Promoção'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -327,8 +321,8 @@ const products = [
             {available: true, size: 'GG'}
         ],
         regular_price: 105.99,
-        actual_price: 105.99,
-        porcent_discount: 0
+        actual_price: 84.79,
+        porcent_discount: 20
     },
     {
         id: 17,
@@ -338,7 +332,7 @@ const products = [
             back: imgPath + "Produto17_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Preta', 'Preto', 'Cordão', 'Bolso', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Preta', 'Preto', 'Cordão', 'Bolso', 'Desconto', 'Promoção', 'Masculino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: false, size: 'P'},
@@ -358,7 +352,7 @@ const products = [
             back: imgPath + "Produto18_verso.webp"
         },
         type: 'Short',
-        keywords: ['Short Jeans', 'Jens', 'Azul', 'Short Jeans', 'Bolso', 'Short'],
+        keywords: ['Short Jeans', 'Jens', 'Azul', 'Short Jeans', 'Bolso', 'Short', 'Feminino', 'Desconto', 'Promoção', ],
         sizes: [
             {available: true, size: 'PP'},
             {available: false, size: 'P'},
@@ -367,8 +361,8 @@ const products = [
             {available: true, size: 'GG'}
         ],
         regular_price: 100.90,
-        actual_price: 100.90,
-        porcent_discount: 0
+        actual_price: 80.72,
+        porcent_discount: 20
     },
     {
         id: 19,
@@ -378,7 +372,7 @@ const products = [
             back: imgPath + "Produto19_verso.webp"
         },
         type: 'Moletom',
-        keywords: ['Moletom', 'Colorido', 'Capuz', 'Bolso', 'Desconto', 'Promoção'],
+        keywords: ['Moletom', 'Colorido', 'Capuz', 'Bolso', 'Desconto', 'Promoção', 'Feminino'],
         sizes: [
             {available: false, size: 'PP'},
             {available: false, size: 'P'},
@@ -398,7 +392,7 @@ const products = [
             back: imgPath + "Produto20_verso.webp"
         },
         type: 'Conjunto',
-        keywords: ['Conjunto', 'Camisa', 'Calça', 'Preto', 'Preta', 'Bege', 'Casual'],
+        keywords: ['Conjunto', 'Camisa', 'Calça', 'Preto', 'Preta', 'Bege', 'Casual', 'Masculino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -418,7 +412,7 @@ const products = [
             back: imgPath + "Produto21_verso.webp"
         },
         type: 'Short',
-        keywords: ['Short', 'Branco', 'Bolso', 'Botão'],
+        keywords: ['Short', 'Branco', 'Bolso', 'Botão', 'Feminino'],
         sizes: [
             {available: true, size: 'PP'},
             {available: true, size: 'P'},
@@ -429,6 +423,66 @@ const products = [
         regular_price: 87.99,
         actual_price: 87.99,
         porcent_discount: 0
+    },
+    {
+        id: 22,
+        name: "Camisa Sólido - Verde Militar",
+        img: {
+            front: imgPath + "Produto22_frente.webp",
+            back: imgPath + "Produto22_verso.webp"
+        },
+        type: 'Camisa',
+        keywords: ['Camisa', 'Verde Militar', 'Verde', 'Manga Curta', 'Masculino'],
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: true, size: 'P'},
+            {available: true, size: 'M'},
+            {available: false, size: 'G'},
+            {available: false, size: 'GG'}
+        ],
+        regular_price: 66.95,
+        actual_price: 66.95,
+        porcent_discount: 0
+    },
+    {
+        id: 23,
+        name: "Camiseta - Bordado de chifre",
+        img: {
+            front: imgPath + "Produto23_frente.webp",
+            back: imgPath + "Produto23_verso.webp"
+        },
+        type: 'Camiseta',
+        keywords: ['Camiseta', 'Colorido', 'Manga Curta', 'Masculino'],
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: true, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: true, size: 'GG'}
+        ],
+        regular_price: 56.99,
+        actual_price: 56.99,
+        porcent_discount: 0
+    },
+    {
+        id: 24,
+        name: "Camiseta Carta Gráfica - California",
+        img: {
+            front: imgPath + "Produto24_frente.webp",
+            back: imgPath + "Produto24_verso.webp"
+        },
+        type: 'Camiseta',
+        keywords: ['Camiseta', 'Branco', 'Branca', 'Manga Curta', 'Feminino', 'Desconto', 'Promoção', ],
+        sizes: [
+            {available: true, size: 'PP'},
+            {available: false, size: 'P'},
+            {available: true, size: 'M'},
+            {available: true, size: 'G'},
+            {available: true, size: 'GG'}
+        ],
+        regular_price: 44.99,
+        actual_price: 40.49,
+        porcent_discount: 10
     }
    
 ]
