@@ -33,7 +33,7 @@ const Navbar = () => {
     const { pathname } = useLocation();
     if (pathname === "/login" || pathname === "/checkout") {
         return (
-            <header className='navbar' style={{justifyContent: 'center'}}>
+            <header className='navbar' style={{justifyContent: 'space-evenly'}}>
                 <NavLink to="/home"  className='navbar__logo'>
                     <img src="/assets/Logos/Logo_Black_Transparencia.png" alt="IMA logo" />
                 </NavLink >
