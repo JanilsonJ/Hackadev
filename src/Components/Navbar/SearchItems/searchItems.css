@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   transition: 1s;
+  margin: 0 1em;
 }
 
 .navbar_search .search_form {

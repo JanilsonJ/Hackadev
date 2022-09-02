@@ -24,7 +24,7 @@ const Formulario = () => {
                     <CampoTexto label="CPF" placeholder="000.000.000-00" defaultValue={user.cpf}/>
                     <CampoTexto id="data__nasc" label="Data de Nascimento" placeholder="DD/MM/AAAA" type="date" defaultValue={user.dataNascimento} />
                     <CampoTexto label="Email" placeholder="Digite seu Email" defaultValue={user.email}/>
-                    <CampoTexto label="Senha" placeholder="Digite sua Senha" defaultValue={user.senha}/>
+                    <CampoTexto label="Senha" placeholder="Digite sua Senha" type="password" defaultValue={user.senha}/>
                     <CampoTexto label="Celular" placeholder="Digite o numero do celular" defaultValue={user.tel}/>
                 </form>
 

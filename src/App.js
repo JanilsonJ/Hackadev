@@ -27,6 +27,8 @@ function App() {
             <Route exact path="/account" element={<Account />} />
             <Route exact path="/checkout" element={<Checkout />} />
 
+            <Route exact path="/home/:filter" element={<Home />} />
+
             {/*Redireciona para Home se a página não existir*/}
             <Route exact path="*" element={<Home />} />
           </Routes>

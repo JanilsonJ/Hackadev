@@ -58,7 +58,7 @@
 }
 
 .footer .footer__team {
-    width: 50%;
+    width: 40%;
     height: 100%;
 
     display: flex;
@@ -90,7 +90,7 @@
 
 /* PARTNERS */
 .footer .footer__partners {
-    width: 50%;
+    width: 60%;
     height: 100%;
 
     align-self: stretch;
@@ -133,7 +133,7 @@
 /* SOCIAL */
 
 .footer .footer_social-links {
-    width: 50%;
+    width: 40%;
     height: 100%;
     
     box-sizing: border-box;

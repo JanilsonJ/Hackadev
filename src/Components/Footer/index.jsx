@@ -51,7 +51,6 @@ const Footer = () => {
                         <a href="https://github.com/allagyn" target="_blank" rel="noreferrer">André Lima</a>
                         <a href="https://github.com/ArturDiego" target="_blank" rel="noreferrer">Artur Diego</a>
                         <a href="https://github.com/ezcmacedo" target="_blank" rel="noreferrer">Enzo Macedo</a>
-                        <a href="https://github.com/estevaosampaio" target="_blank" rel="noreferrer">Estevão Sampaio</a>
                         <a href="https://github.com/Fabioazevedojr" target="_blank" rel="noreferrer">Fábio Junior</a>
                         <a href="https://github.com/JanilsonJ" target="_blank" rel="noreferrer">Janilson Junior</a>
                         <a href="https://github.com/mateus-asouza" target="_blank" rel="noreferrer">Mateus Alves</a>
