@@ -1,11 +1,21 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [bagItems, setBagItems] = useState([]);
-    const [bagItemsCount, updateItemsCount] = useState(null);
+    const [bagItems, setBagItems] = useState(JSON.parse(window.localStorage.getItem('bagItemsStorage')) || []);
+    const [bagItemsCount, updateItemsCount] = useState(window.localStorage.getItem('bagItemsCountStorage') || null );
     const [bagDisplay, setBagDisplay] = useState(false);
 
+    useEffect(() => {
+        setBagItems(JSON.parse(window.localStorage.getItem('bagItemsStorage')))
+        updateItemsCount(JSON.parse(window.localStorage.getItem('bagItemsCountStorage')))
+    }, []);
+    
+    useEffect(() => {
+        window.localStorage.setItem('bagItemsStorage', JSON.stringify(bagItems));
+        window.localStorage.setItem('bagItemsCountStorage', bagItemsCount);
+    }, [bagItems, bagItemsCount]);
+    
     const addBagItem = (product, size) => {
         const sku = `${product.id}${size}`
         const bagProduct = Object.assign({}, product);
