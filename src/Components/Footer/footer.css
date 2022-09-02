@@ -18,6 +18,30 @@
     flex-wrap: wrap;
 }
 
+.footer__arrow-up {
+    position: sticky;
+    
+    width: fit-content;
+    bottom: 40px;
+    left: calc(100vw - 80px);
+    z-index: 20;
+
+    font-size: 40px;
+    line-height: 0;
+    color: var(--HeavyMetal);
+    border-radius: 7px;
+    background-color: #ffff;
+    box-shadow: 2px 2px 6px #000;
+    
+    cursor: pointer;
+    transition: 1.2s;
+    transform: translateY(-20px);
+}
+
+.footer__arrow-up:hover {
+    transform: translateY(-40px);
+}
+
 .footer hr {
     margin: 2em 0;
     width: 100%;
@@ -230,6 +254,11 @@
     .footer__email label {
         width: 100%;
         flex-grow: 1;
+    }
+
+    .footer__arrow-up {
+        font-size: 30px;
+        left: calc(100vw - 40px);
     }
 }
 
