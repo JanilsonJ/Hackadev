@@ -17,11 +17,10 @@ export const CartProvider = ({ children }) => {
     }, [bagItems, bagItemsCount]);
     
     const addBagItem = (product, size) => {
-        const sku = `${product.id}${size}`
-        const bagProduct = Object.assign({}, product);
-        bagProduct.sku = sku;
-        
-        const Exist = bagItems.find((x) => x.sku === bagProduct.sku);
+        // Pega os valores de sku e size do produto caso o size não seja enviado 
+        const addProduct = { ...product, ...size} 
+
+        const Exist = bagItems.find((x) => x.sku === addProduct.sku);
         if (Exist) {
             const newBagItems = bagItems.map((x) =>
                 x.sku === Exist.sku
@@ -30,9 +29,7 @@ export const CartProvider = ({ children }) => {
             );
             setBagItems(newBagItems);
         } else {
-            bagProduct.productSize = size
-            const newBagItems = [...bagItems, { ...bagProduct, quantity: +1 }];
-            setBagItems(newBagItems);
+            setBagItems([...bagItems, { ...addProduct, quantity: +1 }]);
         }
         updateItemsCount(bagItemsCount + 1);
     };
@@ -56,6 +53,12 @@ export const CartProvider = ({ children }) => {
         if (bagItemsCount === 1) updateItemsCount(null);
     };
 
+    const emptyBagItems = async () => {
+        updateItemsCount(null);
+        setBagItems([]);
+        setBagDisplay(false);
+    }
+
     return (
         <CartContext.Provider
             value={{
@@ -66,7 +69,8 @@ export const CartProvider = ({ children }) => {
                 bagItemsCount,
                 updateItemsCount,
                 bagDisplay, 
-                setBagDisplay
+                setBagDisplay,
+                emptyBagItems
             }}
         >
             {children}
