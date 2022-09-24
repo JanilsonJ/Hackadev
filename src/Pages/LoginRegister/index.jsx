@@ -1,15 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import Register from './Register';
 import Login from './Login';
 
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../Context/user';
+
 import './loginRegister.css';
 
 const LoginRegister = () => {
+    const navigate = useNavigate();
+    
     const [loginComponent, setloginComponent] = useState(true);
 
+    const { isLoggedIn } = useContext(UserContext);
     useEffect(() => {
-        document.title = `IMA - ${loginComponent ? 'Logar' : 'Cadastrar'} `;
+        document.title = `IMA - ${loginComponent ? 'Logar' : 'Cadastrar'}`;
+        
+        if (isLoggedIn)
+            navigate('/account');
     });
 
     return (
