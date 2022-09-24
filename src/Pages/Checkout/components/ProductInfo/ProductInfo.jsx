@@ -9,14 +9,14 @@ const ProductInfo = (props) => {
   return (
     <div className="productinfo-main-container">
       {bagItems.map((product, i) => {
-        console.log(bagItems);
-        console.log(product);
+        // console.log(bagItems);
+        // console.log(product);
         return (
           <ItemAndValue key={i} class="line-botton-container-product-info">
             <div className="container">
               <div className="container_car-item-description">
                 <div className="container_car-item-description_product-image">
-                  <img src={product.img.front} alt={product.name} />
+                  <img src={product.image1} alt={product.name} />
                 </div>
                 <div>
                   <p>{product.name}</p>

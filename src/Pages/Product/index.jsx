@@ -1,20 +1,22 @@
 import { useContext, useEffect, useState } from 'react'
-import { CartContext } from '../../Context/cart'
-import './product.css'
-import ProductList from '../../data/products'
 import { useParams } from 'react-router-dom'
+
+import { CartContext } from '../../Context/cart'
+
 import Button from '../../Components/Button'
+import useFetch from '../../hooks/useFetch'
+
+import './product.css'
 
 const Product = () => {
-  const { id } = useParams()
-  const product = ProductList.find(p => p.id === parseInt(id))
-
-  const [mainImage, setMainImage] = useState(product.img.front)
-
   const { addBagItem } = useContext(CartContext)
+  
+  const { id } = useParams()
+  const { data: product, isFetching: loadProduct } = useFetch(`produto/${id}`) // Pegando produto na API por id
+  const { data: sizes, isFetching: loadSizes } = useFetch(`produto/sizes/${id}`) // Pegando tamanhos disponiveis do produto pela API por id
 
+  const [mainImage, setMainImage] = useState(product?.image1)
   const [size, setSize] = useState(null)
-
   const [sizeAlert, setSizeAlert] = useState(false)
 
   const shakeButtonSizes = () => {
@@ -36,14 +38,17 @@ const Product = () => {
   }
 
   useEffect(() => {
-    document.title = `IMA - ${product.name}`
+    document.title = `IMA - ${product?.name}`
 
+    //Subindo a página no inicio da ao entrar nela;
     window.scrollTo({ top: 0, behavior: 'smooth' })
+
     // Reiniciando o componente
-    setMainImage(product.img.front)
+    setMainImage(product?.image1)
     setSizeAlert(false)
     setSize(null)
 
+    //Reiniciando dados
     document
       .getElementsByClassName('buttonActive')[0]
       ?.classList.remove('buttonActive')
@@ -63,11 +68,11 @@ const Product = () => {
   }
 
   const sizeButtons = () => {
-    return product.sizes.map(s => {
+    return loadSizes ? 'Carregando...' : sizes?.map(s => {
       return s.available ? (
         <button
           className="button__product-size"
-          onClick={e => buttonSelected(e, s.size)}
+          onClick={e => buttonSelected(e, s)}
           key={s.size}
         >
           {s.size}
@@ -88,7 +93,7 @@ const Product = () => {
   }
 
   return (
-    <>
+    <> {loadProduct ? 'Caregando...' : 
       <div className="container--product">
         <div className="products--images">
           <div className="main--product--image">
@@ -98,16 +103,16 @@ const Product = () => {
             <div className="image--product--preview">
               <img
                 onClick={() => {
-                  setMainImage(product.img.front)
+                  setMainImage(product.image1)
                 }}
-                src={product.img.front}
+                src={product.image1}
                 alt={product.name}
               />
               <img
                 onClick={() => {
-                  setMainImage(product.img.back)
+                  setMainImage(product.image2)
                 }}
-                src={product.img.back}
+                src={product.image2}
                 alt={product.name}
               />
             </div>
@@ -159,7 +164,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-    </>
+    } </>
   )
 }
 
