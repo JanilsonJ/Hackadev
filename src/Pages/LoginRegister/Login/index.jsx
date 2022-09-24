@@ -1,40 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {useNavigate} from "react-router-dom"
 
 import Button from "../../../Components/Button";
 
 import { UserContext } from "../../../Context/user";
+import useFetch from "../../../hooks/useFetch";
 
 import "./login.css"
 
 const Login = () => {
     const navigate = useNavigate();
     
-    const { setLoggedIn } = useContext(UserContext);
+    const [body, setBody] = useState({});
 
-    const login = (e) => {
+    const { setLoggedIn, setUserData } = useContext(UserContext);
+
+    const { data } = useFetch('customer_validate', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        })
+    })
+
+    const validateLogin = (e) => {
         e.preventDefault();
 
-        setLoggedIn(true)
-
-        navigate("/home");
+        if (data) {
+            setLoggedIn(true);
+            setUserData(data);
+            navigate("/home");
+        }
     }
 
     return (
-        <form onSubmit={login} className='form'>
+        <form onSubmit={validateLogin} className='form'>
             <div className="title">
                 <h1>Entrar na IMA</h1>
             </div>
 
             <div className="input-box">
                 <label>
-                    <input type="text" name="email" placeholder='E-mail' required/>
+                    <input onChange={(e) => setBody({email: e.target.value, password: body?.password})} type="text" name="email" placeholder='E-mail' required/>
                 </label>
             </div>   
 
             <div className="input-box">
                 <label>
-                    <input type="password" name="senha" placeholder='Senha' required/>
+                    <input onChange={(e) => setBody({email: body?.email, password: e.target.value})}  type="password" name="senha" placeholder='Senha' required/>
                 </label>
             </div>    
 

@@ -4,49 +4,31 @@ export const UserContext = createContext();
 
 export const UserProvider = ({children}) => {
     const [isLoggedIn, setLoggedIn] = useState(false);
-    
-    const [user, setUser] = useState({
-        nome: '',
-        cpf: '',
-        dataNascimento: '',
-        email: '',
-        senha: '',
-        tel: ''
-    })
 
-    const [address, setAddress] = useState({
-        cep: '',
-        endereço: '',
-        complemento: '',
-        bairro: '',
-        cidade: '',
-    })
-
-    const [payment, setPayment] = useState({
-        numero: '',
-        nome: '',
-        dataExpiracao: '',
-        cvv: ''
-    })
+    const [user, setUser] = useState(JSON.parse(window.localStorage.getItem('userData')) || {})
 
     useEffect(() => {
-        // console.log(user)s
-    }, [user]) // synchronous states
+        if (user.id)
+            setLoggedIn(true)
+    }, [user]) 
 
-    const updateUserData = (elements) => {
-        elements.map(e => {
-            if (e.tagName === "INPUT"){
-                setUser(prev => ({...prev, [e.name]: e.value}))
-                setAddress(prev => ({...prev, [e.name]: e.value}))
-                setPayment(prev => ({...prev, [e.name]: e.value}))
-            }
+    const setUserData = (data) => {
+        data.birth = data?.birth.split('T')[0]; //Corrigindo formato da data;
+        data.expiry = data?.expiry.split('T')[0]; //Corrigindo formato da data;
+        
+        setUser(data)
 
-            return null
-        })
+        window.localStorage.setItem('userData', JSON.stringify(data)); //Armazenando dados localmente;
+    }
+
+    const logoutUser = (data) => {
+        window.localStorage.setItem('userData', JSON.stringify({})); //Remove dados localmente;
+
+        setLoggedIn(false);
     }
 
     return (
-        <UserContext.Provider value={{isLoggedIn, setLoggedIn, updateUserData, user, payment, address}}>
+        <UserContext.Provider value={{isLoggedIn, setLoggedIn, setUserData, user , logoutUser}}>
             { children }
         </UserContext.Provider>
     )
