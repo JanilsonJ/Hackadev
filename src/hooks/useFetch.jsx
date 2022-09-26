@@ -6,7 +6,8 @@ export default function useFetch(url, options = null) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/${url}`, options)
+        //fetch(`http://localhost:8080/${url}`, options)
+        fetch(`https://rest-api-hackadev.herokuapp.com/${url}`, options)
         .then((response) => response.json())
         .then((data) => {
             setData(data);
