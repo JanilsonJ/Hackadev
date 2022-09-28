@@ -9,7 +9,7 @@ const PaymentsMethod = (props) => {
 
   const handleSelectPaymentMethod = (e) => {
     option = e.target.id;
-    console.log(option);
+    // console.log(option);
     document.getElementById("credito-block").style.display = "none";
     document.getElementById("boleto-block").style.display = "none";
     document.getElementById("pix-block").style.display = "none";
