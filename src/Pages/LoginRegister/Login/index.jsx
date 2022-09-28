@@ -12,10 +12,11 @@ const Login = () => {
     const navigate = useNavigate();
     
     const [body, setBody] = useState({});
+    const [buttonStyle, setButtonStyle] = useState();
 
     const { setLoggedIn, setUserData } = useContext(UserContext);
 
-    const { data } = useFetch('customer_validate', {
+    const { data: existUser } = useFetch('customer_validate', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: new Headers({
@@ -27,10 +28,13 @@ const Login = () => {
     const validateLogin = (e) => {
         e.preventDefault();
 
-        if (data) {
+        if (existUser) {
             setLoggedIn(true);
-            setUserData(data);
+            setUserData(existUser);
             navigate("/home");
+        } else {
+            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"})
+            setTimeout(() => {setButtonStyle()}, 1500)
         }
     }
 
@@ -42,18 +46,18 @@ const Login = () => {
 
             <div className="input-box">
                 <label>
-                    <input onChange={(e) => setBody({email: e.target.value, password: body?.password})} type="text" name="email" placeholder='E-mail' required/>
+                    <input onKeyUp={(e) => setBody({email: e.target.value, password: body?.password})} type="text" name="email" placeholder='E-mail' required/>
                 </label>
             </div>   
 
             <div className="input-box">
                 <label>
-                    <input onChange={(e) => setBody({email: body?.email, password: e.target.value})}  type="password" name="senha" placeholder='Senha' required/>
+                    <input onKeyUp={(e) => setBody({email: body?.email, password: e.target.value})}  type="password" name="senha" placeholder='Senha' required/>
                 </label>
             </div>    
 
             <div className="login-button">
-                <Button type="submit">Logar</Button>
+                <Button type="submit" styles={buttonStyle}>Logar</Button>
             </div>
 
         </form>      
