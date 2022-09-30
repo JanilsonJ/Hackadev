@@ -48,7 +48,7 @@ const Checkout = () => {
       })
     };
     
-    await fetch(`${process.env.REACT_APP_API_URL}${url}`, requestOptions)
+    await fetch(`${process.env.REACT_APP_API_URL.replaceAll('"', '')}${url}`, requestOptions)
     .then(data => {/*console.log(data)*/}).catch(err => {console.log(err)});
   }
 
@@ -72,7 +72,7 @@ const Checkout = () => {
       order_address: `${user.address}, ${user.complement}, ${user.district}, ${user.city}, ${user.state}`
     }
 
-    postRequest('order_details', order_details)
+    await postRequest('order_details', order_details)
 
     setTimeout(() => {
       const order_items = bagItems.map(i => {return {
@@ -87,8 +87,8 @@ const Checkout = () => {
       })
     }, 1500); //Temporizador necessario para adicionar os items apos a tabela order_details
 
-    await emptyBagItems();
-    navigate('/home');
+    // await emptyBagItems();
+    // navigate('/home');
   }
 
   return (
