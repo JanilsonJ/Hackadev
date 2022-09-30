@@ -47,12 +47,16 @@ const Checkout = () => {
         'Accept': 'application/json'
       })
     };
-    
+
     await fetch(`${process.env.REACT_APP_API_URL.replaceAll('"', '')}${url}`, requestOptions)
     .then(data => {/*console.log(data)*/}).catch(err => {console.log(err)});
   }
 
   const finishPurchase = async () => {
+    if (!user.address){
+      window.alert('POR FAVOR! Selecione um endereço.')
+      return;
+    }
     if (!freteIsSelected){
       window.alert('POR FAVOR! Selecione o modo de entrega.')
       return;
@@ -87,8 +91,8 @@ const Checkout = () => {
       })
     }, 1500); //Temporizador necessario para adicionar os items apos a tabela order_details
 
-    // await emptyBagItems();
-    // navigate('/home');
+    await emptyBagItems();
+    navigate('/home');
   }
 
   return (
@@ -104,7 +108,7 @@ const Checkout = () => {
                   <b>RESIDENCIAL</b>
                 </p>
                 <p className="main-container_session-container_label-subtitle">
-                  {`${user.address}, ${user.complement}, ${user.district}, ${user.city}, ${user.state}`}
+                  {user.address ? `${user.address}, ${user.complement}, ${user.district}, ${user.city}, ${user.state}` : 'Nenhum endereço encontrado'}
                 </p>
               </div>
             </div>
