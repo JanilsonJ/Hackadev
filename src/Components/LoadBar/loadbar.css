@@ -1,0 +1,20 @@
+.loadbar {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.loadbar__title {
+    text-align: center;
+
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.loadbar__gif {
+    text-align: center;
+}

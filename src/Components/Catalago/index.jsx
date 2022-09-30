@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import Produto from './Produtos/produto'
 import useFetch from '../../hooks/useFetch'
 
+import LoadBar from '../LoadBar'
+
 import './catalago.css'
 
 const Catalago = () => {
@@ -13,7 +15,7 @@ const Catalago = () => {
 
   return (
     <section className="catalago">
-      {loadProducts ? 'Caregando...' : products?.map(product => {
+      {loadProducts ? <LoadBar title='Carregando Produtos...' /> : products?.map(product => {
         return <Produto key={product.id} product={product} />
       })}
     </section>

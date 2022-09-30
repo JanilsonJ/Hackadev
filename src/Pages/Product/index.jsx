@@ -7,6 +7,7 @@ import Button from '../../Components/Button'
 import useFetch from '../../hooks/useFetch'
 
 import './product.css'
+import LoadBar from '../../Components/LoadBar'
 
 const Product = () => {
   const { addBagItem } = useContext(CartContext)
@@ -68,7 +69,7 @@ const Product = () => {
   }
 
   const sizeButtons = () => {
-    return loadSizes ? 'Carregando...' : sizes?.map(s => {
+    return loadSizes ?  <LoadBar styles={{width: '75px'}}/> : sizes?.map(s => {
       return s.available ? (
         <button
           className="button__product-size"
@@ -93,7 +94,7 @@ const Product = () => {
   }
 
   return (
-    <> {loadProduct ? 'Caregando...' : 
+    <> {loadProduct ? <LoadBar title='Carregando Produto...' />  : 
       <div className="container--product">
         <div className="products--images">
           <div className="main--product--image">
