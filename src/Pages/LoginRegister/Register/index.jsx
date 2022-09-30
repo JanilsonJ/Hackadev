@@ -79,7 +79,7 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
-                    <input type="date" name="birth" placeholder='Data de Nascimento' onKeyUp={(e) => setBirth(e.target.value)} required/>
+                    <input type="date" name="birth" placeholder='Data de Nascimento' onChange={(e) => setBirth(e.target.value)} required/>
                 </label>
             </div> 
 
