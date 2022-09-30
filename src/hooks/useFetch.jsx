@@ -2,13 +2,37 @@ import { useEffect, useState } from "react";
 
 export default function useFetch(path, options = null) {
     const [data, setData] = useState(null);
-    const [isFetching, setIsFetching] = useState(true);
     const [error, setError] = useState(null);
+    const [isFetching, setIsFetching] = useState(true);
 
     useEffect(() => {
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + path;
 
+        if (data != null)
+            setData(null);
+
         fetch(api, options)
+        .then((response) => response.json())
+        .then((data) => {
+            setData(data);
+        })
+        .catch((err) => {
+            // setData(null)
+            setError(err);
+        })
+        .finally(() => {
+            setIsFetching(false)
+        });
+    }, [path, options]);
+
+    const refetch = async () => {
+        setData(null);
+        setError(null);
+        setIsFetching(true);
+
+        const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + path;
+
+        await fetch(api, options)
         .then((response) => response.json())
         .then((data) => {
             setData(data);
@@ -19,7 +43,7 @@ export default function useFetch(path, options = null) {
         .finally(() => {
             setIsFetching(false)
         });
-    }, [path, options]);
+    }
 
-    return { data, error, isFetching };
+    return { data, error, isFetching, refetch };
 }
