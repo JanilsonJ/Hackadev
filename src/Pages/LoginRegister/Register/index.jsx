@@ -38,8 +38,8 @@ const Register = (props) => {
         };
         
         if (password === passwordConfirm && cpfExists === null){
-            // setUserData(data);
-            // props.setloginComponent(true);
+            setUserData(data);
+            props.setloginComponent(true);
         }else {
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
