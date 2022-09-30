@@ -1,50 +1,74 @@
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../../Components/Button";
-import { UserContext } from "../../../Context/user";
 
 import useFetch from "../../../hooks/useFetch";
 
 import "./register.css"
 
 const Register = (props) => {
-    const { setUserData } = useContext(UserContext);
-
     const [buttonStyle, setButtonStyle] = useState();
 
-    const [name, setName] = useState();
-    const [cpf, setCpf] = useState();
-    const [birth, setBirth] = useState();
-    const [email, setEmail] = useState();
-    const [tel, setTel] = useState();
-    const [password, setPassword] = useState();
-    const [passwordConfirm, setPasswordConfirm] = useState();
+    const [name, setName] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [birth, setBirth] = useState('');
+    const [email, setEmail] = useState('');
+    const [tel, setTel] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
 
     const [wrongEntry, setWrongEntry] = useState(false);
     
-    const { data: cpfExists, isFetching: searchCpf } = useFetch(`customer_cpf/${cpf}`)
+    const { data: cpfExists, isFetching: searchCpf } = useFetch(cpf ? `customer_cpf/${cpf}` : null);
+    const { data: emailExists, isFetching: searchEmail } = useFetch(email ? `customer_email/${email}` : null);
 
-    const cadastro = (e) => {
+    const [registerData, setRegisterData] = useState();
+
+    const postNewUser = async () => {
+        const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer';
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(registerData),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            })
+        }
+
+        await fetch(api, options)
+        .then(() => {
+            props.setloginComponent(true);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    useEffect(() => {
+        setWrongEntry(false);
+    }, [email, password]);
+
+    const cadastro = async (e) => {
         e.preventDefault();
 
         setWrongEntry(false);
 
-        const data = {
+        setRegisterData({
             name: name,
             cpf: cpf,
             birth: birth,
             email: email,
             tel: tel,
             password: password
-        };
+        });
         
-        if (password === passwordConfirm && cpfExists === null){
-            setUserData(data);
-            props.setloginComponent(true);
-        }else {
+        if (password !== passwordConfirm || cpfExists !== null || emailExists !== null ){
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
             setWrongEntry(true);
-        }
+        } else {
+            postNewUser();
+        };
     }
 
     const cpfMask = (value) => {
@@ -73,7 +97,7 @@ const Register = (props) => {
             <div className="input-box">
                 <label>
                     <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(cpfExists && wrongEntry) ? 'CPF já cadastrado no sistema!' : null}</p>
-                    <input type="text" maxLength='14' name="cpf" placeholder='CPF' value={cpf || ''} onChange={(e) => cpfMask(e.target.value)} required/>
+                    <input type="text" maxLength='14' name="cpf" placeholder='CPF' value={cpf} onChange={(e) => cpfMask(e.target.value)} required/>
                 </label>
             </div>  
 
@@ -85,6 +109,7 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
+                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(emailExists && wrongEntry) ? 'E-mail já cadastrado no sistema!' : null}</p>
                     <input type="email" name="email" placeholder='E-mail' onKeyUp={(e) => setEmail(e.target.value)} required/>
                 </label>
             </div>   
@@ -109,7 +134,7 @@ const Register = (props) => {
             </div>
 
             <div className="login-button">
-                <Button type="submit" styles={buttonStyle}>{searchCpf ? 'Verificando...' : 'Cadastre-se'}</Button>
+                <Button type="submit" styles={buttonStyle}>{searchCpf || searchEmail ? 'Verificando...' : 'Cadastre-se'}</Button>
             </div>
 
         </form>      

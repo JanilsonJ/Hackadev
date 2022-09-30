@@ -13,9 +13,6 @@ export const UserProvider = ({children}) => {
     }, [user]) 
 
     const setUserData = (data) => {
-        data.birth = data?.birth.split('T')[0]; //Corrigindo formato da data;
-        data.expiry = data?.expiry.split('T')[0]; //Corrigindo formato da data;
-        
         setUser(data)
 
         window.localStorage.setItem('userData', JSON.stringify(data)); //Armazenando dados localmente;

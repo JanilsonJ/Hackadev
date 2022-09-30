@@ -6,10 +6,12 @@ export default function useFetch(path, options = null) {
     const [isFetching, setIsFetching] = useState(true);
 
     useEffect(() => {
+        if (!path){
+            setIsFetching(false);
+            return
+        }
+        
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + path;
-
-        if (data != null)
-            setData(null);
 
         fetch(api, options)
         .then((response) => response.json())
@@ -17,7 +19,7 @@ export default function useFetch(path, options = null) {
             setData(data);
         })
         .catch((err) => {
-            // setData(null)
+            setData(null);
             setError(err);
         })
         .finally(() => {

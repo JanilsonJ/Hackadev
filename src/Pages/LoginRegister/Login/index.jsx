@@ -11,12 +11,16 @@ import "./login.css"
 const Login = () => {
     const navigate = useNavigate();
     
-    const [body, setBody] = useState({});
-    const [buttonStyle, setButtonStyle] = useState();
-
     const { setLoggedIn, setUserData } = useContext(UserContext);
 
-    const { data: existUser } = useFetch('customer_validate', {
+    const [buttonStyle, setButtonStyle] = useState();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const body = {email: email, password: password};
+
+    const { data: validUser, isFetching: validating } = useFetch('customer_validate', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: new Headers({
@@ -28,13 +32,13 @@ const Login = () => {
     const validateLogin = (e) => {
         e.preventDefault();
 
-        if (existUser) {
+        if (validUser) {
             setLoggedIn(true);
-            setUserData(existUser);
+            setUserData(validUser);
             navigate("/home");
         } else {
-            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"})
-            setTimeout(() => {setButtonStyle()}, 1500)
+            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
+            setTimeout(() => {setButtonStyle()}, 1500);
         }
     }
 
@@ -46,18 +50,18 @@ const Login = () => {
 
             <div className="input-box">
                 <label>
-                    <input onKeyUp={(e) => setBody({email: e.target.value, password: body?.password})} type="text" name="email" placeholder='E-mail' required/>
+                    <input onKeyUp={(e) => setEmail(e.target.value)} type="text" name="email" placeholder='E-mail' required/>
                 </label>
             </div>   
 
             <div className="input-box">
                 <label>
-                    <input onKeyUp={(e) => setBody({email: body?.email, password: e.target.value})}  type="password" name="senha" placeholder='Senha' required/>
+                    <input onKeyUp={(e) => setPassword(e.target.value)}  type="password" name="senha" placeholder='Senha' required/>
                 </label>
             </div>    
 
             <div className="login-button">
-                <Button type="submit" styles={buttonStyle}>Logar</Button>
+                    <Button type="submit" styles={buttonStyle}>{validating ? 'Validando...' : 'Logar'}</Button>
             </div>
 
         </form>      
