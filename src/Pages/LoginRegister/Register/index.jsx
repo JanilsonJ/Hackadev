@@ -21,14 +21,13 @@ const Register = (props) => {
     const { data: cpfExists, isFetching: searchCpf } = useFetch(cpf ? `customer_cpf/${cpf}` : null);
     const { data: emailExists, isFetching: searchEmail } = useFetch(email ? `customer_email/${email}` : null);
 
-    const [registerData, setRegisterData] = useState();
-
-    const postNewUser = async () => {
+    const postNewUser = async (userData) => {
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer';
 
+        console.log(api)
         const options = {
             method: 'POST',
-            body: JSON.stringify(registerData),
+            body: JSON.stringify(userData),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -53,21 +52,21 @@ const Register = (props) => {
 
         setWrongEntry(false);
 
-        setRegisterData({
+        const userData = {
             name: name,
             cpf: cpf,
             birth: birth,
             email: email,
             tel: tel,
             password: password
-        });
+        };
         
         if (password !== passwordConfirm || cpfExists !== null || emailExists !== null ){
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
             setWrongEntry(true);
         } else {
-            postNewUser();
+            postNewUser(userData);
         };
     }
 
