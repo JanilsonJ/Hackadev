@@ -128,7 +128,7 @@ const Formulario = () => {
                     <h3 style={{marginBottom: '15px', textAlign: 'center'}}>Quantidade em estoque para cada tamanho</h3>
                     <CampoTexto name='PP' label="Tamanho: PP" type="number" min="0" required/>
                     <CampoTexto name='P'label="Tamanho: P" type="number" min="0" required/>
-                    <CampoTexto name='M'Vlabel="Tamanho: M" type="number" min="0" required/>
+                    <CampoTexto name='M' label="Tamanho: M" type="number" min="0" required/>
                     <CampoTexto name='G' label="Tamanho: G" type="number" min="0" required/>
                     <CampoTexto name='GG' label="Tamanho: GG" type="number" min="0" required/>
                     
