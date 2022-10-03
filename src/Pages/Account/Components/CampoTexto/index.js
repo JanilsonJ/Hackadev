@@ -13,8 +13,21 @@ const CampoTexto = (props) => {
         // </div>
 
         <div className="input-block">
-            <input type={props.type} name="input-text" id={props.id} required spellCheck="false" defaultValue={props.defaultValue}/>
-                <span className="placeholder"> {props.label} </span>
+            <input 
+                type={props.type} 
+                name={props.name}
+                id={props.id}
+                // placeholder={props.placeholder}
+                required={props.required}
+                spellCheck={props.spellCheck}
+                defaultValue={props.defaultValue}
+                min={props.min}
+                max={props.max}
+                step={props.step}
+                style={props.style}
+            />
+            
+            <span className="placeholder"> {props.label} </span>
         </div>
     )
 }
