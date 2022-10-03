@@ -51,13 +51,11 @@ const Formulario = () => {
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'products_attributes', attributesOptions)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
         })
         .catch(err => {
             console.log(err);
-        });
-
-        console.log(productData);
+        }); 
     }
 
     return (
