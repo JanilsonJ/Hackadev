@@ -13,8 +13,8 @@ const Product = () => {
   const { addBagItem } = useContext(CartContext)
   
   const { id } = useParams()
-  const { data: product, isFetching: loadProduct } = useFetch(`produto/${id}`) // Pegando produto na API por id
-  const { data: sizes, isFetching: loadSizes } = useFetch(`produto/sizes/${id}`) // Pegando tamanhos disponiveis do produto pela API por id
+  const { data: product, isFetching: loadProduct } = useFetch(`products/product/${id}`) // Pegando produto na API por id
+  const { data: sizes, isFetching: loadSizes } = useFetch(`products/sizes/${id}`) // Pegando tamanhos disponiveis do produto pela API por id
 
   const [mainImage, setMainImage] = useState(product?.image1)
   const [size, setSize] = useState(null)
@@ -53,6 +53,7 @@ const Product = () => {
     document
       .getElementsByClassName('buttonActive')[0]
       ?.classList.remove('buttonActive')
+
   }, [product])
 
   const buttonSelected = (e, size) => {

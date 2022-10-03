@@ -9,7 +9,7 @@ import './catalago.css'
 
 const Catalago = () => {
   const { filter } = useParams();
-  const url = filter ? `produtos/produto?filter=${filter}` : `produtos`; // Mudando a URL caso exista o filtro
+  const url = filter ? `products/produto?filter=${filter}` : `products`; // Mudando a URL caso exista o filtro
 
   const { data: products, isFetching: loadProducts } = useFetch(url); // Pegando Produtos na API
 
