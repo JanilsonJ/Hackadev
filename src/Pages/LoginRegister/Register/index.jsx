@@ -24,7 +24,6 @@ const Register = (props) => {
     const postNewUser = async (userData) => {
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer';
 
-        console.log(api)
         const options = {
             method: 'POST',
             body: JSON.stringify(userData),
