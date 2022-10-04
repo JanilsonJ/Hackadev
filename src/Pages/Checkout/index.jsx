@@ -53,10 +53,10 @@ const Checkout = () => {
   }
 
   const finishPurchase = async () => {
-    if (!user.address){
-      window.alert('POR FAVOR! Adicione um endereço.')
-      return;
-    }
+    // if (!user.address){
+    //   window.alert('POR FAVOR! Adicione um endereço.')
+    //   return;
+    // }
     if (!freteIsSelected){
       window.alert('POR FAVOR! Selecione o modo de entrega.')
       return;

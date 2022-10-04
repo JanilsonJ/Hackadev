@@ -2,23 +2,16 @@ import './CampoTexto.css'
 
 const CampoTexto = (props) => {
 
-    // const placeholderModificada = `${props.placeholder}`
-
     return (
-        // <div className="campo-texto">
-        //     <label>
-        //         {props.label}
-        //     </label>
-        //     <input type={props.type} className='placeholder' placeholder={placeholderModificada}/>
-        // </div>
-
         <div className="input-block">
-            <input 
+            <label htmlFor={props.name} > {props.label} </label>
+            <input id={props.name}
                 type={props.type} 
                 name={props.name}
-                id={props.id}
                 // placeholder={props.placeholder}
                 required={props.required}
+                disabled={props.disabled}
+                checked={props.checked}
                 spellCheck={props.spellCheck}
                 defaultValue={props.defaultValue}
                 min={props.min}
@@ -26,8 +19,6 @@ const CampoTexto = (props) => {
                 step={props.step}
                 style={props.style}
             />
-            
-            <span className="placeholder"> {props.label} </span>
         </div>
     )
 }
