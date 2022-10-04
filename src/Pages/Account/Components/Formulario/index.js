@@ -37,7 +37,6 @@ const Formulario = () => {
             console.log(err);
         });
 
-
         const attributesOptions = {
             method: 'POST',
             body: JSON.stringify(productData),
