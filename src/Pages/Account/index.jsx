@@ -39,7 +39,7 @@ const Account = () => {
     return (
         <div className='account'>    
             
-            <h1 className='subtitulo'><hr /><VscAccount/>Minha Conta</h1>
+            <h1 className='subtitulo'><VscAccount/>Minha Conta</h1>
 
             <div className='menu-form'>
                 <div className='left-menu'>

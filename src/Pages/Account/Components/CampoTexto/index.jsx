@@ -8,6 +8,7 @@ const CampoTexto = (props) => {
             <input id={props.name}
                 type={props.type} 
                 name={props.name}
+                maxLength={props.maxlength}
                 // placeholder={props.placeholder}
                 required={props.required}
                 disabled={props.disabled}
