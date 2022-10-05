@@ -13,6 +13,8 @@ export const UserProvider = ({children}) => {
     }, [user]) 
 
     const setUserData = (data) => {
+        data.birth = data?.birth.split('T')[0];
+        
         setUser(data)
 
         window.localStorage.setItem('userData', JSON.stringify(data)); //Armazenando dados localmente;
