@@ -18,12 +18,12 @@
     width: 100%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
 }
 
-.user_cards .title .title_newCard {
+.user_cards .title .title_button {
     font-size: 15px;
     color: var(--MetallicRed);
 }

@@ -17,12 +17,12 @@
     padding: 0 15px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
 }
 
-.user_addresses .title .title_newAddress {
+.user_addresses .title .title_button {
     font-size: 15px;
     color: var(--MetallicRed);
 }
@@ -90,8 +90,7 @@
     flex-direction: row;
     justify-content:center;
     box-sizing: border-box;
-    width: 100%;
-
+    width: 450px;
 }
 
 .address_form form h2{
@@ -103,6 +102,7 @@
 }
 
 .address_form form {
+    width: 100%;
     border-radius: 20px;
     padding: 1rem;
 }

@@ -82,24 +82,22 @@ const Enderecos = () => {
 
     const addressForm = () => {
         return (
-            <div>
-                <section className="address_form" >
-                    <form onSubmit={insertNewAddress}>
-                        <h2>Endereço</h2>
-                        <CampoTexto label="Destinátario: " maxLength='50' name='addressee' required/>
-                        <CampoTexto label="CEP: " placeholder="00000-000" name='cep' required/>
-                        <CampoTexto label="Endereço: " placeholder="Digite seu endereço" name='address' required/>
-                        <CampoTexto label="Complemento: " placeholder="Digite o complemento" name='complement' required/>
-                        <CampoTexto label="Bairro: " placeholder="Digite seu bairro" name='district' required/>
-                        <CampoTexto label="Cidade: " placeholder="Digite sua cidade" name='city' required/>
-                        <CampoTexto label="Estado: " placeholder="Digite o seu estado" name='state' required/>
-                        <CampoTexto type="checkbox" label="Criar como destino atual?" name='principal_address'/>
-                        
-                        <div className='formulario__botao'>
-                            <Button type="submit">Adicionar Endereço</Button>
-                        </div>
-                    </form>
-                </section>
+            <div className="address_form" >
+                <form onSubmit={insertNewAddress}>
+                    <h2>Endereço</h2>
+                    <CampoTexto label="Destinátario: " maxLength='50' name='addressee' required/>
+                    <CampoTexto label="CEP: " placeholder="00000-000" name='cep' required/>
+                    <CampoTexto label="Endereço: " placeholder="Digite seu endereço" name='address' required/>
+                    <CampoTexto label="Complemento: " placeholder="Digite o complemento" name='complement' required/>
+                    <CampoTexto label="Bairro: " placeholder="Digite seu bairro" name='district' required/>
+                    <CampoTexto label="Cidade: " placeholder="Digite sua cidade" name='city' required/>
+                    <CampoTexto label="Estado: " placeholder="Digite o seu estado" name='state' required/>
+                    <CampoTexto type="checkbox" label="Criar como destino atual?" name='principal_address'/>
+                    
+                    <div className='formulario__botao'>
+                        <Button type="submit">Adicionar Endereço</Button>
+                    </div>
+                </form>
             </div>
         )
     }
@@ -137,8 +135,12 @@ const Enderecos = () => {
     return (
         <div className='user_addresses' style={{padding: '10px', minHeight: '400px'}}>
             <div className='title'>
-                <p onClick={() => setShowAddressForm(false)} >Endereços</p>
-                <p onClick={() => setShowAddressForm(true)} className="title_newAddress" >+ Cadastrar novo endereço</p>
+                {
+                    showAddressForm ? 
+                        <p onClick={() => setShowAddressForm(false)} className="title_button">Voltar para endereços</p>
+                    :
+                        <p onClick={() => setShowAddressForm(true)} className="title_button">+ Cadastrar novo endereço</p>
+                }
             </div>
             {showAddressForm ? addressForm() : addresses()}
         </div>

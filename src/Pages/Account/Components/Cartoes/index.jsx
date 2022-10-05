@@ -131,8 +131,12 @@ const cards = () => {
 return (
     <div className='user_cards' style={{padding: '10px', minHeight: '400px'}}>
         <div className='title'>
-            <p onClick={() => setShowNewCardForm(false)} >Cartões</p>
-            <p onClick={() => setShowNewCardForm(true)} className="title_newCard" >+ Cadastrar novo cartão</p>
+            {
+                showNewCardForm ?
+                    <p onClick={() => setShowNewCardForm(false)} className="title_button">Voltar para cartões</p>
+                :
+                    <p onClick={() => setShowNewCardForm(true)} className="title_button">+ Cadastrar novo cartão</p>
+            }
         </div>
         {showNewCardForm ? newCardForm() : cards()}
     </div>
