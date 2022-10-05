@@ -8,8 +8,9 @@ import useFetch from '../../../../hooks/useFetch';
 import LoadBar from '../../../../Components/LoadBar';
 
 const CadastroProduto = () => {
-    const categoryOptions = ["Bermuda", "Blusa", "Camisa", "Camiseta", "Conjunto", "Moletom", "Vestido", "Short"]
-
+    const departamentOptions = ["Masculino", "Feminino", "Unissex"];
+    const categoryOptions = ["Bermuda", "Blusa", "Camisa", "Camiseta", "Conjunto", "Moletom", "Vestido", "Short"];
+    
     const [showNewProductForm, setShowNewProductForm] = useState(false);
 
     const { data: products, isFetching: loadProducts } = useFetch('products'); // Pegando Produtos na API
@@ -72,6 +73,7 @@ const CadastroProduto = () => {
                         <CampoTexto label="Nome" placeholder="Digite o nome do produto" name='name' defaultValue={product.name} required/>
                         <CampoTexto label="Descrição" placeholder="Digite o nome do produto" name='description' defaultValue={product.description} />
                         <CampoTexto label="Categoria" type='select' name="category" id="category" selectOptions={categoryOptions}/>
+                        <CampoTexto label="Departamento" type='select' name="departament" id="departament" selectOptions={departamentOptions}/>
                         <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" defaultValue={product.image1} required/>
                         <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" defaultValue={product.image2} required/>
                         <CampoTexto label="Preço regular" name='regular_price' type="number" defaultValue={product.regular_price} step="0.01" required/>
@@ -130,6 +132,7 @@ const CadastroProduto = () => {
                         <CampoTexto label="Nome" placeholder="Digite o nome do produto" name='name' required/>
                         <CampoTexto label="Descrição" placeholder="Digite o nome do produto" name='description'/>
                         <CampoTexto label="Categoria" type='select' name="category" id="category" selectOptions={categoryOptions}/>
+                        <CampoTexto label="Departamento" type='select' name="departament" id="departament" selectOptions={departamentOptions}/>
                         <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" required/>
                         <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" required/>
                         <CampoTexto label="Preço regular" name='regular_price' type="number" step="0.01" required/>
