@@ -1,6 +1,18 @@
 import './CampoTexto.css'
 
 const CampoTexto = (props) => {
+    if (props.type === 'select') {
+        return (
+            <div className="input-block">
+                <label> {props.label} </label>
+                <select>
+                    {props.selectOptions.map(option => {
+                        return <option key={option} value={option}>{option}</option>
+                    })}
+                </select>
+            </div>
+        )
+    }
 
     return (
         <div className="input-block">

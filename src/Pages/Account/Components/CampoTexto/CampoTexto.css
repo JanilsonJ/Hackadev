@@ -29,6 +29,16 @@
   min-width: 200px;
 }
 
+.input-block select {
+  font-family: Kumbh Sans;
+  
+  border: none;
+  outline: none;
+
+  
+  min-width: 200px;
+}
+
 /* div.input-block {
   position: relative;
   margin-bottom: 1rem;
