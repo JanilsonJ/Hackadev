@@ -1,3 +1,86 @@
+.user_cards {
+    height: 100%;
+    width: 100%;
+    padding: 1em 1.5em;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.user_cards .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.user_cards .title .title_newCard {
+    font-size: 15px;
+    color: var(--MetallicRed);
+}
+
+.user_cards .title p:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.user_cards .card {
+    width: fit-content;
+    height: fit-content;
+    margin: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    background-color: var(--HeavyMetal);
+    color: aliceblue;
+
+    box-shadow: 2px 2px 4px #000;
+}
+
+.card .card_label {
+    display: flex;
+    margin: 5px 0;
+}
+
+.card .card_label p,
+.card label {
+    font-weight: 600;
+    min-width: 160px;
+}
+
+.card .card_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 5px 0;
+}
+
+.card .card_button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px #fefefe;
+    cursor: pointer;
+}
+
+.card .card_edit {
+    background-color: rgb(45, 74, 167);
+    color: #fefefe;
+}
+
+.card .card_delete {
+    background-color: var(--MetallicRed);
+    color: #fefefe;
+}
+
 .formulario {
     font-family: Kumbh Sans;
     display: flex;
@@ -10,44 +93,12 @@
 }
 
 .formulario form {
-    /* background-color: #F2F2F2; */
     border-radius: 20px;
-    /* padding: 13px 44px 10px 44px; */
-    /* box-shadow: 8px 8px 16px rgba(0,0,0, 0.08); */
-    /* margin: 10px 20px 15px 20px; */
     padding: 1rem;
-    /* height: 100%; */
-}
-
-.formulario h2{
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 1rem;
 }
 
 .formulario__botao {
     display: flex;
     justify-content:center;
-    margin: 10px 0 40px 0;
-}
-
-/* @media screen and (max-width: 1280px) {
-    .formulario form {
-        width: 500px;
-        padding: 36px 18px;
-    }
-    .formulario{
-        display: flex;
-        justify-content: left;
-        margin-left: 5%;
-    }
-} */
-
-@media screen and (max-width: 700px) {
-
-
-
-    .formulario form {
-        padding: 0;
-    }
+    margin: 25px 0 40px 0;
 }

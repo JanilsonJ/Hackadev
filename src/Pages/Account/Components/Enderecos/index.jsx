@@ -9,7 +9,7 @@ import './enderecos.css'
 import useFetch from '../../../../hooks/useFetch';
 
 const Enderecos = () => {
-    const {setUserData, user} = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const [showAddressForm, setShowAddressForm] = useState(false);
 
