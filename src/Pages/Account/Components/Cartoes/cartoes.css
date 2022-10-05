@@ -15,6 +15,7 @@
     text-align: center;
     margin-bottom: 1rem;
     padding: 0 15px;
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -67,6 +68,7 @@
 
 .card .card_button {
     padding: 5px 10px;
+    margin: 0 5px;
     border-radius: 5px;
     border: none;
     box-shadow: 1px 1px 3px #fefefe;
@@ -90,8 +92,7 @@
     flex-direction: row;
     justify-content:center;
     box-sizing: border-box;
-    width: 100%;
-
+    width: 450px;
 }
 
 .cards_form form h2{
@@ -103,6 +104,7 @@
 }
 
 .cards_form form {
+    width: 100%;
     border-radius: 20px;
     padding: 1rem;
 }
