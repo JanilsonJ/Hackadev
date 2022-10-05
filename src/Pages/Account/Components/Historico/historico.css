@@ -53,5 +53,20 @@
 }
 
 .order .order_items .order_item .order_item_description p{
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 380px) {
+    .order .order_items .order_item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order_item .order_item_description {
+        display: none !important;
+    }
+
+    .order .order_items .order_item img{
+        height: 100px;
+    }
 }

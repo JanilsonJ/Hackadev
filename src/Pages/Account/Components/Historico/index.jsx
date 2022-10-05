@@ -30,8 +30,8 @@ const Historico = () => {
         return Object.keys(items).map(order => {
             
             return (
-                <>
-                    <div key={order} className="order">
+                <div key={order} >
+                    <div className="order">
                         <div className='order_details'>
                             <p><strong>Pedido Nº {order}</strong></p>
                             <p><strong>Endereço:</strong> {items[order][0].order_address}</p>
@@ -59,7 +59,7 @@ const Historico = () => {
                     </div>
                     
                     <hr />
-                </>
+                </div>
             )
         })
     }
