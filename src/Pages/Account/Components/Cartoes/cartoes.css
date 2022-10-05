@@ -48,6 +48,13 @@
     box-shadow: 2px 2px 4px #000;
 }
 
+.user_cards .payment_card {
+    background-color: #fefefe;
+    border: 1px solid var(--HeavyMetal);
+    color: var(--HeavyMetal);
+    box-shadow: 4px 4px 16px #081f11;
+} 
+
 .card .card_label {
     display: flex;
     margin: 5px 0;

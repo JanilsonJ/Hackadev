@@ -108,7 +108,7 @@ const Enderecos = () => {
 
         return userAddresses.map(address => {
             return (
-                <div className='address' key={address.address_id}>
+                <div className={address.principal_address ? 'address principal_address' : 'address'} key={address.address_id}>
                     <div className='address_label' ><p>Destinatário:</p>{address.addressee}</div>
                     <div>
                         <label htmlFor="principal_address">Endereço de entrega?</label>

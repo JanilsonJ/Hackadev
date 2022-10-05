@@ -44,8 +44,15 @@
     background-color: var(--HeavyMetal);
     color: aliceblue;
 
-    box-shadow: 2px 2px 4px #000;
+    box-shadow: 4px 4px 8px #000;
 }
+
+.user_addresses .principal_address {
+    background-color: #fefefe;
+    border: 1px solid var(--HeavyMetal);
+    color: var(--HeavyMetal);
+    box-shadow: 4px 4px 16px #081f11;
+} 
 
 .address .address_label {
     display: flex;
@@ -69,8 +76,12 @@
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 1px 3px #fefefe;
+    box-shadow: -1px -1px 3px #fefefe;
     cursor: pointer;
+}
+
+.address .address_button:hover {
+    box-shadow: 2px 2px 3px #fefefe;
 }
 
 .address .address_edit {

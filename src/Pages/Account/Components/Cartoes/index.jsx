@@ -24,6 +24,7 @@ const insertNewCard = async (e) => {
     CardFormData.forEach((value, key) => (cardData[key] = value));
     cardData.customer_id = user.id; 
     cardData.payment_card = cardData.payment_card === "" ? true : false; 
+    cardData.cvv = '000'; 
 
     const AddressOptions = {
         method: 'POST',
@@ -110,7 +111,7 @@ const cards = () => {
         const expiry = `${monthNames[expiryDate.getMonth() + 1]} de ${expiryDate.getFullYear()}`
 
         return (
-            <div className='card' key={card.card_id}>
+            <div className={card.payment_card ? 'card payment_card' : 'card'} key={card.card_id}>
                 { card.payment_card ? <div style={{textAlign: "center", margin: "5px 0"}}>Cartão selecionado para pagamaneto<hr /></div> : null  }
                 
                 <div className='card_label' ><p>Número:</p>{card.card_number}</div>
