@@ -11,7 +11,7 @@ import "./login.css"
 const Login = () => {
     const navigate = useNavigate();
     
-    const { setLoggedIn, login } = useContext(UserContext);
+    const { setLoggedIn, setUserData } = useContext(UserContext);
 
     const [buttonStyle, setButtonStyle] = useState();
 
@@ -34,7 +34,7 @@ const Login = () => {
 
         if (validUser) {
             setLoggedIn(true);
-            login(validUser);
+            setUserData(validUser);
             navigate("/home");
         } else {
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});

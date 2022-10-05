@@ -55,7 +55,6 @@ const Enderecos = () => {
             })
         }
 
-        //Adicionando dados base do produto ao banco
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_address/${address.address_id}`, AddressOptions)
         .then((data) => {
             // console.log(data);
@@ -76,16 +75,9 @@ const Enderecos = () => {
             })
         }
 
-        //Adicionando dados base do produto ao banco
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_delivery_address`, AddressOptions)
-        .then((data) => {
-            // console.log(data);
-            setUserData(address);
-            refetch();
-        })
-        .catch(err => {
-            console.log(err);
-        });
+        .then((data) => {refetch()})
+        .catch(err => {console.log(err)});
     }
 
     const addressForm = () => {

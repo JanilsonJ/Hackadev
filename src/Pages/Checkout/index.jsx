@@ -16,6 +16,7 @@ import './checkout.css'
 
 import { CartContext } from '../../Context/cart.js'
 import { UserContext } from '../../Context/user.js'
+import useFetch from '../../hooks/useFetch'
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -25,6 +26,8 @@ const Checkout = () => {
 
   const [freteValue, setFreteValue] = useState(0);
   const [freteIsSelected, setFreteIsSelected] = useState(false);
+
+  const {data: address, isFetching: loadAddress} = useFetch(`customer_delivery_address/${user.id}`);
 
   useEffect(() => {
     document.title = 'IMA - Checkout'
@@ -53,10 +56,10 @@ const Checkout = () => {
   }
 
   const finishPurchase = async () => {
-    // if (!user.address){
-    //   window.alert('POR FAVOR! Adicione um endereço.')
-    //   return;
-    // }
+    if (!address){
+      window.alert('POR FAVOR! Adicione um endereço.')
+      return;
+    }
     if (!freteIsSelected){
       window.alert('POR FAVOR! Selecione o modo de entrega.')
       return;
@@ -73,7 +76,7 @@ const Checkout = () => {
       order_date: current_date,
       total_price: subtotal,
       installments: 0,
-      order_address: `${user.address}, ${user.complement}, ${user.district}, ${user.city}, ${user.state}`
+      order_address: `${address.address}, ${address.complement}, ${address.district}, ${address.city}, ${address.state}`
     }
 
     await postRequest('order_details', order_details)
@@ -108,7 +111,7 @@ const Checkout = () => {
                   <b>RESIDENCIAL</b>
                 </p>
                 <p className="main-container_session-container_label-subtitle">
-                  {user.address ? `${user.address}, ${user.complement}, ${user.district}, ${user.city}, ${user.state}` : 'Nenhum endereço encontrado'}
+                  {loadAddress || address?.address === undefined ? 'Nenhum endereço encontrado' : `Destinátario: ${address.addressee}, ${address?.address}, ${address?.complement}, ${address?.district}, ${address?.city}, ${address?.state}`}
                 </p>
               </div>
             </div>
