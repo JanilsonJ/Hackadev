@@ -1,34 +1,37 @@
 .input-block {
   font-family: Kumbh Sans;
   font-size: clamp(11px, 1vw, 16px);
-
+  
   padding: 8px;
+  margin: .6em 1em .6em 1em;
+  box-sizing: border-box;
+  
   border-radius: 5px;
   border: none;
   box-shadow: 3px 3px 4px #000;
-  width: 100%;
-
-  margin-bottom: 1.2em;
 
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .input-block label {
-  min-width: 50%;
-
   font-weight: 600;
-
+  min-width: 50%;
+  box-sizing: border-box;
   cursor: pointer;
+  flex-grow: 1;
 }
 
 .input-block input {
   font-family: Kumbh Sans;
-  
   border: none;
   outline: none;
-
+  margin: 0;
   min-width: 50%;
+  box-sizing: border-box;
+  flex-grow: 1;
 }
 
 .input-block:has(img) input {
@@ -49,8 +52,8 @@
   font-family: Kumbh Sans;
   border: none;
   outline: none;
-
   min-width: 45%;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 450px) {

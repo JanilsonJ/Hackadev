@@ -3,12 +3,14 @@ import CampoTexto from '../CampoTexto'
 import { UserContext } from '../../../../Context/user';
 import { useContext, useState } from 'react';
 
+import { IoLogOut } from 'react-icons/io5'
+
 import Button from '../../../../Components/Button';
 
 import './dadosPessoais.css'
 
 const DadosPessoais = () => {
-    const { user, setUserData } = useContext(UserContext);
+    const { user, setUserData, logoutUser } = useContext(UserContext);
 
     const [buttonStyle, setButtonStyle] = useState();
     const [updating, setUpdating] = useState(false);
@@ -49,8 +51,8 @@ const DadosPessoais = () => {
 
     return (
         <div>
-            <section className="formulario">
-                <form className="Form__DadosPessoais" onSubmit={updateUserData}>
+            <div className="dados__pessoais">
+                <form className="dados__pessoais__form" onSubmit={updateUserData}>
                     <h2>Dados pessoais</h2>
                     <CampoTexto label="Nome Completo" placeholder="Digite seu nome completo" name='name' defaultValue={user.name} required/>
                     <CampoTexto label="CPF" placeholder="000.000.000-00" name='cpf' defaultValue={user.cpf} disabled required/>
@@ -64,7 +66,13 @@ const DadosPessoais = () => {
                         <Button type="submit" styles={buttonStyle}>{updating ? 'Atualizando...' : 'Salvar Alterações'}</Button>
                     </div>
                 </form>
-            </section>
+                    
+                <div className='logout__botao'>
+                    <div onClick={() => {if(window.confirm('Deseja sair da conta?'))logoutUser()}}>
+                        <Button>Deslogar <IoLogOut /></Button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

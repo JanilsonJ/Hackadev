@@ -1,50 +1,63 @@
-.formulario {
+.dados__pessoais {
     font-family: Kumbh Sans;
+    
+    width: 450px;
+    height: 100%;
+
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:center;
+    
     box-sizing: border-box;
-    width: 100%;
-
 }
 
-.formulario form {
-    /* background-color: #F2F2F2; */
+.dados__pessoais .dados__pessoais__form {
     border-radius: 20px;
-    /* padding: 13px 44px 10px 44px; */
-    /* box-shadow: 8px 8px 16px rgba(0,0,0, 0.08); */
-    /* margin: 10px 20px 15px 20px; */
+    width: 100%;
     padding: 1rem;
-    /* height: 100%; */
+    box-sizing: border-box;
 }
 
-.formulario h2{
+.dados__pessoais .dados__pessoais__form h2{
+    font-size: clamp(17px, 1vw, 20px);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.dados__pessoais h2{
     font-size: 30px;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.formulario__botao {
+.dados__pessoais__form .formulario__botao {
     display: flex;
     justify-content:center;
-    margin: 10px 0 40px 0;
+    margin: 30px 0 10px 0;
 }
 
-/* @media screen and (max-width: 1280px) {
-    .formulario form {
-        width: 500px;
-        padding: 36px 18px;
-    }
-    .formulario{
-        display: flex;
-        justify-content: left;
-        margin-left: 5%;
-    }
-} */
+.dados__pessoais .logout__botao {
+    display: flex;
+    justify-content: center;
+}
+
+.dados__pessoais .logout__botao div > button {
+    background-color: var(--MetallicRed);
+}
 
 @media screen and (max-width: 300px) {
-    .formulario form  {
+    .dados__pessoais .dados__pessoais__form {
         padding: 0 !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .dados__pessoais {
+        width: 100vw;
+    }
+
+    .dados__pessoais .dados__pessoais__form {
+        padding: 10px;
     }
 }
