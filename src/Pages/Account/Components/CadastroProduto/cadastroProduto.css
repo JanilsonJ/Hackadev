@@ -1,3 +1,55 @@
+.product {
+    margin: 5px;
+    padding: 5px;
+
+    width: 175px;
+    height: 225px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    text-align: center;
+
+    box-shadow: 2px 2px 4px #000;
+
+    font-size: 12px;
+}
+
+.product img {
+    width: 100px;
+}
+
+.product hr {
+    width: 125px;
+}
+
+.product button{
+    background-color: rgb(33, 88, 139);
+    color: aliceblue;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px #000;
+    cursor: pointer;
+}
+
+.Form__CadastroProduto .cartegory {
+    width: 100%;
+
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 4px #000;
+    margin-bottom: 1.2em;
+}
+
 .formulario {
     font-family: Kumbh Sans;
     display: flex;
@@ -6,7 +58,6 @@
     justify-content:center;
     box-sizing: border-box;
     width: 100%;
-
 }
 
 .formulario form {
