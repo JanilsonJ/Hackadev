@@ -5,7 +5,7 @@ const CampoTexto = (props) => {
         return (
             <div className="input-block">
                 <label> {props.label} </label>
-                <select>
+                <select name={props.name} id={props.id}>
                     {props.selectOptions.map(option => {
                         return <option key={option} value={option}>{option}</option>
                     })}
