@@ -9,6 +9,7 @@
   margin-bottom: 1.2em;
 
   display: flex;
+  align-items: center;
 }
 
 .input-block label {
@@ -25,8 +26,13 @@
   border: none;
   outline: none;
 
-  
   min-width: 200px;
+}
+
+.input-block img {
+  margin-left: 5px;
+  border-radius: 5px;
+  width: 50px;
 }
 
 .input-block select {
