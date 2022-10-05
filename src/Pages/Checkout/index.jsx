@@ -81,7 +81,7 @@ const Checkout = () => {
 
     await postRequest('order_details', order_details)
 
-    setTimeout(() => {
+    setTimeout(async () => {
       const order_items = bagItems.map(i => {return {
         order_id: id,
         product_sku: i.sku,
@@ -89,7 +89,7 @@ const Checkout = () => {
         order_item_price: i.actual_price
       }})
       
-      order_items.map(async items => {
+      await order_items.map(async items => {
         await postRequest('order_items', items)
       })
     }, 1500); //Temporizador necessario para adicionar os items apos a tabela order_details
@@ -106,7 +106,7 @@ const Checkout = () => {
           <div className="line-botton-container">
             <div style={{ display: 'flex' }}>
               <MdLocationPin />
-              <div>
+              <div style={{width: "100%"}}>
                 <p className="bold">
                   <b>RESIDENCIAL</b>
                 </p>
@@ -160,10 +160,6 @@ const Checkout = () => {
           <ItemAndValue class="main-container_session-container_item">
             <p>Subtotal</p>
             <p>{BRL(subtotal)}</p>
-          </ItemAndValue>
-          <ItemAndValue class="main-container_session-container_item">
-            <p>Vale Troca</p>
-            <p>{BRL(0)}</p>
           </ItemAndValue>
           <ItemAndValue class="main-container_session-container_item">
             <p>Desconto</p>

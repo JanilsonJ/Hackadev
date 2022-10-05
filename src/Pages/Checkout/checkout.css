@@ -18,8 +18,10 @@ body {
 
 .checkout-container {
   display: flex;
-  width: 99.8%;
-  height: 99.4vh;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .main-container_session-container {

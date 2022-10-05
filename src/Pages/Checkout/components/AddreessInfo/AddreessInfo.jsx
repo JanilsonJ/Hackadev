@@ -2,7 +2,7 @@ import React from "react";
 // import ItemAndValue from "../ItemAndValue/ItemAndValue";
 import "./AddreessInfo.css";
 
-import { FiEdit } from "react-icons/fi";
+// import { FiEdit } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
 import { Link } from "react-router-dom";
 
@@ -17,13 +17,14 @@ const AddreessInfo = (props) => {
 
         <div className="address-options-container">
           <div className="address-options-container_mobile">
-            <div>
+            {/* <div>
               <FiEdit />
               <Link to="/account">editar </Link>
-            </div>
+            </div> */}
             <div>
+              <Link to="/account">outros endereços</Link>
+              &nbsp;
               <GoHome />
-              <Link to="/account">outros endereços </Link>
             </div>
           </div>
         </div>
