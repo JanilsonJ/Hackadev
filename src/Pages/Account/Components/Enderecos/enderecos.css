@@ -5,12 +5,13 @@
     box-sizing: border-box;
 
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
 .user_addresses .title {
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 1rem;
     padding: 0 15px;
@@ -32,6 +33,7 @@
 }
 
 .user_addresses .address {
+    font-size: clamp(12px, 1vw, 16px);
     width: 300px;
     height: fit-content;
     margin: 15px;
@@ -81,7 +83,7 @@
     color: #fefefe;
 }
 
-.formulario {
+.address_form {
     font-family: Kumbh Sans;
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +94,15 @@
 
 }
 
-.formulario form {
+.address_form form h2{
+    font-size: clamp(17px, 1vw, 20px);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.address_form form {
     border-radius: 20px;
     padding: 1rem;
 }

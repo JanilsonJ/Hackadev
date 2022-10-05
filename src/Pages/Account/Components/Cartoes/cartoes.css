@@ -5,6 +5,7 @@
     box-sizing: border-box;
 
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -32,6 +33,7 @@
 }
 
 .user_cards .card {
+    font-size: clamp(12px, 1vw, 16px);
     width: fit-content;
     height: fit-content;
     margin: 15px;
@@ -81,7 +83,7 @@
     color: #fefefe;
 }
 
-.formulario {
+.cards_form {
     font-family: Kumbh Sans;
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +94,15 @@
 
 }
 
-.formulario form {
+.cards_form form h2{
+    font-size: clamp(17px, 1vw, 20px);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.cards_form form {
     border-radius: 20px;
     padding: 1rem;
 }

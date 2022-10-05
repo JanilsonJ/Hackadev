@@ -84,9 +84,9 @@ const setPaymentCard = async (card) => {
 const newCardForm = () => {
     return (
         <div>
-            <section className="formulario">
-                <form className="Form__Cartao" onSubmit={insertNewCard}>
-                    <h2 >Cartão</h2>
+            <div className="cards_form">
+                <form onSubmit={insertNewCard}>
+                    <h2>Cartão</h2>
                     <CampoTexto label="Número do cartão" placeholder=" " name='card_number' required/>
                     <CampoTexto label="Nome no cartão" placeholder=" " name='card_name' required/>
                     <CampoTexto label="Data de expiração" placeholder="MM/AAAA" type='month' name='expiry' required/>
@@ -97,7 +97,7 @@ const newCardForm = () => {
                         <Button type="submit">Adicionar Cartão</Button>
                     </div>
                 </form>
-            </section>
+            </div>
         </div>
     )
 }

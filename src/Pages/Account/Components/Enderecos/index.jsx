@@ -83,8 +83,9 @@ const Enderecos = () => {
     const addressForm = () => {
         return (
             <div>
-                <section className="formulario" >
-                    <form className="Form__Endereco" onSubmit={insertNewAddress}>
+                <section className="address_form" >
+                    <form onSubmit={insertNewAddress}>
+                        <h2>Endereço</h2>
                         <CampoTexto label="Destinátario: " maxLength='50' name='addressee' required/>
                         <CampoTexto label="CEP: " placeholder="00000-000" name='cep' required/>
                         <CampoTexto label="Endereço: " placeholder="Digite seu endereço" name='address' required/>
@@ -95,7 +96,7 @@ const Enderecos = () => {
                         <CampoTexto type="checkbox" label="Criar como destino atual?" name='principal_address'/>
                         
                         <div className='formulario__botao'>
-                            <Button type="submit">Cadastrar Endereço</Button>
+                            <Button type="submit">Adicionar Endereço</Button>
                         </div>
                     </form>
                 </section>
