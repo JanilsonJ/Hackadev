@@ -39,7 +39,23 @@ const Account = () => {
     return (
         <div className='account'>    
             
-            <h1 className='subtitulo'><VscAccount/>Minha Conta</h1>
+            <div className='subtitulo'>
+                <h1 ><VscAccount/>Minha Conta</h1>
+                <div className='select-menu'>
+                    <select onChange={(e) => setComponent(e.target.value)}>
+                        <option value="DadosPessoais">Dados Pessoais</option>
+                        <option value="Historico">Historico de compras</option>
+                        <option value="Enderecos">Endereços</option>
+                        <option value="Cartoes">Cartões</option>
+                        {
+                            user.adm === true ?
+                            <option value="CadastroProduto">Cadastro de produtos</option>
+                        :
+                            null
+                        }
+                    </select>
+                </div>
+            </div>
 
             <div className='menu-form'>
                 <div className='left-menu'>

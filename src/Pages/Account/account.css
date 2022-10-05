@@ -1,5 +1,5 @@
 .account {
-    min-width: 100vh;
+    min-width: 100%;
 
     box-sizing: border-box;
 }
@@ -50,6 +50,10 @@
     box-shadow: 10px 0px 15px  var(--HeavyMetal);
 }
 
+.account .subtitulo .select-menu {
+    display: none;
+}
+
 .menu-form .left-menu button{
     background-color: transparent;
     border: none;
@@ -85,15 +89,26 @@
     overflow-y: scroll;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
+    .menu-form .left-menu {
+        display: none;
+    }
 
-    .Subtitulo{
-        font-family: Arial;
-        font-size: 40px;
-        margin-left: -3%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        text-align: center;
-        
+    .account .subtitulo .select-menu select{
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: #fefefe;    
+    }
+
+    .account .subtitulo .select-menu select option{
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: #000;    
+    }
+    
+    .account .subtitulo .select-menu{
+        display: block;
     }
 }
