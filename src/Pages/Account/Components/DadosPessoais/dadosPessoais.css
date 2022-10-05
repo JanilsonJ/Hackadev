@@ -43,11 +43,8 @@
     }
 } */
 
-@media screen and (max-width: 700px) {
-
-
-
-    .formulario form {
-        padding: 0;
+@media screen and (max-width: 300px) {
+    .formulario form  {
+        padding: 0 !important;
     }
 }

@@ -99,7 +99,7 @@ const CadastroProduto = () => {
             return <LoadBar title="Carregando Produtos..." />
         else {
             return (
-                <>
+                <div className="products">
                     <div className="product">
                         <button onClick={() => setShowNewProductForm(true)}>Adicionar Produto</button>
                     </div>
@@ -116,7 +116,7 @@ const CadastroProduto = () => {
                             )
                         })
                     }
-                </>
+                </div>
             )
         }
     }

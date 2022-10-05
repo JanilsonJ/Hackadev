@@ -15,13 +15,15 @@
     font-size: 40px;
     text-align: center;
     
-
     width: 100%;
     padding: 12px 0 12px 0;
     box-sizing: border-box;
-
     
     box-shadow: 0px 10px 15px  var(--HeavyMetal);
+}
+
+.account .subtitulo h1{
+    font-size: clamp(20px, 1vw + 15px, 40px);
 }
 
 .account .subtitulo svg {
@@ -85,8 +87,14 @@
     justify-content: center;
 
     margin: 15px 0;
+    box-sizing: border-box;
 
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu-form .right-form::-webkit-scrollbar {
+    display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -110,5 +118,10 @@
     
     .account .subtitulo .select-menu{
         display: block;
+    }
+
+    .account .menu-form {
+        min-height: fit-content;
+        max-height: 600;
     }
 }

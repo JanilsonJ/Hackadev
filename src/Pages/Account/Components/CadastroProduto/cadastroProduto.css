@@ -1,3 +1,9 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .product {
     margin: 5px;
     padding: 5px;
@@ -61,13 +67,8 @@
 }
 
 .formulario form {
-    /* background-color: #F2F2F2; */
     border-radius: 20px;
-    /* padding: 13px 44px 10px 44px; */
-    /* box-shadow: 8px 8px 16px rgba(0,0,0, 0.08); */
-    /* margin: 10px 20px 15px 20px; */
     padding: 1rem;
-    /* height: 100%; */
 }
 
 .formulario h2{
@@ -82,23 +83,8 @@
     margin: 10px 0 40px 0;
 }
 
-/* @media screen and (max-width: 1280px) {
-    .formulario form {
-        width: 500px;
-        padding: 36px 18px;
-    }
-    .formulario{
-        display: flex;
-        justify-content: left;
-        margin-left: 5%;
-    }
-} */
-
-@media screen and (max-width: 700px) {
-
-
-
-    .formulario form {
-        padding: 0;
+@media screen and (max-width: 380px) {
+    .formulario form  {
+        padding: 0 !important;
     }
 }
