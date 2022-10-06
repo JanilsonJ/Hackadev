@@ -64,7 +64,6 @@ const CadastroProduto = () => {
     }
 
     const updateProdutctForm = (product) => {
-        console.log(product)
         return (
             <div>
                 <div className="formulario">
