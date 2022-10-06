@@ -27,6 +27,8 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
 ## Deploy
 <p><stroke>Projeto atual:</stroke> https://ima-ecommerce.netlify.app/</p>
 <p><stroke>Versão 1.0:</stroke> https://ima-ecommerce-v1.netlify.app/</p>
+<p><stroke>Versão 2.0:</stroke> https://ima-ecommerce-v2.netlify.app/</p>
+<p><stroke>Versão 3.0:</stroke> https://ima-ecommerce-v3.netlify.app/</p>
 
 ## API
 <p><stroke>GIT:</stroke>https://github.com/JanilsonJ/Hackadev_api</p>
