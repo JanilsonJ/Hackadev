@@ -5,7 +5,14 @@ const CampoTexto = (props) => {
         return (
             <div className="input-block">
                 <label> {props.label} </label>
-                <select name={props.name} id={props.id}>
+                <select 
+                    name={props.name} 
+                    id={props.id}
+                    required={props.required}
+                    disabled={props.disabled}
+                    style={props.style}
+                    defaultValue={props.defaultValue}
+                >
                     {props.selectOptions.map(option => {
                         return <option key={option} value={option}>{option}</option>
                     })}
