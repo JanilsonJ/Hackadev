@@ -32,18 +32,25 @@
   min-width: 50%;
   box-sizing: border-box;
   flex-grow: 1;
+
+  border-bottom: 1px solid #72727271;
+}
+
+.input-block:has(img){
+  min-width: calc(100% + 50px);
 }
 
 .input-block:has(img) input {
-  min-width: 30%;
+  min-width: fit-content;
 }
 
 .input-block:has(img) label {
-  min-width: 35%;
+  min-width: fit-content;
 }
 
 .input-block img {
-  margin-left: 5px;
+  margin-left: 10px;
+  box-sizing: border-box;
   border-radius: 5px;
   width: 50px;
 }
@@ -56,9 +63,12 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 475px) {
   .input-block img {
     display: none;
   }
-
+    
+  .input-block:has(img){
+    min-width: auto;
+  }
 }
