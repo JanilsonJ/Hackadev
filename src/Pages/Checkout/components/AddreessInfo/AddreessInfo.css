@@ -21,12 +21,12 @@
 }
 
 .address-options-container svg {
-  width: 12px;
-  margin: 0 5%;
+  font-size: 25px;
 }
 
 .address-options-container a {
   font-size: clamp(0.4rem, 0.1rem + 0.6vw, 1rem);
+  text-align: right;
 }
 
 .address-options-container:nth-child(2) {

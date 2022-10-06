@@ -1,0 +1,72 @@
+.user_history .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.order {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.order .order_details {
+    width: 100%;
+}
+
+.order .order_details p{
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+.order strong {
+    font-weight: 600;
+}
+
+.order .order_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order .order_items .order_item {
+    display: flex;
+    margin: 10px 15px 5px 0;
+    
+    box-shadow: 2px 2px 6px #000;
+}
+
+.order .order_items .order_item img{
+    height: 150px;
+}
+
+.order .order_items .order_item .order_item_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 160px;
+    padding: 10px;
+}
+
+.order .order_items .order_item .order_item_description p{
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 380px) {
+    .order .order_items .order_item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order_item .order_item_description {
+        display: none !important;
+    }
+
+    .order .order_items .order_item img{
+        height: 100px;
+    }
+}

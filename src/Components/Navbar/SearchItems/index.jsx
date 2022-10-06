@@ -20,7 +20,7 @@ const SearchItems = () => {
         return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
 
-    const { data: products, isFetching } = useFetch(`produtos/produto?filter=${input}`); // Pegando Produtos pela API
+    const { data: products, isFetching } = useFetch(`products/produto?filter=${input}`); // Pegando Produtos pela API
 
     const clearInput = () => {
         document.getElementById('search__input').value = null;

@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
-import { Link  } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 
 import { FaMinusSquare, FaTrashAlt, FaPlusSquare } from "react-icons/fa";
+
 import { CartContext } from '../../../Context/cart';
+import { UserContext } from '../../../Context/user';
+
 import './cart.css';
 
     export default function Cart () {
         const { bagItems, addBagItem, onRemove, setBagItems, updateItemsCount, bagItemsCount } = useContext(CartContext)
+        const { isLoggedIn } = useContext(UserContext)
         
+        const navigate = useNavigate();
+
         const itemsValue = bagItems.reduce((a, c) => a + c.quantity * c.actual_price, 0);
         const frete = itemsValue > 250 ? 0  : 25;
         const totalValue = itemsValue + frete;
@@ -67,7 +73,10 @@ import './cart.css';
                   </div>
                
                   <div>
-                  <Link to="/checkout" className="checkout-button">Ir Para Pagamento</Link>
+                    {isLoggedIn ? 
+                        <Link to="/checkout" className="checkout-button">Ir Para Pagamento</Link>
+                      :
+                        <div onClick={() => window.confirm('Faça o login antes de prosseguir') ? navigate("/account") : null} className="checkout-button">Ir Para Pagamento</div>}
                   </div>
                 </section>
               )} 

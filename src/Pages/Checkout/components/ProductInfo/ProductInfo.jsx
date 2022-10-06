@@ -19,14 +19,14 @@ const ProductInfo = (props) => {
                   <img src={product.image1} alt={product.name} />
                 </div>
                 <div>
-                  <p>{product.name}</p>
-                  <p>{product.type}</p>
+                  <p>{product.name} <span style={{color: "var(--MetallicRed)"}}>({product.size})</span></p>
                   <p>Unitário: R$ {product.actual_price}</p>
+                  <p>Quantidade: {product.quantity} </p>
                 </div>
               </div>
             </div>
             <div className="car-item-subtotal">
-              <p>Subtotal: R$ {product.actual_price}</p>
+              <p>Subtotal: R$ {(product.actual_price * product.quantity).toFixed(2)}</p>
             </div>
           </ItemAndValue>
         );
