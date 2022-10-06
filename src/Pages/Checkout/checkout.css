@@ -18,8 +18,10 @@ body {
 
 .checkout-container {
   display: flex;
-  width: 99.8%;
-  height: 99.4vh;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .main-container_session-container {
@@ -29,9 +31,6 @@ body {
   flex-direction: column;
   width: 50%;
   height: 100%;
-}
-
-.main-container_session-container div:first-child {
 }
 
 /* .main-container_session-container_title {

@@ -1,0 +1,123 @@
+.user_cards {
+    height: 100%;
+    width: 100%;
+    padding: 1em 1.5em;
+    box-sizing: border-box;
+
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.user_cards .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.user_cards .title .title_button {
+    font-size: 15px;
+    color: var(--MetallicRed);
+}
+
+.user_cards .title p:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.user_cards .card {
+    font-size: clamp(12px, 1vw, 16px);
+    width: fit-content;
+    height: fit-content;
+    margin: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    background-color: var(--HeavyMetal);
+    color: aliceblue;
+
+    box-shadow: 2px 2px 4px #000;
+}
+
+.user_cards .payment_card {
+    background-color: #fefefe;
+    border: 1px solid var(--HeavyMetal);
+    color: var(--HeavyMetal);
+    box-shadow: 4px 4px 16px #081f11;
+} 
+
+.card .card_label {
+    display: flex;
+    margin: 5px 0;
+}
+
+.card .card_label p,
+.card label {
+    font-weight: 600;
+    min-width: 160px;
+}
+
+.card .card_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 5px 0;
+}
+
+.card .card_button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 3px #fefefe;
+    cursor: pointer;
+}
+
+.card .card_edit {
+    background-color: rgb(45, 74, 167);
+    color: #fefefe;
+}
+
+.card .card_delete {
+    background-color: var(--MetallicRed);
+    color: #fefefe;
+}
+
+.cards_form {
+    font-family: Kumbh Sans;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    box-sizing: border-box;
+    width: 450px;
+}
+
+.cards_form form h2{
+    font-size: clamp(17px, 1vw, 20px);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.cards_form form {
+    width: 100%;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.formulario__botao {
+    display: flex;
+    justify-content:center;
+    margin: 25px 0 40px 0;
+}

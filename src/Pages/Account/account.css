@@ -1,27 +1,127 @@
-.Subtitulo{
-    /* font-family: Kumbh Sans; */
-    font-family: Arial;
-    font-size: 40px;
-    margin-left: 1%;
-    margin-top: 2%;
-    margin-bottom: 0.5%;
-    
+.account {
+    min-width: 100%;
+
+    box-sizing: border-box;
 }
 
-.Subtitulo svg {
+.account .subtitulo hr{
+    margin: 0 0 10px 0;
+}
+
+.account .subtitulo{
+    background-color: var(--HeavyMetal);
+    color: #fefefe;
+    font-family: Arial;
+    font-size: 40px;
+    text-align: center;
+    
+    width: 100%;
+    padding: 12px 0 12px 0;
+    box-sizing: border-box;
+    
+    box-shadow: 0px 10px 15px  var(--HeavyMetal);
+}
+
+.account .subtitulo h1{
+    font-size: clamp(20px, 1vw + 15px, 40px);
+}
+
+.account .subtitulo svg {
     font-size: 2rem;
     padding: 0px 10px 0px 0px;
 }
 
-@media screen and (max-width: 700px) {
+.account .menu-form {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
 
-    .Subtitulo{
-        font-family: Arial;
-        font-size: 40px;
-        margin-left: -3%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        text-align: center;
-        
+.menu-form .left-menu {
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+
+
+    background-color: var(--HeavyMetal);
+
+    box-shadow: 10px 0px 15px  var(--HeavyMetal);
+}
+
+.account .subtitulo .select-menu {
+    display: none;
+}
+
+.menu-form .left-menu button{
+    background-color: transparent;
+    border: none;
+    
+    color: #fefefe;
+    font-size: clamp(9px, 1vw, 18px);
+    font-weight: 500;
+    white-space:nowrap;
+    text-align: left;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+    margin: 1em 10px;
+    padding: 10px;
+
+    transition: .7s;
+}
+
+.menu-form .left-menu button:hover{
+    background-color: #fefefe;
+    color: var(--HeavyMetal);
+}
+
+.menu-form .right-form {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 15px 0;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu-form .right-form::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-form .left-menu {
+        display: none;
+    }
+
+    .account .subtitulo .select-menu select{
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: #fefefe;    
+    }
+
+    .account .subtitulo .select-menu select option{
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        color: #000;    
+    }
+    
+    .account .subtitulo .select-menu{
+        display: block;
+    }
+
+    .account .menu-form {
+        min-height: fit-content;
+        max-height: 600;
     }
 }

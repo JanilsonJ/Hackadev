@@ -1,11 +1,19 @@
-import './cart.css';
 import React, { useContext } from 'react';
+import { Link, useNavigate  } from 'react-router-dom'
+
 import { FaMinusSquare, FaTrashAlt, FaPlusSquare } from "react-icons/fa";
+
 import { CartContext } from '../../../Context/cart';
-import { Link  } from 'react-router-dom'
+import { UserContext } from '../../../Context/user';
+
+import './cart.css';
 
     export default function Cart () {
         const { bagItems, addBagItem, onRemove, setBagItems, updateItemsCount, bagItemsCount } = useContext(CartContext)
+        const { isLoggedIn } = useContext(UserContext)
+        
+        const navigate = useNavigate();
+
         const itemsValue = bagItems.reduce((a, c) => a + c.quantity * c.actual_price, 0);
         const frete = itemsValue > 250 ? 0  : 25;
         const totalValue = itemsValue + frete;
@@ -16,21 +24,22 @@ import { Link  } from 'react-router-dom'
               {bagItems.length === 0 && <div><img className='empty-cart' src="/assets/img/Products/empty-cart.jpg" alt="empty-cart"/>
                 <p className='cart__text'>Seu carrinho está vazio!</p></div>}
               
-              {bagItems.map((item) => (
-                <div key={item.sku} className="cart__product-description">
-                  <img className='cart__product-image' key={item.sku} src={item.img.front} alt={item.name} style={{width: '130px'}} />
-                  <div className="cart__product-name"> <span className='product__name' >{item.name}</span>  <span className='product_size' >({item.productSize})</span>
+              {bagItems.map((item) => {
+                // console.log(item);
+                return <div key={item.sku} className="cart__product-description">
+                  <img className='cart__product-image' src={item.image1} alt={item.name} style={{width: '130px'}} />
+                  <div className="cart__product-name"> <span className='product__name' >{item.name}</span>  <span className='product_size' >({item.size})</span>
                   <div className='regular_price' style={item.porcent_discount !== 0
                                                         ? {display: 'unset'}
                                                         : {display: 'none'}}
-                  >R$ {item.regular_price.toFixed(2).toString().replace('.', ',')}</div>
+                  >R$ {Number(item.regular_price).toFixed(2).toString().replace('.', ',')}</div>
                   <div className="cart_product-price">
-                    R$ {item.actual_price.toFixed(2).toString().replace('.', ',')}
+                    R$ {Number(item.actual_price).toFixed(2).toString().replace('.', ',')}
                   </div>
                     <div className="minus__plus">
                         <FaMinusSquare onClick={() => onRemove(item)} className="minus" size="1.6rem" color= "var(--DustyGray)" />
                         &nbsp;<span className='item_quantity' >{item.quantity}</span>&nbsp;
-                        <FaPlusSquare onClick={() => addBagItem(item, item.productSize)} className="plus" size="1.6rem" color= "var(--DustyGray)" />
+                        <FaPlusSquare onClick={() => addBagItem(item, null)} className="plus" size="1.6rem" color= "var(--DustyGray)" />
                     </div>
                     <button onClick={() => {updateItemsCount(bagItemsCount - item.quantity)
                                             setBagItems(bagItems.filter(p => p !== item))
@@ -42,7 +51,7 @@ import { Link  } from 'react-router-dom'
                   </div>
                   
                 </div>
-              ))}
+              })}
 
                   {bagItems.length !== 0 && (
                 
@@ -64,7 +73,10 @@ import { Link  } from 'react-router-dom'
                   </div>
                
                   <div>
-                  <Link to="/checkout" className="checkout-button">Ir Para Pagamento</Link>
+                    {isLoggedIn ? 
+                        <Link to="/checkout" className="checkout-button">Ir Para Pagamento</Link>
+                      :
+                        <div onClick={() => window.confirm('Faça o login antes de prosseguir') ? navigate("/account") : null} className="checkout-button">Ir Para Pagamento</div>}
                   </div>
                 </section>
               )} 

@@ -1,18 +1,83 @@
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../../Components/Button";
-import { UserContext } from "../../../Context/user";
+
+import useFetch from "../../../hooks/useFetch";
 
 import "./register.css"
 
 const Register = (props) => {
-    const { updateUserData } = useContext(UserContext);
+    const [buttonStyle, setButtonStyle] = useState();
+
+    const [name, setName] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [birth, setBirth] = useState('');
+    const [email, setEmail] = useState('');
+    const [tel, setTel] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+
+    const [wrongEntry, setWrongEntry] = useState(false);
     
-    const cadastro = (e) => {
+    const { data: cpfExists, isFetching: searchCpf } = useFetch(cpf ? `customer_cpf/${cpf}` : null);
+    const { data: emailExists, isFetching: searchEmail } = useFetch(email ? `customer_email/${email}` : null);
+
+    const postNewUser = async (userData) => {
+        const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer';
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(userData),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            })
+        }
+
+        await fetch(api, options)
+        .then(() => {
+            props.setloginComponent(true);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    useEffect(() => {
+        setWrongEntry(false);
+    }, [email, password]);
+
+    const cadastro = async (e) => {
         e.preventDefault();
 
-        updateUserData(Array.from(e.target));
+        setWrongEntry(false);
 
-        props.setloginComponent(true);
+        const userData = {
+            name: name,
+            cpf: cpf,
+            birth: birth,
+            email: email,
+            tel: tel,
+            password: password
+        };
+        
+        if (password !== passwordConfirm || cpfExists !== null || emailExists !== null ){
+            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
+            setTimeout(() => {setButtonStyle()}, 1500);
+            setWrongEntry(true);
+        } else {
+            postNewUser(userData);
+        };
+    }
+
+    const cpfMask = (value) => {
+        value = value
+            .replace(/\D/g, '')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d)/, '$1.$2')
+            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+            .replace(/(-\d{2})\d+?$/, '$1')
+
+        setCpf(value)
     }
 
     return (
@@ -23,43 +88,51 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
-                    <input type="text" name="nome" placeholder='Nome completo' required/>
-                </label>
-            </div>  
-
-
-            <div className="input-box">
-                <label>
-                    <input type="text" name="cpf" placeholder='CPF' required/>
+                    <input type="text" name="nome" placeholder='Nome completo' onKeyUp={(e) => setName(e.target.value)} required/>
                 </label>
             </div>  
 
             <div className="input-box">
                 <label>
-                    <input type="text" name="email" placeholder='E-mail' required/>
+                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(cpfExists && wrongEntry) ? 'CPF já cadastrado no sistema!' : null}</p>
+                    <input type="text" maxLength='14' name="cpf" placeholder='CPF' value={cpf} onChange={(e) => cpfMask(e.target.value)} required/>
                 </label>
-            </div>   
+            </div>  
 
             <div className="input-box">
                 <label>
-                    <input type="tel" name="tel" placeholder='Telefone' required/>
+                    <input type="date" name="birth" placeholder='Data de Nascimento' onChange={(e) => setBirth(e.target.value)} required/>
                 </label>
             </div> 
 
             <div className="input-box">
                 <label>
-                    <input type="password" name="senha" placeholder='Senha' required/>
+                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(emailExists && wrongEntry) ? 'E-mail já cadastrado no sistema!' : null}</p>
+                    <input type="email" name="email" placeholder='E-mail' onKeyUp={(e) => setEmail(e.target.value)} required/>
+                </label>
+            </div>   
+
+            <div className="input-box">
+                <label>
+                    <input type="tel" name="tel" placeholder='Telefone' onKeyUp={(e) => setTel(e.target.value)} required/>
+                </label>
+            </div>
+
+            <div className="input-box">
+                <label>
+                    <input type="password" name="password" placeholder='Senha' onKeyUp={(e) => setPassword(e.target.value)} required/>
                 </label>
             </div>    
 
             <div className="input-box">
                 <label>
-                    <input type="password" name="confirmar-senha" placeholder='Confirme sua senha' required/>
+                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(password !== passwordConfirm && wrongEntry) ? 'Senhas diferentes!' : null}</p>
+                    <input type="password" name="password-confirm" placeholder='Confirme sua senha' onKeyUp={(e) => setPasswordConfirm(e.target.value)} required/>
                 </label>
             </div>
 
             <div className="login-button">
-                <Button type="submit">Cadastre-se</Button>
+                <Button type="submit" styles={buttonStyle}>{searchCpf || searchEmail ? 'Verificando...' : 'Cadastre-se'}</Button>
             </div>
 
         </form>      

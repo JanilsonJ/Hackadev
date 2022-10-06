@@ -5,7 +5,8 @@ import {
     MdSearch as SearchIcon
 } from "react-icons/md";
 
-import ProductsList from '../../../data/products';
+import useFetch from '../../../hooks/useFetch';
+
 import './searchItems.css';
 
 const SearchItems = () => {
@@ -19,13 +20,7 @@ const SearchItems = () => {
         return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
     }
 
-    const exists = (name, type, keyword) => {
-        name = strNormalize(name);
-        type = strNormalize(type);
-        keyword = keyword.find(k => strNormalize(k).includes(input))
-
-        return (keyword || type.includes(input) || name.includes(input))
-    }
+    const { data: products, isFetching } = useFetch(`products/produto?filter=${input}`); // Pegando Produtos pela API
 
     const clearInput = () => {
         document.getElementById('search__input').value = null;
@@ -41,7 +36,7 @@ const SearchItems = () => {
             return (
                 <>
                   <div className="card__image">
-                    <img src={p.img.front} alt={p.name} />
+                    <img src={p.image1} alt={p.name} />
                     <p> -{p.porcent_discount}% </p>
                   </div>
                   <div className="search-item__description">
@@ -57,7 +52,7 @@ const SearchItems = () => {
             return (
                 <>
                     <div className="card__image">
-                      <img src={p.img.front} alt={p.name} />
+                      <img src={p.image1} alt={p.name} />
                     </div>
                     <div className="search-item__description">
                       <h3>{p.name}</h3>
@@ -66,7 +61,7 @@ const SearchItems = () => {
                       </div>
                     </div>
                 </>
-              );
+            );
         }
     }
 
@@ -79,20 +74,16 @@ const SearchItems = () => {
                 <SearchIcon className='search__icon'/>
                 
                 <section className="search_result">
-                    {ProductsList.map(p => {
-                        if (exists(p.name, p.type, p.keywords) && input !== '' && input !== ' '){
-                            return (
-                                <section key={p.id}>
-                                    <hr />
-                                    <Link to={`/product/${p.id}`} className="search-item__card" onClick={clearInput} >
-                                        {productCard(p)}
-                                    </Link>
-                                </section>
-                            )
-                        } else
-                            return null
+                    {isFetching ? 'Caregando...' : products?.map(p => {
+                        return (
+                            <section key={p.id}>
+                                <hr />
+                                <Link to={`/product/${p.id}`} className="search-item__card" onClick={clearInput} >
+                                    {productCard(p)}
+                                </Link>
+                            </section>
+                        )
                     })}
-
                 </section>
             </form>
         </section>

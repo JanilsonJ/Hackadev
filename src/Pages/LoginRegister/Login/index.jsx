@@ -1,45 +1,67 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {useNavigate} from "react-router-dom"
 
 import Button from "../../../Components/Button";
 
 import { UserContext } from "../../../Context/user";
+import useFetch from "../../../hooks/useFetch";
 
 import "./login.css"
 
 const Login = () => {
     const navigate = useNavigate();
     
-    const { setLoggedIn } = useContext(UserContext);
+    const { setLoggedIn, setUserData } = useContext(UserContext);
 
-    const login = (e) => {
+    const [buttonStyle, setButtonStyle] = useState();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const body = {email: email, password: password};
+
+    const { data: validUser, isFetching: validating } = useFetch('customer_validate', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        })
+    })
+
+    const validateLogin = (e) => {
         e.preventDefault();
 
-        setLoggedIn(true)
-
-        navigate("/home");
+        if (validUser) {
+            setLoggedIn(true);
+            setUserData(validUser);
+            navigate("/home");
+        } else {
+            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
+            setTimeout(() => {setButtonStyle()}, 1500);
+        }
     }
 
     return (
-        <form onSubmit={login} className='form'>
+        <form onSubmit={validateLogin} className='form'>
             <div className="title">
                 <h1>Entrar na IMA</h1>
             </div>
 
             <div className="input-box">
                 <label>
-                    <input type="text" name="email" placeholder='E-mail' required/>
+                    <input onKeyUp={(e) => setEmail(e.target.value)} type="text" name="email" placeholder='E-mail' required/>
                 </label>
             </div>   
 
             <div className="input-box">
                 <label>
-                    <input type="password" name="senha" placeholder='Senha' required/>
+                    <input onKeyUp={(e) => setPassword(e.target.value)}  type="password" name="senha" placeholder='Senha' required/>
                 </label>
             </div>    
 
             <div className="login-button">
-                <Button type="submit">Logar</Button>
+                    <Button type="submit" styles={buttonStyle}>{validating ? 'Validando...' : 'Logar'}</Button>
             </div>
 
         </form>      

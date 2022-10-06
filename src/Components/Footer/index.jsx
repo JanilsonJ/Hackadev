@@ -38,9 +38,13 @@ const Footer = () => {
 
     return (
         <>
-            <div className='footer__arrow-up' >
-                {displayUpPage ? <UpArrowIcon onClick={upPage}/> : null}
-            </div>
+            {pathname === "/account" ? 
+                null 
+             :
+                <div className='footer__arrow-up' >
+                    {displayUpPage ? <UpArrowIcon onClick={upPage}/> : null}
+                </div>
+            }
 
             <footer className='footer'>
     
