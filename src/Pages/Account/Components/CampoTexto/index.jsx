@@ -50,6 +50,7 @@ const CampoTexto = (props) => {
         <div className="input-block">
             <label htmlFor={props.name} > {props.label} </label>
             <input id={props.name}
+                onChange={props.onChange}
                 type={props.type} 
                 name={props.name}
                 maxLength={props.maxLength}
