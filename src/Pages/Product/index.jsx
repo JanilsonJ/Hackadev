@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import { CartContext } from '../../Context/cart'
 
@@ -20,6 +20,8 @@ const Product = () => {
   const [size, setSize] = useState(null)
   const [sizeAlert, setSizeAlert] = useState(false)
 
+  const navigate = useNavigate()
+
   const shakeButtonSizes = () => {
     setSizeAlert(true)
 
@@ -35,7 +37,7 @@ const Product = () => {
   }
 
   function payment() {
-    return product.actual_price / 3
+    return product?.actual_price / 3
   }
 
   useEffect(() => {
@@ -55,6 +57,12 @@ const Product = () => {
       ?.classList.remove('buttonActive')
 
   }, [product])
+
+  useEffect(() => {
+    if (loadProduct === false)
+      if (product === null || product.disable === true)
+        navigate('/home')
+  }, [loadProduct])
 
   const buttonSelected = (e, size) => {
     setSizeAlert(false)
@@ -100,47 +108,47 @@ const Product = () => {
         <div className="products--images">
           <div className="main--product--image">
             <div className="product--image--zoom">
-              <img id="main--image" src={mainImage} alt={product.name} />
+              <img id="main--image" src={mainImage} alt={product?.name} />
             </div>
             <div className="image--product--preview">
               <img
                 onClick={() => {
-                  setMainImage(product.image1)
+                  setMainImage(product?.image1)
                 }}
-                src={product.image1}
-                alt={product.name}
+                src={product?.image1}
+                alt={product?.name}
               />
               <img
                 onClick={() => {
-                  setMainImage(product.image2)
+                  setMainImage(product?.image2)
                 }}
-                src={product.image2}
-                alt={product.name}
+                src={product?.image2}
+                alt={product?.name}
               />
             </div>
           </div>
         </div>
         <div className="info--product--container">
-          <p className="product--name">{product.name}</p>
+          <p className="product--name">{product?.name}</p>
           <span
             className="regular--price"
             style={
-              product.porcent_discount !== 0
+              product?.porcent_discount !== 0
                 ? { display: 'unset' }
                 : { display: 'none' }
             }
           >
-            De: {BRL(product.regular_price)}
+            De: {BRL(product?.regular_price)}
           </span>
           <span
             className="product--price"
             style={
-              product.porcent_discount !== 0
+              product?.porcent_discount !== 0
                 ? { margin: '10px 0 0 0' }
                 : { margin: '50px 0 0 0' }
             }
           >
-            {BRL(product.actual_price)}
+            {BRL(product?.actual_price)}
           </span>
           <p className="payment--info">em até 3x {BRL(payment())}</p>
 
