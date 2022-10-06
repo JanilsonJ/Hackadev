@@ -62,7 +62,7 @@ const Product = () => {
     if (loadProduct === false)
       if (product === null || product.disable === true)
         navigate('/home')
-  }, [loadProduct])
+  }, [loadProduct, navigate, product])
 
   const buttonSelected = (e, size) => {
     setSizeAlert(false)
