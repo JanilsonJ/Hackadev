@@ -37,16 +37,17 @@ const Produto = ({ product }) => {
   }
 
   return (
-    <Link to={`/product/${product.id}`} className="catalago__produto">
+    <Link to={product.disable ? '' : `/product/${product.id}`} className="catalago__produto">
       <div className="catalago__produto--image">
-        <img className="item_img" src={product.image1} alt={product.name} />
-        <img className="item_img--a" src={product.image2} alt={product.name} />
+        <div className={product.disable? 'produto__disable' : ''}>
+          <img className="item_img" src={product.image1} alt={product.name} />
+          <img className="item_img--a" src={product.image2} alt={product.name} />
+        </div>
       </div>
       <h3>{product.name}</h3> 
       <div className="description__product">
-         {price()}
+         {product.disable ? 'Produto indisponível' : price()}
       </div>
-
     </Link>
   )
 }
