@@ -29,6 +29,10 @@ const CampoTexto = (props) => {
                     type="url"
                     name={props.name}
                     id={props.name}
+                    required={props.required}
+                    disabled={props.disabled}
+                    style={props.style}
+                    defaultValue={props.defaultValue}
                 />
                 <img alt={props.name} id={props.name + 'image'} />
             </div>
