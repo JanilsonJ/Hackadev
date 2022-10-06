@@ -38,6 +38,7 @@
 
 .input-block:has(img){
   min-width: calc(100% + 50px);
+  transform: translateX(-25px);
 }
 
 .input-block:has(img) input {
@@ -70,5 +71,6 @@
     
   .input-block:has(img){
     min-width: auto;
+    transform: translateX(0);
   }
 }
