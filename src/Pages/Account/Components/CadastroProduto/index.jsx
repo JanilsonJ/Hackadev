@@ -1,11 +1,16 @@
-import CampoTexto from '../CampoTexto'
+import { useState } from 'react';
 
+import { 
+    FiEdit
+} from 'react-icons/fi';
+
+import CampoTexto from '../CampoTexto'
 import Button from '../../../../Components/Button';
 
 import './cadastroProduto.css';
-import { useState } from 'react';
-import useFetch from '../../../../hooks/useFetch';
+
 import LoadBar from '../../../../Components/LoadBar';
+import useFetch from '../../../../hooks/useFetch';
 
 const CadastroProduto = () => {
     const departamentOptions = ["Masculino", "Feminino", "Unissex"];
@@ -13,7 +18,7 @@ const CadastroProduto = () => {
     
     const [showNewProductForm, setShowNewProductForm] = useState(false);
 
-    const { data: products, isFetching: loadProducts } = useFetch('products'); // Pegando Produtos na API
+    const { data: products, isFetching: loadProducts, refetch: reloadProducts } = useFetch('products'); // Pegando Produtos na API
 
     const newProduct = async (e) => {
         e.preventDefault();
@@ -57,6 +62,7 @@ const CadastroProduto = () => {
         .then((response) => response.json())
         .then((data) => {
             // console.log(data);
+            setShowNewProductForm(false);
         })
         .catch(err => {
             console.log(err);
@@ -95,6 +101,27 @@ const CadastroProduto = () => {
         )
     }
 
+    const deleteProduct = async (product) => {
+        const attributesOptions = {
+            method: 'PUT',
+            body: JSON.stringify(product),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            })
+        }
+
+        // Adicionando atributos do produto inserido anteriormente;
+        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'products', attributesOptions)
+        .then((data) => {
+            // console.log(data);
+            reloadProducts();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
     const allProducts = () => {
         if (loadProducts) 
             return <LoadBar title="Carregando Produtos..." />
@@ -102,7 +129,9 @@ const CadastroProduto = () => {
             return (
                 <div className="products">
                     <div className="product">
-                        <button onClick={() => setShowNewProductForm(true)}>Adicionar Produto</button>
+                        <div className='product_buttons'>
+                            <button onClick={() => setShowNewProductForm(true)}>Adicionar Produto</button>
+                        </div>
                     </div>
                     {
                         products.map(product => {
@@ -112,7 +141,10 @@ const CadastroProduto = () => {
                                     <hr /> 
                                     <img className="item_img" src={product.image1} alt={product.name} />
                 
-                                    <button onClick={() => updateProdutctForm(product)}>Editar Produto</button>
+                                    <div className='product_buttons'>
+                                        <button onClick={() => updateProdutctForm(product)}>Editar&nbsp;<FiEdit /></button>
+                                        <button className={product.disable ? 'product_buttons_enable' : 'product_buttons_disable'} onClick={() => deleteProduct(product)}>{product.disable ? 'Ativar' : 'Desativar'}</button>
+                                    </div>
                                 </div>
                             )
                         })

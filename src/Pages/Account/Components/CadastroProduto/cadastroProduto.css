@@ -33,7 +33,15 @@
     width: 125px;
 }
 
-.product button{
+.product .product_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product .product_buttons button{
+    display: flex;
+    align-content: center;
     background-color: rgb(33, 88, 139);
     color: aliceblue;
     font-weight: 500;
@@ -44,6 +52,14 @@
     box-sizing: border-box;
     box-shadow: 2px 2px 4px #000;
     cursor: pointer;
+}
+
+.product .product_buttons .product_buttons_enable {
+    background-color: rgb(66, 126, 66);
+}
+
+.product .product_buttons .product_buttons_disable {
+    background-color: var(--MetallicRed);
 }
 
 .Form__CadastroProduto .cartegory {
