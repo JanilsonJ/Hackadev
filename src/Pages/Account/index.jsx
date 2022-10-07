@@ -8,7 +8,7 @@ import './account.css';
 import { UserContext } from '../../Context/user';
 
 import DadosPessoais from './Components/DadosPessoais';
-import CadastroProduto from './Components/CadastroProduto';
+import CadastroProduto from './Components/AdmProdutos';
 import Cartoes from './Components/Cartoes';
 import Enderecos from './Components/Enderecos';
 import Historico from './Components/Historico';
