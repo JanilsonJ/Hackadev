@@ -73,8 +73,9 @@ const Checkout = () => {
     const order_details = {
       id: id,
       customer_id: user.id,
+      addressee: address.addressee,
       order_date: current_date,
-      total_price: subtotal,
+      total_price: Number(subtotal) + Number(subtotal >= 200 ? 0 : freteValue),
       installments: 0,
       order_address: `${address.address}, ${address.complement}, ${address.district}, ${address.city}, ${address.state}`
     }

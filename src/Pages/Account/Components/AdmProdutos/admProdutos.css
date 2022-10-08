@@ -1,0 +1,160 @@
+.accountProducts{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accountProducts_navbar {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.accountProducts_navbar .newProduct_button {
+    background-color: rgb(33, 88, 139);
+    color: #fefefe;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 4px #000;
+    cursor: pointer;
+}
+
+.accountProducts_navbar > div {
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+
+.accountProducts_navbar > div > input {
+    width: 80% !important;
+    max-width: 300px;
+}
+
+.accountProducts_navbar  > div > label {
+   width: fit-content;
+   flex-grow: 0;
+   min-width: auto;
+   margin-right: 10px;
+   box-sizing: border-box;
+}
+
+/* Produtos */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.product {
+    margin: 5px;
+    padding: 5px;
+
+    width: 170px;
+    height: 220px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    text-align: center;
+
+    box-shadow: 2px 2px 4px #000;
+
+    font-size: 12px;
+}
+
+.product .item_img {
+    width: 100px;
+}
+
+.product .item_img_disable {
+    width: 100px;
+    filter: grayscale(100%);
+}
+
+.product hr {
+    width: 125px;
+}
+
+.product .product_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product .product_buttons button{
+    display: flex;
+    align-content: center;
+    background-color: rgb(33, 88, 139);
+    color: aliceblue;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px #000;
+    cursor: pointer;
+}
+
+.product .product_buttons .product_buttons_enable {
+    background-color: rgb(66, 126, 66);
+}
+
+.product .product_buttons .product_buttons_disable {
+    background-color: var(--MetallicRed);
+}
+
+/* Formulario */
+.Form__CadastroProduto {
+    font-family: Kumbh Sans;
+    
+    max-width: 450px;
+    min-width: fit-content;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.title{
+    font-size: clamp(20px, 1vw + 1em, 30px);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.subtitle{
+    font-size: clamp(8px, 1em, 16px);
+    text-align: center;
+    padding: 0 10px;
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+
+.formulario__botao {
+    display: flex;
+    justify-content:center;
+    margin: 10px 0 40px 0;
+}
+
+@media screen and (max-width: 380px) {
+    .Form__CadastroProduto  {
+        padding: 0 !important;
+    }
+    
+    .accountProducts_navbar > div {
+        flex-wrap: wrap;
+    }
+
+}

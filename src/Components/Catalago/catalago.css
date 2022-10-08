@@ -48,7 +48,15 @@
     cursor: pointer;
     max-width: 100%;
     display: block;  
-    
+}
+
+.catalago__produto:has(.produto__disable), 
+.catalago__produto:has(.produto__disable) img {
+    cursor: not-allowed !important;
+}
+
+.catalago__produto .produto__disable {
+    filter: grayscale(100%);
 }
 
 /* Transição de Imagens Hoover*/

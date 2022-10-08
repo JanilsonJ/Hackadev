@@ -75,6 +75,9 @@ const SearchItems = () => {
                 
                 <section className="search_result">
                     {isFetching ? 'Caregando...' : products?.map(p => {
+                        if (p.disable)
+                            return null
+
                         return (
                             <section key={p.id}>
                                 <hr />
