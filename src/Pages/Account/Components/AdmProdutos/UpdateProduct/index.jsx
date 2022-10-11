@@ -30,36 +30,14 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
             })
         }
 
-        // //Adicionando dados base do produto ao banco
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'product', ProductOptions)
         .then((response) => response.json())
         .then((data) => {
-            //Adicioanando ao productData o id em que foi inserido o novo produto;
+    
         })
         .catch(err => {
             console.log(err);
         });
-
-        const attributesOptions = {
-            method: 'PUT',
-            body: JSON.stringify(productData),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            })
-        }
-
-        // Adicionando atributos do produto inserido anteriormente;
-        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'product_attributes', attributesOptions)
-        .then((response) => response.json())
-        .then((data) => {
-            // console.log(data);
-            setComponent();
-            reloadProducts();
-        })
-        .catch(err => {
-            console.log(err);
-        }); 
     }
 
     return (

@@ -13,7 +13,7 @@ const Cartoes = () => {const { user } = useContext(UserContext);
 
 const [showNewCardForm, setShowNewCardForm] = useState(false);
 
-const {data: userCards, isFetching: loadCards, refetch} = useFetch(`customer_cards/${user.id}`)
+const {data: userCards, isFetching: loadCards, refetch} = useFetch(`customer/card/${user.id}`)
 
 const insertNewCard = async (e) => {
     e.preventDefault();
@@ -36,9 +36,12 @@ const insertNewCard = async (e) => {
     }
 
     //Adicionando dados base do produto ao banco
-    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer_card', AddressOptions)
-    .then((data) => {
-        // console.log(data)
+    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer/card', AddressOptions)
+    .then(response => {
+        if (!response.ok)
+            throw Error(response.statusText)
+    })
+    .then(() => {
         refetch();
         setShowNewCardForm(false);
     })
@@ -56,9 +59,12 @@ const deleteCard = async (card) => {
         })
     }
 
-    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_card/${card.card_id}`, AddressOptions)
-    .then((data) => {
-        // console.log(data);
+    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer/card/${card.card_id}`, AddressOptions)
+    .then(response => {
+        if (!response.ok)
+            throw Error(response.statusText)
+    })
+    .then(() => {
         refetch();
     })
     .catch(err => {
@@ -76,7 +82,7 @@ const setPaymentCard = async (card) => {
         })
     }
 
-    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_payment_card`, AddressOptions)
+    await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer/card/payment`, AddressOptions)
     .then((data) => {refetch()})
     .catch(err => {console.log(err)});
 }

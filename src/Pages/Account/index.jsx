@@ -8,7 +8,7 @@ import './account.css';
 import { UserContext } from '../../Context/user';
 
 import DadosPessoais from './Components/DadosPessoais';
-import CadastroProduto from './Components/AdmProdutos';
+import GerenciarProdutos from './Components/AdmProdutos';
 import Cartoes from './Components/Cartoes';
 import Enderecos from './Components/Enderecos';
 import Historico from './Components/Historico';
@@ -31,7 +31,7 @@ const Account = () => {
             case 'Historico': return <Historico />;
             case 'Enderecos': return <Enderecos />;
             case 'Cartoes': return <Cartoes />;
-            case 'CadastroProduto': return <CadastroProduto />;
+            case 'GerenciarProdutos': return <GerenciarProdutos />;
             default: break;
         }
     }
@@ -42,14 +42,14 @@ const Account = () => {
             <div className='subtitulo'>
                 <h1 ><VscAccount/>Minha Conta</h1>
                 <div className='select-menu'>
-                    <select onChange={(e) => setComponent(e.target.value)}>
+                    <select value={component} onChange={(e) => setComponent(e.target.value)}>
                         <option value="DadosPessoais">Dados Pessoais</option>
                         <option value="Historico">Historico de compras</option>
                         <option value="Enderecos">Endereços</option>
                         <option value="Cartoes">Cartões</option>
                         {
                             user.adm === true ?
-                            <option value="CadastroProduto">Cadastro de produtos</option>
+                            <option value="GerenciarProdutos">Gerenciamento de produtos</option>
                         :
                             null
                         }
@@ -65,7 +65,7 @@ const Account = () => {
                     <button onClick={() => setComponent('Cartoes')}>Cartões</button>
                     {
                     user.adm === true ?
-                        <button onClick={() => setComponent('CadastroProduto')}>Cadastro de produtos</button>
+                        <button onClick={() => setComponent('GerenciarProdutos')}>Gerenciamento de produtos</button>
                     :
                         null
                     }

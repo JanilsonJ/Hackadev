@@ -27,35 +27,13 @@ const NewProduct = ({setComponent, reloadProducts}) => {
 
         //Adicionando dados base do produto ao banco
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'products', ProductOptions)
-        .then((response) => response.json())
-        .then((data) => {
-            //Adicioanando ao productData o id em que foi inserido o novo produto;
-            productData.product_id = data[0].id
-        })
-        .catch(err => {
-            console.log(err);
-        });
-
-        const attributesOptions = {
-            method: 'POST',
-            body: JSON.stringify(productData),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            })
-        }
-
-        // Adicionando atributos do produto inserido anteriormente;
-        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'products_attributes', attributesOptions)
-        .then((response) => response.json())
-        .then((data) => {
-            // console.log(data);
+        .then(() => {
             setComponent();
             reloadProducts();
         })
         .catch(err => {
             console.log(err);
-        }); 
+        });
     }
 
     return (
