@@ -25,11 +25,14 @@ const Historico = () => {
 
     const userHistory = () => {
         const items = groupOrdersId();
+        const monthNames = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
         if(!items)
             return
 
         return Object.keys(items).map(order => {
+            const date = new Date(items[order][0].order_date.toString().slice('.'));
+
             return (
                 <div key={order} >
                     <div className="order">
@@ -37,7 +40,7 @@ const Historico = () => {
                             <p><strong>Pedido Nº {order}</strong></p>
                             <p><strong>Endereço:</strong> {items[order][0].order_address}</p>
                             <p><strong>Destinatário:</strong> {items[order][0].addressee}</p>
-                            <p><strong>Data:</strong> {items[order][0].order_date.split('T')[0]}</p>
+                            <p><strong>Data:</strong>{` ${date.getDate()} de ${monthNames[date.getMonth()]} de ${date.getFullYear()} às ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`}</p>
                             <p><strong>Valor total:</strong> {BRL(items[order][0].total_price)}</p>
                             <p><strong>Parcelas:</strong> {items[order][0].installments}</p>
                         </div>
