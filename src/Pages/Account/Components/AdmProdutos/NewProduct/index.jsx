@@ -15,6 +15,9 @@ const NewProduct = ({setComponent, reloadProducts}) => {
         const productData = {};
 
         ProductFormData.forEach((value, key) => (productData[key] = value));
+        
+        //Adicionando o valor do preço atual, pois campos desabilitados não são indentificados pela função anterior
+        productData.actual_price = document.getElementsByName('actual_price')[0].value;
 
         const ProductOptions = {
             method: 'POST',
@@ -36,6 +39,21 @@ const NewProduct = ({setComponent, reloadProducts}) => {
         });
     }
 
+    const getActualPrice = () => {
+        const regularPrice = Number(document.getElementsByName('regular_price')[0].value || 0);
+        const porcentDiscount = Number(document.getElementsByName('porcent_discount')[0].value || 0);
+        const actualPrice = document.getElementsByName('actual_price')[0];
+
+        if(porcentDiscount > 100 || porcentDiscount < 0){
+            actualPrice.value = regularPrice;
+            return
+        }
+
+        const price = regularPrice - ((porcentDiscount / 100) * regularPrice);
+
+        actualPrice.value = price.toFixed(2);
+    }
+
     return (
         <form className="Form__CadastroProduto" onSubmit={newProduct}>
             <h2 className='title'>Cadastrar novo produto</h2>
@@ -45,9 +63,9 @@ const NewProduct = ({setComponent, reloadProducts}) => {
             <CampoTexto label="Departamento" type='select' name="departament" id="departament" selectOptions={departamentOptions} required/>
             <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" required/>
             <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" required/>
-            <CampoTexto label="Preço regular" name='regular_price' type="number" step="0.01" min="0" required/>
-            <CampoTexto label="Preço atual" name='actual_price' type="number" step="0.01" min="0" required/>
-            <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" min="0" required/>
+            <CampoTexto label="Preço regular" name='regular_price' type="number" onChange={() => getActualPrice()} step="0.01" min="0" required/>
+            <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" onChange={() => getActualPrice()} min="0" max="100" required/>
+            <CampoTexto label="Preço atual" name='actual_price' type="number" step="0.01" min="0" required disabled />
 
             <h3 className='subtitle'>Quantidade em estoque para cada tamanho</h3>
             <CampoTexto name='PP' label="Tamanho PP:" size="50" type="number" min="0" required/>

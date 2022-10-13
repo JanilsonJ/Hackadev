@@ -9,8 +9,7 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
     const departamentOptions = ["", "Masculino", "Feminino", "Unissex"];
     const categoryOptions = ["", "Bermuda", "Blusa", "Camisa", "Camiseta", "Conjunto", "Moletom", "Vestido", "Short"];
 
-    
-  const { data: sizes, isFetching: loadSizes } = useFetch(`products/sizes/${editProduct.id}`) // Pegando tamanhos disponiveis do produto pela API por id
+    const { data: sizes, isFetching: loadSizes } = useFetch(`products/sizes/${editProduct.id}`) // Pegando tamanhos disponiveis do produto pela API por id
     
     const updateProduct = async (e) => {
         e.preventDefault();
@@ -20,6 +19,9 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
 
         ProductFormData.forEach((value, key) => (productData[key] = value));
         productData.product_id = editProduct.id
+        
+        //Adicionando o valor do preço atual, pois campos desabilitados não são indentificados pela função anterior
+        productData.actual_price = document.getElementsByName('actual_price')[0].value;
 
         const ProductOptions = {
             method: 'PUT',
@@ -31,13 +33,28 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
         }
 
         await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'product', ProductOptions)
-        .then((response) => response.json())
-        .then((data) => {
-    
+        .then(() => {
+            setComponent();
+            reloadProducts();
         })
         .catch(err => {
             console.log(err);
         });
+    }
+
+    const getActualPrice = () => {
+        const regularPrice = Number(document.getElementsByName('regular_price')[0].value || 0);
+        const porcentDiscount = Number(document.getElementsByName('porcent_discount')[0].value || 0);
+        const actualPrice = document.getElementsByName('actual_price')[0];
+
+        if(porcentDiscount > 100 || porcentDiscount < 0){
+            actualPrice.value = regularPrice;
+            return
+        }
+
+        const price = regularPrice - ((porcentDiscount / 100) * regularPrice);
+
+        actualPrice.value = price.toFixed(2);
     }
 
     return (
@@ -51,9 +68,9 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
                     <CampoTexto label="Departamento" type='select' name="departament" id="departament" defaultValue={editProduct.departament} selectOptions={departamentOptions} required/>
                     <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" defaultValue={editProduct.image1} required/>
                     <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" defaultValue={editProduct.image2} required/>
-                    <CampoTexto label="Preço regular" name='regular_price' type="number" defaultValue={editProduct.regular_price} step="0.01" required/>
-                    <CampoTexto label="Preço atual" name='actual_price' type="number" defaultValue={editProduct.actual_price} step="0.01" required/>
-                    <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" defaultValue={editProduct.porcent_discount} required/>
+                    <CampoTexto label="Preço regular" name='regular_price' type="number" defaultValue={editProduct.regular_price} onChange={() => getActualPrice()} step="0.01" min="0" required/>
+                    <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" defaultValue={editProduct.porcent_discount}  onChange={() => getActualPrice()} step="0.01" min="0" required/>
+                    <CampoTexto label="Preço atual" name='actual_price' type="number" defaultValue={editProduct.actual_price} disabled required/>
 
                     <h3 className='subtitle'>Quantidade em estoque para cada tamanho</h3>
                     {
