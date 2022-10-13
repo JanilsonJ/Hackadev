@@ -9,7 +9,7 @@ import { UserContext } from '../../../Context/user';
 import './cart.css';
 
     export default function Cart () {
-        const { bagItems, addBagItem, onRemove, setBagItems, updateItemsCount, bagItemsCount } = useContext(CartContext)
+        const { bagItems, addBagItem, onRemove, setBagItems, updateItemsCount, bagItemsCount, setBagDisplay } = useContext(CartContext)
         const { isLoggedIn } = useContext(UserContext)
         
         const navigate = useNavigate();
@@ -74,7 +74,7 @@ import './cart.css';
                
                   <div>
                     {isLoggedIn ? 
-                        <Link to="/checkout" className="checkout-button">Ir Para Pagamento</Link>
+                        <Link to="/checkout" onClick={() => setBagDisplay(false)} className="checkout-button">Ir Para Pagamento</Link>
                       :
                         <div onClick={() => window.confirm('Faça o login antes de prosseguir') ? navigate("/account") : null} className="checkout-button">Ir Para Pagamento</div>}
                   </div>
