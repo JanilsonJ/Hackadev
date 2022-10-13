@@ -15,9 +15,7 @@ import './cart.css';
         const navigate = useNavigate();
 
         const itemsValue = bagItems.reduce((a, c) => a + c.quantity * c.actual_price, 0);
-        const frete = itemsValue > 250 ? 0  : 25;
-        const totalValue = itemsValue + frete;
-    
+        
         return (
             <aside>
             <section className="cart__products">
@@ -56,22 +54,14 @@ import './cart.css';
                   {bagItems.length !== 0 && (
                 
                 <section className="resume">
-                  <div className="total__value">
-                    <div className="total__value-fix">
-                      <strong>Preço total</strong>
-                    </div>
-                    <div className="total__value-p">
-                      <strong>R$ {totalValue.toFixed(2).toString().replace('.', ',')}</strong>
-                    </div>
-                  </div>
-                  <span className='cart__product-line'></span>
-                  <div className="frete__price">
-                    <div className="frete__price-fix">Valor do frete</div>
-                    <div className="frete__total-value">
-                      R$ {frete.toFixed(2).toString().replace('.', ',')}
-                    </div>
-                  </div>
-               
+                  <p className="total__value">
+                    <strong>Subtotal:</strong> R$ {itemsValue.toFixed(2).toString().replace('.', ',')}
+                  </p>
+                  <p className="frete_msg">
+                    Frete grátis para compra acima de <strong>R$200,00</strong>
+                  </p>
+                  <hr className="resume_divider"/>
+
                   <div>
                     {isLoggedIn ? 
                         <Link to="/checkout" onClick={() => setBagDisplay(false)} className="checkout-button">Ir Para Pagamento</Link>
