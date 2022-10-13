@@ -22,23 +22,17 @@ const CampoTexto = (props) => {
     }
     
     if (props.type === 'urlImage') {
-        function image() {
-            const imgInput = document.getElementById(props.name).value;
-            const imgSrc =  document.getElementById(props.name + 'image');
+        function image(e) {
+            const url = e.target.value;
 
-            const img = new Image();
-            img.src = imgInput;
-        
-            //Caso não consiga carregar a url da imagem será inserida a imagem de produto sem imagem
-            img.onload  = () => {imgSrc.setAttribute('src', imgInput)}
-            img.onerror = () => {imgSrc.setAttribute('src', '/assets/img/Products/no_product_image.png')}
+            document.getElementById(`${props.name}image`).src = url;
         }
 
         return (
             <div className="input-block">
                 <label htmlFor={props.name} > {props.label} </label>
                 <input 
-                    onChange={image}
+                    onChange={(e) => image(e)}
                     type="text"
                     name={props.name}
                     id={props.name}
@@ -47,7 +41,12 @@ const CampoTexto = (props) => {
                     style={props.style}
                     defaultValue={props.defaultValue}
                 />
-                <img alt={props.name} id={props.name + 'image'} src={props.defaultValue} />
+                <img 
+                    id={props.name + 'image'} 
+                    src={props.defaultValue}
+                    onError={e => e.target.src = '/assets/img/Products/no_product_image.png'} 
+                    alt={props.name} 
+                />
             </div>
         )
     }

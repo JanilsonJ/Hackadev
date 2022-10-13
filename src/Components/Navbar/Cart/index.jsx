@@ -25,7 +25,7 @@ import './cart.css';
               {bagItems.map((item) => {
                 // console.log(item);
                 return <div key={item.sku} className="cart__product-description">
-                  <img className='cart__product-image' src={item.image1} alt={item.name} style={{width: '130px'}} />
+                  <img className='cart__product-image' src={item.image1} alt={item.name} style={{width: '130px'}} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'} />
                   <div className="cart__product-name"> <span className='product__name' >{item.name}</span>  <span className='product_size' >({item.size})</span>
                   <div className='regular_price' style={item.porcent_discount !== 0
                                                         ? {display: 'unset'}

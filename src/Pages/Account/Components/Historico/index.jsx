@@ -49,7 +49,7 @@ const Historico = () => {
                                 items[order].map(i => {
                                     return (
                                         <div key={i.order_items_id} className='order_item'>
-                                            <img src={i.image1} alt={i.name}/>
+                                            <img src={i.image1} alt={i.name} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}/>
                                             <div className='order_item_description'>
                                                 <p><strong>{i.name}</strong></p>
                                                 <p><strong>Tamanho: <span style={{color: 'var(--MetallicRed)'}}>{i.size}</span></strong></p>

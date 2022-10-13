@@ -66,8 +66,8 @@ const UpdateProduct = ({editProduct, setComponent, reloadProducts}) => {
                     <CampoTexto label="Descrição" placeholder="Digite o nome do produto" name='description' defaultValue={editProduct.description} />
                     <CampoTexto label="Categoria" type='select' name="category" id="category" defaultValue={editProduct.category} selectOptions={categoryOptions} required/>
                     <CampoTexto label="Departamento" type='select' name="departament" id="departament" defaultValue={editProduct.departament} selectOptions={departamentOptions} required/>
-                    <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" defaultValue={editProduct.image1} required/>
-                    <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" defaultValue={editProduct.image2} required/>
+                    <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" defaultValue={editProduct.image1} />
+                    <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" defaultValue={editProduct.image2} />
                     <CampoTexto label="Preço regular" name='regular_price' type="number" defaultValue={editProduct.regular_price} onChange={() => getActualPrice()} step="0.01" min="0" required/>
                     <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" defaultValue={editProduct.porcent_discount}  onChange={() => getActualPrice()} step="0.01" min="0" required/>
                     <CampoTexto label="Preço atual" name='actual_price' type="number" defaultValue={editProduct.actual_price} disabled required/>

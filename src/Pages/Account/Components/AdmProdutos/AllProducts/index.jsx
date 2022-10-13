@@ -46,7 +46,7 @@ const AllProducts = ({products, reloadProducts, loadProducts, setComponent, setE
                         <div key={product.id} className="product">
                             <h3>{product.name}</h3>
                             <hr /> 
-                            <img className={product.disable ? "item_img_disable" : "item_img"} src={product.image1} alt={product.name} />
+                            <img className={product.disable ? "item_img_disable" : "item_img"} src={product.image1} alt={product.name} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}/>
         
                             <div className='product_buttons'>
                                 <button onClick={() => {setEditProduct(product); setComponent('updateProduct')}}>Editar&nbsp;<FiEdit /></button>
