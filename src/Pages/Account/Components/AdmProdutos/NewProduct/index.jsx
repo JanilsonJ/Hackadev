@@ -61,8 +61,8 @@ const NewProduct = ({setComponent, reloadProducts}) => {
             <CampoTexto label="Descrição" name='description'/>
             <CampoTexto label="Categoria" type='select' name="category" id="category" selectOptions={categoryOptions} required/>
             <CampoTexto label="Departamento" type='select' name="departament" id="departament" selectOptions={departamentOptions} required/>
-            <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage" required/>
-            <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage" required/>
+            <CampoTexto label="Imagem - 1 (URL)" name='image1' type="urlImage"/>
+            <CampoTexto label="Imagem - 2 (URL)" name='image2' type="urlImage"/>
             <CampoTexto label="Preço regular" name='regular_price' type="number" onChange={() => getActualPrice()} step="0.01" min="0" required/>
             <CampoTexto label="Desconto(%)" name='porcent_discount' type="number" onChange={() => getActualPrice()} min="0" max="100" required/>
             <CampoTexto label="Preço atual" name='actual_price' type="number" step="0.01" min="0" required disabled />
