@@ -18,6 +18,13 @@
     box-sizing: border-box;
 }
 
+.dados__pessoais__form .error_msg {
+    color: #CE5B49;
+    font-size: 12px; 
+    font-weight: 600;
+    text-align: center;
+}
+
 .dados__pessoais .dados__pessoais__form h2{
     font-size: clamp(17px, 1vw, 20px);
     font-weight: 500;

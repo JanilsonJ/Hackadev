@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../../../Components/Button";
-
-import useFetch from "../../../hooks/useFetch";
 
 import "./register.css"
 
@@ -15,14 +13,14 @@ const Register = (props) => {
     const [tel, setTel] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
-
-    const [wrongEntry, setWrongEntry] = useState(false);
     
-    const { data: cpfExists, isFetching: searchCpf } = useFetch(cpf ? `customer_cpf/${cpf}` : null);
-    const { data: emailExists, isFetching: searchEmail } = useFetch(email ? `customer_email/${email}` : null);
+    const [wrongEntry, setWrongEntry] = useState(false);
+    const [validating, setValidating] = useState(false);
 
     const postNewUser = async (userData) => {
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer';
+
+        setValidating(true);
 
         const options = {
             method: 'POST',
@@ -34,17 +32,23 @@ const Register = (props) => {
         }
 
         await fetch(api, options)
-        .then(() => {
+        .then(async (response) => {
+            if (!response.ok)
+                throw new Error(await response.text())
+
             props.setloginComponent(true);
         })
         .catch(err => {
-            console.log(err);
+            setWrongEntry(err.message);
+            
+            setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
+            setTimeout(() => {setButtonStyle()}, 1500);
+            setWrongEntry('As senhas informadas não correspondem!');
+        })
+        .finally(() => {
+            setValidating(false);
         });
     }
-
-    useEffect(() => {
-        setWrongEntry(false);
-    }, [email, password]);
 
     const cadastro = async (e) => {
         e.preventDefault();
@@ -60,10 +64,10 @@ const Register = (props) => {
             password: password
         };
         
-        if (password !== passwordConfirm || cpfExists !== null || emailExists !== null ){
+        if (password !== passwordConfirm){
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
-            setWrongEntry(true);
+            setWrongEntry('As senhas informadas não correspondem!');
         } else {
             postNewUser(userData);
         };
@@ -86,6 +90,10 @@ const Register = (props) => {
                 <h1>Cadastre-se na IMA</h1>
             </div>
 
+            <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>
+                {wrongEntry !== false ? wrongEntry : null}
+            </p>
+
             <div className="input-box">
                 <label>
                     <input type="text" name="nome" placeholder='Nome completo' onKeyUp={(e) => setName(e.target.value)} required/>
@@ -94,7 +102,6 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
-                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(cpfExists && wrongEntry) ? 'CPF já cadastrado no sistema!' : null}</p>
                     <input type="text" maxLength='14' name="cpf" placeholder='CPF' value={cpf} onChange={(e) => cpfMask(e.target.value)} required/>
                 </label>
             </div>  
@@ -107,7 +114,6 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
-                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(emailExists && wrongEntry) ? 'E-mail já cadastrado no sistema!' : null}</p>
                     <input type="email" name="email" placeholder='E-mail' onKeyUp={(e) => setEmail(e.target.value)} required/>
                 </label>
             </div>   
@@ -126,13 +132,12 @@ const Register = (props) => {
 
             <div className="input-box">
                 <label>
-                    <p style={{color: '#CE5B49', fontSize:'10px', fontWeight: 'bold'}}>{(password !== passwordConfirm && wrongEntry) ? 'Senhas diferentes!' : null}</p>
                     <input type="password" name="password-confirm" placeholder='Confirme sua senha' onKeyUp={(e) => setPasswordConfirm(e.target.value)} required/>
                 </label>
             </div>
 
             <div className="login-button">
-                <Button type="submit" styles={buttonStyle}>{searchCpf || searchEmail ? 'Verificando...' : 'Cadastre-se'}</Button>
+                <Button type="submit" styles={buttonStyle}>{validating ? 'Verificando...' : 'Cadastre-se'}</Button>
             </div>
 
         </form>      
