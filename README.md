@@ -31,8 +31,8 @@ Oferecer a melhor experiência aos usuários que interagem com os produtos no de
 <p><stroke>Versão 3.0:</stroke> https://ima-ecommerce-v3.netlify.app/</p>
 
 ## API
-<p><stroke>GIT:</stroke>https://github.com/JanilsonJ/Hackadev_api</p>
-<p><stroke>URL:</stroke>https://rest-api-hackadev.herokuapp.com/</p>
+<p><stroke>GIT:</stroke> https://github.com/JanilsonJ/Hackadev_api</p>
+<p><stroke>URL:</stroke> https://rest-api-hackadev.herokuapp.com/</p>
 
 ## Equipe
 

@@ -13,7 +13,7 @@ const Enderecos = () => {
 
     const [showAddressForm, setShowAddressForm] = useState(false);
 
-    const {data: userAddresses, isFetching: loadAddresses, refetch} = useFetch(`customer_address/${user.id}`)
+    const {data: userAddresses, isFetching: loadAddresses, refetch} = useFetch(`customer/address/${user.id}`)
 
     const insertNewAddress = async (e) => {
         e.preventDefault();
@@ -35,9 +35,12 @@ const Enderecos = () => {
         }
 
         //Adicionando dados base do produto ao banco
-        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer_address', AddressOptions)
-        .then((data) => {
-            // console.log(data)
+        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + 'customer/address', AddressOptions)
+        .then(response => {
+            if (!response.ok)
+                throw Error(response.statusText)
+        })
+        .then(() => {
             refetch();
             setShowAddressForm(false);
         })
@@ -55,9 +58,12 @@ const Enderecos = () => {
             })
         }
 
-        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_address/${address.address_id}`, AddressOptions)
-        .then((data) => {
-            // console.log(data);
+        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer/address/${address.address_id}`, AddressOptions)
+        .then(response => {
+            if (!response.ok)
+                throw Error(response.statusText)
+        })
+        .then(() => {
             refetch();
         })
         .catch(err => {
@@ -75,7 +81,7 @@ const Enderecos = () => {
             })
         }
 
-        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer_delivery_address`, AddressOptions)
+        await fetch(process.env.REACT_APP_API_URL.replaceAll('"', '') + `customer/address/delivery`, AddressOptions)
         .then((data) => {refetch()})
         .catch(err => {console.log(err)});
     }
