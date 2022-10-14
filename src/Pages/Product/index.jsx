@@ -108,10 +108,11 @@ const Product = () => {
         <div className="products--images">
           <div className="main--product--image">
             <div className="product--image--zoom">
-              <img id="main--image" src={mainImage} alt={product?.name} />
+              <img id="main--image" onError={e => e.target.src = '/assets/img/Products/no_product_image.png'} src={mainImage} alt={product?.name} />
             </div>
             <div className="image--product--preview">
               <img
+                onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}
                 onClick={() => {
                   setMainImage(product?.image1)
                 }}
@@ -119,6 +120,7 @@ const Product = () => {
                 alt={product?.name}
               />
               <img
+                onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}
                 onClick={() => {
                   setMainImage(product?.image2)
                 }}

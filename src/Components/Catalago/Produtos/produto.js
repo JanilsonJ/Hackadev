@@ -40,8 +40,8 @@ const Produto = ({ product }) => {
     <Link to={product.disable ? '' : `/product/${product.id}`} className="catalago__produto">
       <div className="catalago__produto--image">
         <div className={product.disable? 'produto__disable' : ''}>
-          <img className="item_img" src={product.image1} alt={product.name} />
-          <img className="item_img--a" src={product.image2} alt={product.name} />
+          <img className="item_img" onError={e => e.target.src = '/assets/img/Products/no_product_image.png'} src={product.image1} alt={product.name} />
+          <img className="item_img--a" onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}  src={product.image2} alt={product.name} />
         </div>
       </div>
       <h3>{product.name}</h3> 

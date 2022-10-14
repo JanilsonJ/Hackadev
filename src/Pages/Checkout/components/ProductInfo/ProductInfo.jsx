@@ -16,7 +16,7 @@ const ProductInfo = (props) => {
             <div className="container">
               <div className="container_car-item-description">
                 <div className="container_car-item-description_product-image">
-                  <img src={product.image1} alt={product.name} />
+                  <img src={product.image1} alt={product.name} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}/>
                 </div>
                 <div>
                   <p>{product.name} <span style={{color: "var(--MetallicRed)"}}>({product.size})</span></p>

@@ -36,7 +36,7 @@ const SearchItems = () => {
             return (
                 <>
                   <div className="card__image">
-                    <img src={p.image1} alt={p.name} />
+                    <img src={p.image1} alt={p.name} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}/>
                     <p> -{p.porcent_discount}% </p>
                   </div>
                   <div className="search-item__description">
@@ -52,7 +52,7 @@ const SearchItems = () => {
             return (
                 <>
                     <div className="card__image">
-                      <img src={p.image1} alt={p.name} />
+                      <img src={p.image1} alt={p.name} onError={e => e.target.src = '/assets/img/Products/no_product_image.png'}/>
                     </div>
                     <div className="search-item__description">
                       <h3>{p.name}</h3>

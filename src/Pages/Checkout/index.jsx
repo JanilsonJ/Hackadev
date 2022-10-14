@@ -16,6 +16,7 @@ import './checkout.css'
 
 import { CartContext } from '../../Context/cart.js'
 import { UserContext } from '../../Context/user.js'
+
 import useFetch from '../../hooks/useFetch'
 
 const Checkout = () => {
@@ -27,7 +28,7 @@ const Checkout = () => {
   const [freteValue, setFreteValue] = useState(0);
   const [freteIsSelected, setFreteIsSelected] = useState(false);
 
-  const {data: address, isFetching: loadAddress} = useFetch(`customer_delivery_address/${user.id}`);
+  const {data: address, isFetching: loadAddress} = useFetch(`customer/address/delivery/${user.id}`);
 
   useEffect(() => {
     document.title = 'IMA - Checkout'
@@ -41,7 +42,34 @@ const Checkout = () => {
     return sum + (Number(bag.actual_price) * Number(bag.quantity));
   }, 0)).toFixed(2);
 
-  const postRequest = async (url, body) => {    
+  const finishPurchase = async () => {
+    if (!address)
+      return window.alert('POR FAVOR! Adicione um endereço.')
+
+    if (!freteIsSelected)
+      return window.alert('POR FAVOR! Selecione o modo de entrega.')
+
+    // Body da requisição fecth
+    const body = [];
+
+    // Adicionando detalhes da compra ao body
+    body[0] = {
+      customer_id: user.id,
+      addressee: address.addressee,
+      total_price: Number(subtotal) + Number(subtotal >= 200 ? 0 : freteValue),
+      installments: 0,
+      order_address: `${address.address}, ${address.complement}, ${address.district}, ${address.city}, ${address.state}`
+    }
+
+    //Adicionando items comprados ao body
+    Array.from(bagItems).forEach((item, index) => {
+      body[index + 1] = {
+        product_sku: item.sku,
+        order_item_quantity: item.quantity,
+        order_item_price: item.actual_price
+      }
+    })
+
     const requestOptions = {
       method: 'POST',
       body: JSON.stringify(body),
@@ -51,52 +79,14 @@ const Checkout = () => {
       })
     };
 
-    await fetch(`${process.env.REACT_APP_API_URL.replaceAll('"', '')}${url}`, requestOptions)
-    .then(data => {/*console.log(data)*/}).catch(err => {console.log(err)});
-  }
-
-  const finishPurchase = async () => {
-    if (!address){
-      window.alert('POR FAVOR! Adicione um endereço.')
-      return;
-    }
-    if (!freteIsSelected){
-      window.alert('POR FAVOR! Selecione o modo de entrega.')
-      return;
-    }
-
-    const date = new Date();
-    const current_date = `${date.getDay()}-${date.getMonth()+1}-${date.getFullYear()}`;
-    // const current_time = `${date.getHours()}:${date.getMinutes()}${date.getSeconds()}`
-    const id = `${user.id}${date.getFullYear()}${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}` 
-
-    const order_details = {
-      id: id,
-      customer_id: user.id,
-      addressee: address.addressee,
-      order_date: current_date,
-      total_price: Number(subtotal) + Number(subtotal >= 200 ? 0 : freteValue),
-      installments: 0,
-      order_address: `${address.address}, ${address.complement}, ${address.district}, ${address.city}, ${address.state}`
-    }
-
-    await postRequest('order_details', order_details)
-
-    setTimeout(async () => {
-      const order_items = bagItems.map(i => {return {
-        order_id: id,
-        product_sku: i.sku,
-        order_item_quantity: i.quantity,
-        order_item_price: i.actual_price
-      }})
-      
-      await order_items.map(async items => {
-        await postRequest('order_items', items)
-      })
-    }, 1500); //Temporizador necessario para adicionar os items apos a tabela order_details
-
-    await emptyBagItems();
-    navigate('/home');
+    await fetch(`${process.env.REACT_APP_API_URL.replaceAll('"', '')}order`, requestOptions)
+    .then((data) => {
+      emptyBagItems();
+      navigate('/home');
+    }) 
+    .catch(err => {
+      console.log(err)
+    });
   }
 
   return (

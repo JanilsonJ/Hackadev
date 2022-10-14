@@ -112,20 +112,27 @@
     box-shadow: 0px 4px 4px rgba(95, 93, 93, 0.25);
 }
 
-.cart__products .confirm-button:hover {
-    background-color: #408a36;
-    transition: 1s;
-}
-
-.frete__price {
-    padding: 5px;
-    margin-bottom: 5px;
+.resume strong{
+    font-weight: 600;
 }
 
 .total__value {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 5px;
     margin-top: 5px;
+}
+
+.frete_msg {
+    font-size: .9rem;
+}
+
+.resume_divider {
+    width: 90%;
+}
+
+.cart__products .confirm-button:hover {
+    background-color: #408a36;
+    transition: 1s;
 }
 
 .cart__product-line {
@@ -145,11 +152,19 @@
     background-color: #EEEEEE;
     color: #333333;
     padding: 2px 6px 2px 6px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    border-right: 2px solid #333333;
+    border-bottom: 2px solid #333333;
+    border-left: 2px solid #CCCCCC;
     text-transform: uppercase;
+    transition: 1s;
+}
+
+.checkout-button:hover {
+    border-top: 2px solid #333333;
+    border-right: 2px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+    border-left: 2px solid #333333;
 }
 
 .cart__text {

@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom"
 import Button from "../../../Components/Button";
 
 import { UserContext } from "../../../Context/user";
-import useFetch from "../../../hooks/useFetch";
 
 import "./login.css"
 
@@ -18,28 +17,39 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const body = {email: email, password: password};
+    const [validating, setValidating] = useState(false);
 
-    const { data: validUser, isFetching: validating } = useFetch('customer_validate', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: new Headers({
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        })
-    })
-
-    const validateLogin = (e) => {
+    const validateLogin = async (e) => {
         e.preventDefault();
 
-        if (validUser) {
+        setValidating(true)
+
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({email: email, password: password}),
+            headers: new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+            })
+        };
+
+        await fetch(`${process.env.REACT_APP_API_URL.replaceAll('"', '')}customer/auth`, requestOptions)
+        .then(response => {
+            if (!response.ok)
+                throw Error(response.statusText)
+            
+            return response.json();
+        })
+        .then(data => {
+            setUserData(data);
             setLoggedIn(true);
-            setUserData(validUser);
             navigate("/home");
-        } else {
+        }) 
+        .catch(err => {
+            setValidating(false);
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
-        }
+        });
     }
 
     return (
