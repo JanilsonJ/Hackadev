@@ -8,9 +8,20 @@ import {
 
 import './relatedProducts.css'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const RelatedProducts = ({product}) => {
     const { data: products, isFetching: loadProducts } = useFetch(`products/related/${product?.id}`) // Pegando produto na API por id
+
+    useEffect(() => {
+        if(document.getElementById('carousel')){
+            const carousel = document.getElementById('carousel');
+            if (carousel.scrollWidth === carousel.offsetWidth){
+                document.getElementById('right_button').style.display = "none";
+                document.getElementById('left_button').style.display = "none";
+            }
+        }
+    }, [products]);
 
     const BRL = (price) => {
         return new Intl.NumberFormat('pt-BR', {
@@ -38,6 +49,9 @@ const RelatedProducts = ({product}) => {
     if (loadProducts)
         return <LoadBar title='Carregando produtos relacionados...' />
 
+    if (products.length === 0)
+        return
+
     return (
         <div className='related_products'>
             <div className='related_products--title'>
@@ -45,7 +59,7 @@ const RelatedProducts = ({product}) => {
                 <h3>Veja mais produtos relacionados a categoria <strong>{product.category}</strong></h3>
             </div>
 
-            <button className='button left_button' onClick={() => {slideLeft()}}><LeftArrow /></button>
+            <button id='left_button' className='button left_button' onClick={() => {slideLeft()}}><LeftArrow /></button>
             <div className='carousel' id='carousel'>
                 {products.map(p => {
                     return(
@@ -59,7 +73,7 @@ const RelatedProducts = ({product}) => {
                     )
                 })}
             </div>
-            <button className='button right_button' onClick={() => {slideRight()}}><RightArrow /></button>
+            <button id='right_button' className='button right_button' onClick={() => {slideRight()}}><RightArrow /></button>
         </div>
     )
 }
