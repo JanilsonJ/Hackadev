@@ -1,7 +1,8 @@
 .related_products {
     width: 100vw;
-    height: 250px;
+    height: 320px;
     
+    margin: 2rem 0;
     padding: 10px;
     box-sizing: border-box;
 
@@ -16,7 +17,7 @@
     
     flex-basis: 2;
     width: 100%;
-    margin: 10px 0;
+    margin: 1rem 0;
 
     display: flex;
     align-items: center;
@@ -75,11 +76,10 @@
     border-bottom-right-radius: 15px;
 }
 
-/* Produtos */
+/* Carousel */
 .carousel {
     width: 80%;
-    overflow: hidden;
-
+    overflow-y: hidden;
     padding: 1em 0;
     box-sizing: border-box;
     
@@ -88,10 +88,19 @@
     scroll-behavior: smooth;
 }
 
+.carousel::-webkit-scrollbar{
+    height: 12px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--MetallicRed);
+}
+
 .carousel .carousel_product{
-    width: 110px;
+    width: 175px;
     height: 100%;
     margin: 0 1em;
+    padding: 5px 0 0 0;
     box-sizing: border-box;
     flex: none;
 
@@ -99,13 +108,22 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     color: var(--HeavyMetal);
     text-decoration: none;
+    border-radius: 10px;
+
+    transition: .6s;
+}
+
+.carousel .carousel_product:hover {
+    background-color: #ebb7b771;
 }
 
 .carousel .carousel_product img{
-    width: 100%;
+    width: 90%;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -125,16 +143,17 @@
 
 .carousel .carousel_product .actual_price{
     font-size: .8rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: auto;
+    margin-bottom: 3px;
     text-align: end;
 }
 
 .carousel .carousel_product--discount {
     position: absolute;
 
-    top: 3px;
-    right: 3px;
+    top: 7px;
+    right: 11px;
 
     padding: 2px 4px;
     box-sizing: border-box;
