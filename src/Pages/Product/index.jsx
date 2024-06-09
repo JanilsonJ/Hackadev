@@ -8,6 +8,7 @@ import useFetch from '../../hooks/useFetch'
 
 import './product.css'
 import LoadBar from '../../Components/LoadBar'
+import RelatedProducts from './RelatedProducts'
 
 const Product = () => {
   const { addBagItem } = useContext(CartContext)
@@ -102,8 +103,11 @@ const Product = () => {
     }).format(price)
   }
 
+  if (loadProduct)
+    return <LoadBar title='Carregando Produto...' />
+
   return (
-    <> {loadProduct ? <LoadBar title='Carregando Produto...' />  : 
+    <>
       <div className="container--product">
         <div className="products--images">
           <div className="main--product--image">
@@ -176,7 +180,9 @@ const Product = () => {
           </div>
         </div>
       </div>
-    } </>
+
+      <RelatedProducts product={product} />
+    </>
   )
 }
 

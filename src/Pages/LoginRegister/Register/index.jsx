@@ -43,7 +43,6 @@ const Register = (props) => {
             
             setButtonStyle({backgroundColor: "#CE5B49", color: "#fefefe"});
             setTimeout(() => {setButtonStyle()}, 1500);
-            setWrongEntry('As senhas informadas não correspondem!');
         })
         .finally(() => {
             setValidating(false);

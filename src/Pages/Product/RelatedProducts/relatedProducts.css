@@ -1,0 +1,183 @@
+.related_products {
+    width: 100vw;
+    height: 320px;
+    
+    margin: 2rem 0;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.related_products--title {
+    position: relative;
+    
+    flex-basis: 2;
+    width: 100%;
+    margin: 1rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related_products--title hr{
+    width: 90%;
+    margin: auto;
+}
+
+.related_products--title h3{
+    position: absolute;
+
+    font-size: clamp(.9rem, 1.5vw, 1.7rem);
+    font-weight: 500;
+    text-align: center;
+
+    background: #ffffff;
+    padding: 0 15px;
+}
+
+.related_products--title h3 strong {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--MetallicRed);
+}
+
+.related_products .button {
+    width: fit-content;
+    height: 100%;
+    padding: 5px;
+    margin: 0 5px;
+    box-sizing: border-box;
+
+    background-color: #e67a7a71;
+    color: var(--HeavyMetal);
+    
+    border: none;
+    cursor: pointer;
+
+    transition: 1s;
+}
+
+.related_products .button:hover {
+    background-color: var(--MetallicRed);
+}
+
+.related_products .left_button {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.related_products .right_button {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Carousel */
+.carousel {
+    width: 80%;
+    overflow-y: hidden;
+    padding: 1em 0;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar{
+    height: 12px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--MetallicRed);
+}
+
+.carousel .carousel_product{
+    width: 175px;
+    height: 100%;
+    margin: 0 1em;
+    padding: 5px 0 0 0;
+    box-sizing: border-box;
+    flex: none;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: var(--HeavyMetal);
+    text-decoration: none;
+    border-radius: 10px;
+
+    transition: .6s;
+}
+
+.carousel .carousel_product:hover {
+    background-color: #ebb7b771;
+}
+
+.carousel .carousel_product img{
+    width: 90%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.carousel .carousel_product .name{
+    margin-top: 2px;
+    font-size: .7rem;
+    text-align: center;
+
+    font-weight: 600;
+}
+
+.carousel .carousel_product .regular_price{
+    font-size: .6rem;
+    margin-top: auto;
+    text-align: end;
+}
+
+.carousel .carousel_product .actual_price{
+    font-size: .8rem;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: 3px;
+    text-align: end;
+}
+
+.carousel .carousel_product--discount {
+    position: absolute;
+
+    top: 7px;
+    right: 11px;
+
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    background-color: var(--MetallicRed);
+    color: #fff;
+    font-size: 10px;
+}
+
+
+@media all and (max-width: 850px) {
+    .related_products {
+        height: 200px;
+    }
+
+    .carousel .carousel_product{
+        width: 70px;
+    }
+}
+
+
+@media all and (max-width: 425px) {
+    .carousel {
+        width: 65%;
+    }
+}
