@@ -22,9 +22,10 @@ const insertNewCard = async (e) => {
     const cardData = {};
 
     CardFormData.forEach((value, key) => (cardData[key] = value));
-    cardData.customer_id = user.id; 
-    cardData.payment_card = cardData.payment_card === "" ? true : false; 
-    cardData.cvv = '000'; 
+    cardData.customer_id = user.id;
+    cardData.payment_card = cardData.payment_card === "";
+    cardData.card_number = '0000 0000 0000 0000';
+    cardData.cvv = '000';
 
     const AddressOptions = {
         method: 'POST',
@@ -92,12 +93,12 @@ const newCardForm = () => {
         <div className="cards_form">
             <form onSubmit={insertNewCard}>
                 <h2>Cartão</h2>
-                <CampoTexto label="Número do cartão" maxLength="19" name='card_number' required/>
+                <CampoTexto label="Número do cartão" maxLength="19" name='card_number' defaultValue='0000 0000 0000 0000' disabled required/>
                 <CampoTexto label="Nome no cartão" placeholder=" " name='card_name' required/>
                 <CampoTexto label="Data de expiração" type='month' name='expiry' required/>
                 <CampoTexto label="CVV" name='cvv' defaultValue='000' maxLength="3" disabled required/>
                 <CampoTexto type="checkbox" label="Criar como principal?" name='payment_card'/>
-                
+
                 <div className='formulario__botao'>
                     <Button type="submit">Adicionar Cartão</Button>
                 </div>
@@ -111,7 +112,7 @@ const cards = () => {
         return <LoadBar title="Carregando cartões..." />
 
     const monthNames = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
-    
+
     return userCards.map(card => {
         const expiryDate = new Date(card?.expiry.split('T')[0])
         const expiry = `${monthNames[expiryDate.getMonth() + 1]} de ${expiryDate.getFullYear()}`
@@ -119,15 +120,15 @@ const cards = () => {
         return (
             <div className={card.payment_card ? 'card payment_card' : 'card'} key={card.card_id}>
                 { card.payment_card ? <div style={{textAlign: "center", margin: "5px 0"}}>Cartão selecionado para pagamaneto<hr /></div> : null  }
-                
+
                 <div className='card_label' ><p>Número:</p>{card.card_number}</div>
                 <div className='card_label' ><p>Nome no cartão:</p>{card.card_name}</div>
                 <div className='card_label' ><p>Data de expiração:</p>{expiry}</div>
                 <div className='card_label' ><p>CVV:</p>{card.cvv}</div>
-                
+
                 <div className='card_buttons'>
                     <button onClick={() => deleteCard(card)} className='card_button card_delete'>Excluir Cartão</button>
-                    {card.payment_card ? null : 
+                    {card.payment_card ? null :
                         <button onClick={() => setPaymentCard(card)} className='card_button card_edit'>Selecionar para pagamento</button>}
                 </div>
             </div>

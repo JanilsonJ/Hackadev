@@ -10,7 +10,7 @@ export default function useFetch(path, options = null) {
             setIsFetching(false);
             return
         }
-        
+
         const api = process.env.REACT_APP_API_URL.replaceAll('"', '') + path;
 
         fetch(api, options)
